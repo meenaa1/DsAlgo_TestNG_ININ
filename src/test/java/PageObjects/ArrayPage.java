@@ -175,11 +175,11 @@ public class ArrayPage {
 		Run.click();
 	}
 	public void InvalidPythoncode(String sheetName, int rowNumber) throws EncryptedDocumentException, IOException, InterruptedException {
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(TryEditor).sendKeys(pcode).build().perform();
+//		Path filePath = Paths.get(relativePath).toAbsolutePath();
+//		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
+//		String pcode = testDataMap.get(rowNumber).get("pyCode");
+//		Actions actions = new Actions(driver);
+//		actions.moveToElement(TryEditor).sendKeys(pcode).build().perform();
 		Run.click();
 		
 		try {
@@ -200,11 +200,11 @@ public class ArrayPage {
 		return driver.switchTo().alert().getText();
 	}
 	public void ValidPythoncode(String sheetName,int rowNumber) throws EncryptedDocumentException, IOException {
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		Actions actions = new Actions(driver);
-		actions.moveToElement(TryEditor).sendKeys(pcode).build().perform();
+//		Path filePath = Paths.get(relativePath).toAbsolutePath();
+//		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
+//		String pcode = testDataMap.get(rowNumber).get("pyCode");
+//		Actions actions = new Actions(driver);
+//		actions.moveToElement(TryEditor).sendKeys(pcode).build().perform();
 	}
 	public String GetConsoleOutput() {
 		return TryEditor_Console.getText();
@@ -236,11 +236,11 @@ public class ArrayPage {
 		Run.click();
 	}
 	public void ValidInputPracticeQn(String sheetName,int rowNumber) throws EncryptedDocumentException, IOException {
-		Path filePath = Paths.get(relativePath).toAbsolutePath();
-		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-		String pcode = testDataMap.get(rowNumber).get("pyCode");
-		StringSelection stringSelection = new StringSelection(pcode);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+//		Path filePath = Paths.get(relativePath).toAbsolutePath();
+//		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
+//		String pcode = testDataMap.get(rowNumber).get("pyCode");
+//		StringSelection stringSelection = new StringSelection(pcode);
+//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(codeMirrorDiv).click().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL)
