@@ -2,8 +2,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>DS_Algo_TestNG</groupId>
-	<artifactId>DS_Algo_TestNG</artifactId>
+	<groupId>DSAlgo_TestNG_ININ</groupId>
+	<artifactId>DS_Algo_TestNG_ININ</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 
@@ -85,8 +85,7 @@
 			<version>1.0.12</version>
 		</dependency>
 
-	</dependencies>
-
+		</dependencies>
 	<build>
 		<plugins>
 			<plugin>
