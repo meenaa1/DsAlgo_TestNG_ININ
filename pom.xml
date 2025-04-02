@@ -85,6 +85,11 @@
 			<version>1.0.12</version>
 		</dependency>
 
+		<dependency>
+			<groupId>DsAlgo_Cucumber</groupId>
+			<artifactId>DsAlgo_Cucumber</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
