@@ -38,12 +38,13 @@ public class Listener implements ITestListener {
         System.out.println(result.getName() + " success");
     }
 
+  
     @Override
     public void onTestFailure(ITestResult result) {
         extentTest.get().log(Status.FAIL, result.getName() + " failed");
         System.out.println(result.getName() + " failed");
 
-        WebDriver driver = driverFactory.getDriver(); 
+        WebDriver driver = driverFactory.getDriver();
         if (driver != null) {
             try {
                 File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -60,7 +61,11 @@ public class Listener implements ITestListener {
 
                 extentTest.get().addScreenCaptureFromPath(filePath);
                 System.out.println("Screenshot saved at: " + filePath);
+
                 attachScreenshotToAllure(driver);
+
+            } catch (org.openqa.selenium.NoSuchSessionException e) {
+                System.out.println("WebDriver session is closed. Screenshot not taken.");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -68,6 +73,7 @@ public class Listener implements ITestListener {
             System.out.println("Driver is null, screenshot not taken.");
         }
     }
+
     
     @Attachment(value = "Failure Screenshot", type = "image/png")
     public static void attachScreenshotToAllure(WebDriver driver) {

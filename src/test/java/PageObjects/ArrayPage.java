@@ -1,13 +1,7 @@
 package PageObjects;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.Duration;
-import java.util.List;
-import java.util.Map;
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
