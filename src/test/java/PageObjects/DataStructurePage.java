@@ -13,6 +13,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import DriverFactory.driverFactory;
+
 public class DataStructurePage {
 
 	private WebDriver driver;
@@ -81,9 +83,9 @@ public class DataStructurePage {
 	@CacheLookup
 	WebElement SignOut;
 
-	public DataStructurePage(WebDriver driver) {
+	public DataStructurePage() {
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
 	}
 
 	public void GetStarted() {

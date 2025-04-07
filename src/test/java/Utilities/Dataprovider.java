@@ -98,6 +98,17 @@ public class Dataprovider {
 		};
 	}
 	
+	@DataProvider(name = "Registerconfirmpassword")
+	public Object[][] Registerconfirmpassword() throws IOException {
+		Excelreaderpython read = new Excelreaderpython();
+		String username = read.getusername(3);
+		String password=read.getpassword(3);
+		String confrimpassword=read.getconfirmpassword(3);
+		return new Object[][]{
+		{username,password,confrimpassword}
+		};
+	}
+	
 	@DataProvider(name = "LoginValidcredentials")
 	public Object[][] LoginValidcredentials() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();

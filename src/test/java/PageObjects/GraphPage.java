@@ -2,6 +2,7 @@ package PageObjects;
 
 import java.time.Duration;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import DriverFactory.driverFactory;
+import Utilities.LoggerReader;
 
 public class GraphPage {
 	
@@ -134,6 +136,21 @@ public class GraphPage {
 		wait.until(ExpectedConditions.elementToBeClickable(Practice_QuestionsLink)).click();
 	}
 
+	public void enterPythonCode(String code) {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        wait.until(ExpectedConditions.visibilityOf(tryEditorInp));
+	        tryEditorInp.clear();  // Sometimes this might fail for non-standard editors like CodeMirror
+	        tryEditorInp.sendKeys(code);
+	        LoggerReader.info("Code entered into TryEditor: " + code);
+	    } catch (StaleElementReferenceException e) {
+	        LoggerReader.error("StaleElementReferenceException caught. Re-locating the tryEditorInp element.");
+	        PageFactory.initElements(driver, this); // Re-initialize the elements
+	        tryEditorInp.sendKeys(code); // Retry input
+	    } catch (Exception e) {
+	        LoggerReader.error("Exception while entering Python code: " + e.getMessage());
+	    }
+	}
 	public void signOut() {
 		SignOut.click();
 	}
