@@ -1,7 +1,10 @@
 package PageObjects;
 
 import java.time.Duration;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +14,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import DriverFactory.driverFactory;
 import Utilities.LoggerReader;
 
@@ -19,7 +21,7 @@ public class GraphPage {
 	
 	WebDriver driver;
 	WebDriverWait wait;
-	
+	String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 	public GraphPage() {
 		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
@@ -33,10 +35,6 @@ public class GraphPage {
 	@CacheLookup
 	WebElement GraphGetStarted;
 
-	@FindBy(xpath = "//title[text()='Graph']")
-	@CacheLookup
-	WebElement GraphTitle;
-
 	@FindBy(xpath = "//div[@class='nav-item dropdown']")
 	@CacheLookup
 	WebElement dropdownMenu;
@@ -45,7 +43,7 @@ public class GraphPage {
 	@CacheLookup
 	WebElement selectGraph_DropdownMenu;
 
-	@FindBy(xpath = "//a[@href='graph']")
+	@FindBy(xpath ="//a[@href='graph']")
 	@CacheLookup
 	WebElement GraphLink;
 
@@ -59,21 +57,25 @@ public class GraphPage {
 
 	@FindBy(xpath = "//div[@class='CodeMirror-code']")
 	@CacheLookup
+	public
 	WebElement tryEditorInp;
 
 	@FindBy(className = "CodeMirror")
 	@CacheLookup
 	public WebElement tryEditor;
 
-	@FindBy(xpath = "//button[@type='button']")
+	@FindBy (xpath="//button[text()='Run']")
 	@CacheLookup
 	public WebElement RunBtn;
+	   
+	@FindBy (xpath="//button[@type='button']") 
+	WebElement RunBtnenabled;
 
 	@FindBy(xpath = "//pre[@id='output']")
 	@CacheLookup
 	WebElement OutPutmsg;
 
-	@FindBy(linkText = "Practice Questions")
+	@FindBy(xpath = "//a[text()='Practice Questions']")
 	@CacheLookup
 	WebElement Practice_QuestionsLink;
 
@@ -81,14 +83,33 @@ public class GraphPage {
 	@CacheLookup
 	WebElement GraphRepresentationsLink;
 	
+	@FindBy(xpath= ".//textarea")
+	@CacheLookup
+	WebElement textArea;
+	
 	@FindBy(xpath = "//a[text()='Sign out']")
 	@CacheLookup
 	WebElement SignOut;
+	
+	//Excelreaderpython readExcelreaderpython =new Excelreaderpython();
 		
 	public void GraphGetStarted() {
 		GraphGetStarted.click();
 	}
 
+	public void graphGetStarted() {
+	    try {
+	        GraphGetStarted.click();
+	    } catch (StaleElementReferenceException e) {
+	        // Re-find and retry once
+	        WebElement graphStartButton = new WebDriverWait(driver, Duration.ofSeconds(10))
+	            .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='graph']")));
+	        graphStartButton.click();
+	    }
+
+	    new WebDriverWait(driver, Duration.ofSeconds(10))
+	        .until(ExpectedConditions.titleContains("Graph"));
+	}
 	public void dropdownMenuClick() {
 		dropdownMenu.click();
 	}
@@ -112,12 +133,45 @@ public class GraphPage {
 	public void Run() {
 		RunBtn.click();
 	}
+	 public boolean RunbuttonEnabled() {
+	       return RunBtnenabled.isEnabled();   
+	 }
+	       
 
 	public void EmptytryInput() {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(tryEditorTxt).click().sendKeys("").build().perform();
 	}
+	public void enterPythonCode(String code) {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	        wait.until(ExpectedConditions.visibilityOf(tryEditor));
 
+	        Actions actions = new Actions(driver);
+	        actions.moveToElement(tryEditor).click().perform();
+
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("document.querySelector('.CodeMirror').CodeMirror.setValue(arguments[0]);", code);
+	        
+	        LoggerReader.info("Successfully entered code: " + code);
+	    } catch (Exception e) {
+	        LoggerReader.error("Failed to enter code: " + e.getMessage());
+	    }
+	}
+	public String getAlertTextAndAccept() {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+	        String alertText = alert.getText();
+	        alert.accept(); // close the alert
+	        return alertText;
+	    } catch ( NoAlertPresentException e) {
+	        return ""; // No alert appeared
+	    }
+	}
+
+
+	
 	public String alertMessage() {
 		return driver.switchTo().alert().getText();
 	}
@@ -131,28 +185,23 @@ public class GraphPage {
 	}
 
 	public void PracticeQns() {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Practice_QuestionsLink);
-		wait.until(ExpectedConditions.elementToBeClickable(Practice_QuestionsLink)).click();
+		Practice_QuestionsLink.click();
 	}
 
-	public void enterPythonCode(String code) {
-	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        wait.until(ExpectedConditions.visibilityOf(tryEditorInp));
-	        tryEditorInp.clear();  // Sometimes this might fail for non-standard editors like CodeMirror
-	        tryEditorInp.sendKeys(code);
-	        LoggerReader.info("Code entered into TryEditor: " + code);
-	    } catch (StaleElementReferenceException e) {
-	        LoggerReader.error("StaleElementReferenceException caught. Re-locating the tryEditorInp element.");
-	        PageFactory.initElements(driver, this); // Re-initialize the elements
-	        tryEditorInp.sendKeys(code); // Retry input
-	    } catch (Exception e) {
-	        LoggerReader.error("Exception while entering Python code: " + e.getMessage());
-	    }
-	}
-	public void signOut() {
+	
+   	public void signOut() {
 		SignOut.click();
 	}
+
+	public void navigateback() {
+		driver.navigate().back();
+	}
+
+	  public void entercode(String code) {    	
+	    	Actions actions = new Actions(driver);
+			actions.sendKeys(code).perform();
+	   }
 	
+	
+	      
 }

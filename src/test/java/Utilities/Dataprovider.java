@@ -20,13 +20,21 @@ public class Dataprovider {
 
 	@DataProvider(name = "Invalidpythoncode")
 	public Object[][] invalidpythoncode() throws IOException {
-		Excelreaderpython read = new Excelreaderpython();
-		String tryherecode = read.getPycode(2);
-		String expectedalertmessage=read.gettryheremessage(2);
-		return new Object[][]{
-		{tryherecode,expectedalertmessage}
-		};
+	    Excelreaderpython read = new Excelreaderpython();
+	    int rowIndex = 2;  
+	    String tryherecode= read.getPycode(2);;
+	    String expectedalertmessage =read.gettryheremessage(2);
+
+	    try {
+	        tryherecode = read.getPycode(rowIndex);
+	        expectedalertmessage = read.gettryheremessage(rowIndex);
+	    } catch (IndexOutOfBoundsException e) {
+	        throw new RuntimeException("Invalid index: Ensure row " + rowIndex + " exists in Excel sheet.", e);
+	    }
+
+	    return new Object[][]{{tryherecode, expectedalertmessage}};
 	}
+
 	
 	@DataProvider(name = "PracticeQSearchthearray")
 	public Object[][] practiceqsearchthearray() throws IOException {
@@ -103,9 +111,9 @@ public class Dataprovider {
 		Excelreaderpython read = new Excelreaderpython();
 		String username = read.getusername(3);
 		String password=read.getpassword(3);
-		String confrimpassword=read.getconfirmpassword(3);
+		String Confirmpassword=read.getconfirmpassword(3);
 		return new Object[][]{
-		{username,password,confrimpassword}
+		{username,password,Confirmpassword}
 		};
 	}
 	
@@ -117,5 +125,21 @@ public class Dataprovider {
 		return new Object[][]{
 		{username,password}
 		};
+	}
+	@DataProvider(name = "linkDataProvider")
+	public Object[][] linkDataProvider() {
+	    return new Object[][] {
+	        {"Tree Traversals"},
+	        {"Traversals-Illustration"},
+	        {"Binary Trees"},
+	        {"Types of Binary Trees()"},
+	        {"Implementation of Python"},
+	        {"Binary Tree Traversals"},
+	        {"Implementation of Binary Trees"},
+	        {"Application of Binary trees"},
+	        {"Binary Search Trees"},
+	        {"Implementation Of BST"},
+	        {"Practice Questions"}
+	    };
 	}
 }

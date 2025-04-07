@@ -27,7 +27,7 @@ public class DataStructurePage {
 	@FindBy(xpath = "//a[@href='data-structures-introduction']")
 	WebElement GetstartedButton;
 	
-	@FindBy(className = "list-group-item")
+	@FindBy(xpath ="//a[@href='time-complexity']")
 	WebElement timeComplexity;
 
 	@FindBy(xpath = "//a[@href='/tryEditor']")
@@ -87,6 +87,7 @@ public class DataStructurePage {
 		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
 	}
+
 
 	public void GetStarted() {
 		DSAlgoGetstart.click();
@@ -149,6 +150,9 @@ public class DataStructurePage {
 		return driver.switchTo().alert().getText();
 	}
 
+	public void getTitle() {
+		driver.getTitle();
+	}
 	public void Invalidinput() {
 
 		RunBtn.click();
