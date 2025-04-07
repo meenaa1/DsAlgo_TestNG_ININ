@@ -137,5 +137,6 @@ public class GraphPage {
 	public void signOut() {
 		SignOut.click();
 	}
+
 	
 }

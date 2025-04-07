@@ -1,389 +1,513 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="0" failed="0" skipped="7">
+<testng-results ignored="0" total="25" passed="25" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-01T22:37:41 PDT" name="Default suite" finished-at="2025-04-01T22:37:42 PDT" duration-ms="1643">
+  <suite started-at="2025-04-06T20:49:03 CDT" name="DSAlgo Test Suite" finished-at="2025-04-06T20:49:52 CDT" duration-ms="48601">
     <groups>
     </groups>
-    <test started-at="2025-04-01T22:37:41 PDT" name="Default test" finished-at="2025-04-01T22:37:42 PDT" duration-ms="1643">
-      <class name="TestClasses.GraphTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:TestClasses.GraphTest@3148f668]" started-at="2025-04-01T22:37:41 PDT" name="setUp" finished-at="2025-04-01T22:37:42 PDT" duration-ms="1467" status="FAIL">
-          <exception class="java.lang.IllegalStateException">
-            <message>
-              <![CDATA[The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
-at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:33)
-at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:98)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at DriverFactory.driverFactory.initiateDriver(driverFactory.java:35)
-at DriverFactory.driverFactory.getDriver(driverFactory.java:45)
-at PageObjects.GraphPage.<init>(GraphPage.java:22)
-at TestClasses.GraphTest.setUp(GraphTest.java:21)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+    <test started-at="2025-04-06T20:49:03 CDT" name="Functional Tests" finished-at="2025-04-06T20:49:52 CDT" duration-ms="48601">
+      <class name="TestClasses.StackTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:32 CDT" name="setUp" finished-at="2025-04-06T20:49:33 CDT" duration-ms="1049" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testDropdownNavigationToGraph()[pri:0, instance:TestClasses.GraphTest@3148f668]" started-at="2025-04-01T22:37:42 PDT" name="testDropdownNavigationToGraph" finished-at="2025-04-01T22:37:42 PDT" duration-ms="0" status="SKIP">
-          <exception class="java.lang.IllegalStateException">
-            <message>
-              <![CDATA[The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
-at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:33)
-at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:98)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at DriverFactory.driverFactory.initiateDriver(driverFactory.java:35)
-at DriverFactory.driverFactory.getDriver(driverFactory.java:45)
-at PageObjects.GraphPage.<init>(GraphPage.java:22)
-at TestClasses.GraphTest.setUp(GraphTest.java:21)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:33 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:34 CDT" duration-ms="440" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDropdownNavigationToGraph -->
-        <test-method signature="testGraphLinkNavigation()[pri:0, instance:TestClasses.GraphTest@3148f668]" started-at="2025-04-01T22:37:42 PDT" name="testGraphLinkNavigation" finished-at="2025-04-01T22:37:42 PDT" duration-ms="0" status="SKIP">
-          <exception class="java.lang.IllegalStateException">
-            <message>
-              <![CDATA[The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
-at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:33)
-at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:98)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at DriverFactory.driverFactory.initiateDriver(driverFactory.java:35)
-at DriverFactory.driverFactory.getDriver(driverFactory.java:45)
-at PageObjects.GraphPage.<init>(GraphPage.java:22)
-at TestClasses.GraphTest.setUp(GraphTest.java:21)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:34 CDT" name="setupPages" finished-at="2025-04-06T20:49:34 CDT" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGraphLinkNavigation -->
-        <test-method signature="testRunButtonWithoutCode()[pri:0, instance:TestClasses.GraphTest@3148f668]" started-at="2025-04-01T22:37:42 PDT" name="testRunButtonWithoutCode" finished-at="2025-04-01T22:37:42 PDT" duration-ms="0" status="SKIP">
-          <exception class="java.lang.IllegalStateException">
-            <message>
-              <![CDATA[The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
-at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:33)
-at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:98)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at DriverFactory.driverFactory.initiateDriver(driverFactory.java:35)
-at DriverFactory.driverFactory.getDriver(driverFactory.java:45)
-at PageObjects.GraphPage.<init>(GraphPage.java:22)
-at TestClasses.GraphTest.setUp(GraphTest.java:21)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+        </test-method> <!-- setupPages -->
+        <test-method signature="testLoginAndNavigateToStack()[pri:1, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:34 CDT" name="testLoginAndNavigateToStack" finished-at="2025-04-06T20:49:35 CDT" duration-ms="1161" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testRunButtonWithoutCode -->
-        <test-method signature="testSignOut()[pri:0, instance:TestClasses.GraphTest@3148f668]" started-at="2025-04-01T22:37:42 PDT" name="testSignOut" finished-at="2025-04-01T22:37:42 PDT" duration-ms="0" status="SKIP">
-          <exception class="java.lang.IllegalStateException">
-            <message>
-              <![CDATA[The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
-at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:33)
-at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:98)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at DriverFactory.driverFactory.initiateDriver(driverFactory.java:35)
-at DriverFactory.driverFactory.getDriver(driverFactory.java:45)
-at PageObjects.GraphPage.<init>(GraphPage.java:22)
-at TestClasses.GraphTest.setUp(GraphTest.java:21)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+        </test-method> <!-- testLoginAndNavigateToStack -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:35 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:35 CDT" duration-ms="144" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSignOut -->
-        <test-method signature="testTryEditorFunctionality()[pri:0, instance:TestClasses.GraphTest@3148f668]" started-at="2025-04-01T22:37:42 PDT" name="testTryEditorFunctionality" finished-at="2025-04-01T22:37:42 PDT" duration-ms="0" status="SKIP">
-          <exception class="java.lang.IllegalStateException">
-            <message>
-              <![CDATA[The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
-at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:33)
-at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:98)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at DriverFactory.driverFactory.initiateDriver(driverFactory.java:35)
-at DriverFactory.driverFactory.getDriver(driverFactory.java:45)
-at PageObjects.GraphPage.<init>(GraphPage.java:22)
-at TestClasses.GraphTest.setUp(GraphTest.java:21)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:35 CDT" name="setupPages" finished-at="2025-04-06T20:49:35 CDT" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testTryEditorFunctionality -->
-        <test-method signature="testUserNavigationToGraphPage()[pri:0, instance:TestClasses.GraphTest@3148f668]" started-at="2025-04-01T22:37:42 PDT" name="testUserNavigationToGraphPage" finished-at="2025-04-01T22:37:42 PDT" duration-ms="0" status="SKIP">
-          <exception class="java.lang.IllegalStateException">
-            <message>
-              <![CDATA[The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
-at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:33)
-at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:98)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at DriverFactory.driverFactory.initiateDriver(driverFactory.java:35)
-at DriverFactory.driverFactory.getDriver(driverFactory.java:45)
-at PageObjects.GraphPage.<init>(GraphPage.java:22)
-at TestClasses.GraphTest.setUp(GraphTest.java:21)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkOperationInStack()[pri:2, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:35 CDT" name="checkOperationInStack" finished-at="2025-04-06T20:49:36 CDT" duration-ms="1326" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testUserNavigationToGraphPage -->
-        <test-method signature="testValidPythonCodeExecution()[pri:0, instance:TestClasses.GraphTest@3148f668]" started-at="2025-04-01T22:37:42 PDT" name="testValidPythonCodeExecution" finished-at="2025-04-01T22:37:42 PDT" duration-ms="0" status="SKIP">
-          <exception class="java.lang.IllegalStateException">
-            <message>
-              <![CDATA[The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: The path to the driver executable Unable to locate the chromedriver executable; for more information on how to install drivers, see https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
-at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
-at org.openqa.selenium.remote.service.DriverFinder.getPath(DriverFinder.java:33)
-at org.openqa.selenium.chrome.ChromeDriver.generateExecutor(ChromeDriver.java:98)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:52)
-at DriverFactory.driverFactory.initiateDriver(driverFactory.java:35)
-at DriverFactory.driverFactory.getDriver(driverFactory.java:45)
-at PageObjects.GraphPage.<init>(GraphPage.java:22)
-at TestClasses.GraphTest.setUp(GraphTest.java:21)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+        </test-method> <!-- checkOperationInStack -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:37 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:37 CDT" duration-ms="170" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testValidPythonCodeExecution -->
-      </class> <!-- TestClasses.GraphTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:37 CDT" name="setupPages" finished-at="2025-04-06T20:49:37 CDT" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testInvalidPythonCode(java.lang.String,java.lang.String)[pri:3, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:37 CDT" name="testInvalidPythonCode" data-provider="Invalidpythoncode" finished-at="2025-04-06T20:49:38 CDT" duration-ms="1179" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[System.out.println('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NameError: name 'System' is not defined on line 1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:38 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:38 CDT" duration-ms="198" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:38 CDT" name="setupPages" finished-at="2025-04-06T20:49:38 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testValidPythonCode(java.lang.String,java.lang.String)[pri:4, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:38 CDT" name="testValidPythonCode" data-provider="Validpythoncode" finished-at="2025-04-06T20:49:40 CDT" duration-ms="1207" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[print('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Hello World]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:40 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:40 CDT" duration-ms="164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:40 CDT" name="setupPages" finished-at="2025-04-06T20:49:40 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkPracticeQns()[pri:5, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:40 CDT" name="checkPracticeQns" finished-at="2025-04-06T20:49:41 CDT" duration-ms="829" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkPracticeQns -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:41 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:41 CDT" duration-ms="181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:41 CDT" name="setupPages" finished-at="2025-04-06T20:49:41 CDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkImplementation()[pri:6, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:41 CDT" name="checkImplementation" finished-at="2025-04-06T20:49:42 CDT" duration-ms="1649" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkImplementation -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:43 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:43 CDT" duration-ms="190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:43 CDT" name="setupPages" finished-at="2025-04-06T20:49:43 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testImplementationInvalidPythonCode(java.lang.String,java.lang.String)[pri:7, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:43 CDT" name="testImplementationInvalidPythonCode" data-provider="Invalidpythoncode" finished-at="2025-04-06T20:49:44 CDT" duration-ms="1311" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[System.out.println('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NameError: name 'System' is not defined on line 1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImplementationInvalidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:45 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:45 CDT" duration-ms="178" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:45 CDT" name="setupPages" finished-at="2025-04-06T20:49:45 CDT" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testImplementationValidPythonCode(java.lang.String,java.lang.String)[pri:8, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:45 CDT" name="testImplementationValidPythonCode" data-provider="Validpythoncode" finished-at="2025-04-06T20:49:46 CDT" duration-ms="1407" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[print('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Hello World]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImplementationValidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:46 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:46 CDT" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:46 CDT" name="setupPages" finished-at="2025-04-06T20:49:46 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkApplications()[pri:9, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:46 CDT" name="checkApplications" finished-at="2025-04-06T20:49:48 CDT" duration-ms="1517" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkApplications -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:48 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:48 CDT" duration-ms="232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:48 CDT" name="setupPages" finished-at="2025-04-06T20:49:48 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testApplicationsInvalidPythonCode(java.lang.String,java.lang.String)[pri:10, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:48 CDT" name="testApplicationsInvalidPythonCode" data-provider="Invalidpythoncode" finished-at="2025-04-06T20:49:50 CDT" duration-ms="1383" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[System.out.println('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NameError: name 'System' is not defined on line 1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testApplicationsInvalidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:50 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:50 CDT" duration-ms="176" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:50 CDT" name="setupPages" finished-at="2025-04-06T20:49:50 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testApplicationsValidPythonCode(java.lang.String,java.lang.String)[pri:11, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:50 CDT" name="testApplicationsValidPythonCode" data-provider="Validpythoncode" finished-at="2025-04-06T20:49:51 CDT" duration-ms="1222" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[print('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Hello World]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testApplicationsValidPythonCode -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestClasses.StackTest@788ba63e]" started-at="2025-04-06T20:49:51 CDT" name="tearDown" finished-at="2025-04-06T20:49:52 CDT" duration-ms="490" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestClasses.StackTest -->
+      <class name="TestClasses.QueueTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:03 CDT" name="setUp" finished-at="2025-04-06T20:49:03 CDT" duration-ms="16" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:03 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:04 CDT" duration-ms="367" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:04 CDT" name="setupPages" finished-at="2025-04-06T20:49:04 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testQueueGetStarted()[pri:1, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:04 CDT" name="testQueueGetStarted" finished-at="2025-04-06T20:49:06 CDT" duration-ms="1783" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQueueGetStarted -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:06 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:06 CDT" duration-ms="146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:06 CDT" name="setupPages" finished-at="2025-04-06T20:49:06 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkImplementationofQueueinPython()[pri:2, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:06 CDT" name="checkImplementationofQueueinPython" finished-at="2025-04-06T20:49:07 CDT" duration-ms="1394" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkImplementationofQueueinPython -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:10 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:10 CDT" duration-ms="207" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:10 CDT" name="setupPages" finished-at="2025-04-06T20:49:10 CDT" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testInvalidPythonCode(java.lang.String,java.lang.String)[pri:3, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:10 CDT" name="testInvalidPythonCode" data-provider="Invalidpythoncode" finished-at="2025-04-06T20:49:11 CDT" duration-ms="1255" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[System.out.println('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NameError: name 'System' is not defined on line 1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:11 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:11 CDT" duration-ms="178" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:11 CDT" name="setupPages" finished-at="2025-04-06T20:49:11 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testValidPythonCode(java.lang.String,java.lang.String)[pri:4, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:11 CDT" name="testValidPythonCode" data-provider="Validpythoncode" finished-at="2025-04-06T20:49:13 CDT" duration-ms="1340" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[print('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Hello World]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:13 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:13 CDT" duration-ms="238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:13 CDT" name="setupPages" finished-at="2025-04-06T20:49:13 CDT" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkPracticeQns()[pri:5, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:13 CDT" name="checkPracticeQns" finished-at="2025-04-06T20:49:14 CDT" duration-ms="970" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkPracticeQns -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:14 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:14 CDT" duration-ms="261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:14 CDT" name="setupPages" finished-at="2025-04-06T20:49:14 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkImplementationUsingCollectionsDequeue()[pri:6, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:14 CDT" name="checkImplementationUsingCollectionsDequeue" finished-at="2025-04-06T20:49:16 CDT" duration-ms="1371" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkImplementationUsingCollectionsDequeue -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:16 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:17 CDT" duration-ms="231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:17 CDT" name="setupPages" finished-at="2025-04-06T20:49:17 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testImplementationUsingCollectionsDequeueInvalidPythonCode(java.lang.String,java.lang.String)[pri:7, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:17 CDT" name="testImplementationUsingCollectionsDequeueInvalidPythonCode" data-provider="Invalidpythoncode" finished-at="2025-04-06T20:49:18 CDT" duration-ms="1379" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[System.out.println('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NameError: name 'System' is not defined on line 1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImplementationUsingCollectionsDequeueInvalidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:18 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:18 CDT" duration-ms="203" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:18 CDT" name="setupPages" finished-at="2025-04-06T20:49:19 CDT" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testImplementationUsingCollectionsDequeueValidPythonCode(java.lang.String,java.lang.String)[pri:8, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:19 CDT" name="testImplementationUsingCollectionsDequeueValidPythonCode" data-provider="Validpythoncode" finished-at="2025-04-06T20:49:20 CDT" duration-ms="1917" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[print('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Hello World]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImplementationUsingCollectionsDequeueValidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:20 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:21 CDT" duration-ms="198" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:21 CDT" name="setupPages" finished-at="2025-04-06T20:49:21 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkImplementationusingarray()[pri:9, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:21 CDT" name="checkImplementationusingarray" finished-at="2025-04-06T20:49:22 CDT" duration-ms="1335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkImplementationusingarray -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:22 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:23 CDT" duration-ms="240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:23 CDT" name="setupPages" finished-at="2025-04-06T20:49:23 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testImplementationusingarrayInvalidPythonCode(java.lang.String,java.lang.String)[pri:10, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:23 CDT" name="testImplementationusingarrayInvalidPythonCode" data-provider="Invalidpythoncode" finished-at="2025-04-06T20:49:24 CDT" duration-ms="1466" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[System.out.println('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NameError: name 'System' is not defined on line 1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImplementationusingarrayInvalidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:24 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:24 CDT" duration-ms="184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:24 CDT" name="setupPages" finished-at="2025-04-06T20:49:24 CDT" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testImplementationusingarrayValidPythonCode(java.lang.String,java.lang.String)[pri:11, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:24 CDT" name="testImplementationusingarrayValidPythonCode" data-provider="Validpythoncode" finished-at="2025-04-06T20:49:26 CDT" duration-ms="1380" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[print('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Hello World]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testImplementationusingarrayValidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:26 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:26 CDT" duration-ms="244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:26 CDT" name="setupPages" finished-at="2025-04-06T20:49:26 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkQueueOperations()[pri:12, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:26 CDT" name="checkQueueOperations" finished-at="2025-04-06T20:49:27 CDT" duration-ms="1359" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkQueueOperations -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:28 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:28 CDT" duration-ms="259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:28 CDT" name="setupPages" finished-at="2025-04-06T20:49:28 CDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testQueueOperationsInvalidPythonCode(java.lang.String,java.lang.String)[pri:13, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:28 CDT" name="testQueueOperationsInvalidPythonCode" data-provider="Invalidpythoncode" finished-at="2025-04-06T20:49:30 CDT" duration-ms="1736" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[System.out.println('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NameError: name 'System' is not defined on line 1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQueueOperationsInvalidPythonCode -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:30 CDT" name="navigateToHomePage" finished-at="2025-04-06T20:49:30 CDT" duration-ms="225" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:30 CDT" name="setupPages" finished-at="2025-04-06T20:49:30 CDT" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testQueueOperationsValidPythonCode(java.lang.String,java.lang.String)[pri:14, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:30 CDT" name="testQueueOperationsValidPythonCode" data-provider="Validpythoncode" finished-at="2025-04-06T20:49:32 CDT" duration-ms="1302" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[print('Hello World')]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Hello World]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQueueOperationsValidPythonCode -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestClasses.QueueTest@1c9fbb61]" started-at="2025-04-06T20:49:32 CDT" name="tearDown" finished-at="2025-04-06T20:49:32 CDT" duration-ms="630" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestClasses.QueueTest -->
+    </test> <!-- Functional Tests -->
+  </suite> <!-- DSAlgo Test Suite -->
 </testng-results>
