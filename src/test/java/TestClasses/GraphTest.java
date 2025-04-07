@@ -1,7 +1,7 @@
 package TestClasses;
 
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import BaseClass.TestBase;
@@ -10,94 +10,85 @@ import PageObjects.LoginPage;
 import Utilities.ConfigReader;
 import Utilities.Dataprovider;
 import Utilities.LoggerReader;
-@Listeners(Utilities.Listener.class)
-//@Listeners(com.aventstack.chaintest.plugins.ChainTestListener.class)
+
+//@Listeners(ChainTestListener.class)
+//@Listeners(Utilities.Listener.class)
 public class GraphTest extends TestBase {
-	
-	TestBase testBase =new TestBase();
-	ConfigReader config = new ConfigReader();
-	GraphPage graphpage = new GraphPage();
-	LoginPage login = new LoginPage();
-	String Username=ConfigReader.getProperty("username");
-	String Password=ConfigReader.getProperty("password");
 
-	
-	@Test(priority=1)
-	public void GraphFromGetStarted() {
-		login.signin();
+    LoginPage login;
+    GraphPage graphPage;
+    String Username = ConfigReader.getProperty("username");
+    String Password = ConfigReader.getProperty("password");
+
+    @BeforeMethod
+    public void setupPages() {
+        login = new LoginPage();
+        graphPage = new GraphPage();
+    }
+
+    @Test(priority = 1)
+    public void graphFromGetStarted() {
+        login.signin();
         login.login(Username, Password);
-		graphpage.GraphGetStarted();
-		Assert.assertEquals(driver.getTitle(), "Graph");
-		LoggerReader.info("User is in the Graph Page");
-		}
-	@Test(priority=2)
-	public void GraphfromDropdown() {
-		graphpage.dropdownMenuClick();
-		graphpage.ClickGraphFromDropdown();
-		Assert.assertEquals(driver.getTitle(), "Graph");
-	}
-	@Test(priority=3)
-	public void checkingGraphLink() {
-		graphpage.Graphlink();
-		Assert.assertEquals(driver.getTitle(), "Graph");
-	}
-	@Test(priority=4)
-	public void checkingPracticeQnPage() {
-		graphpage.navigateback();
-		graphpage.GraphRepresentationlink();
-		graphpage.PracticeQns();
-		Assert.assertEquals(driver.getTitle(), "Practice Questions");
-	}
-	
-	@Test(priority=5)
-	public void checkingGraphRepresentationLink() {
-		graphpage.graphGetStarted();
-		graphpage = new GraphPage(); // Re-initialize Page Object after page change
-		graphpage.GraphRepresentationlink();
-		//Assert.assertEquals(driver.getTitle(), "Graph Representations");
-		graphpage.TryHereButton();
-		graphpage.EmptytryInput();
-		graphpage.Run();
-		Assert.assertEquals(driver.getTitle(), "Assessment");
-		System.out.println("No Error Message is present");
-	}
-	
-	@Test(priority = 6, dataProvider = "Invalidpythoncode", dataProviderClass = Dataprovider.class)
-	public void testInvalidPythonCode(String tryherecode, String expectedalertmessage) throws InterruptedException {
-	    graphpage.graphGetStarted();
-	    graphpage = new GraphPage(); 
-	    graphpage.GraphRepresentationlink();
-	    graphpage.TryHereButton();
-	    graphpage.enterPythonCode(tryherecode);
-	    graphpage.Run();
+        graphPage.GraphGetStarted();
+        Assert.assertEquals(driver.getTitle(), "Graph");
+        LoggerReader.info("User is in the Graph Page");
+    }
 
-	    // Handle the alert popup and get the message
-	    String actualAlertMessage = graphpage.getAlertTextAndAccept(); // You'll define this in GraphPage
+    @Test(priority = 2)
+    public void graphFromDropdown() {
+        graphPage.dropdownMenuClick();
+        graphPage.ClickGraphFromDropdown();
+        Assert.assertEquals(driver.getTitle(), "Graph");
+    }
 
-	    // Assert the alert text
-	    Assert.assertTrue(actualAlertMessage.contains(expectedalertmessage),
-	        "Expected alert message to contain: " + expectedalertmessage + ", but got: " + actualAlertMessage);
-	    Assert.assertEquals(driver.getTitle(), "Assessment");
-	}
+    @Test(priority = 3)
+    public void checkingGraphLink() {
+        graphPage.Graphlink();
+        Assert.assertEquals(driver.getTitle(), "Graph");
+    }
 
+    @Test(priority = 4)
+    public void checkingPracticeQuestionsPage() {
+        graphPage.navigateback();
+        graphPage.GraphRepresentationlink();
+        graphPage.PracticeQns();
+        Assert.assertEquals(driver.getTitle(), "Practice Questions");
+    }
 
-	@Test(priority=7, dataProvider="Validpythoncode", dataProviderClass= Dataprovider.class)
-	 public void testvalidPythonCode(String tryherecode, String expectedalertmessage) throws InterruptedException {
-		graphpage.graphGetStarted();
-		graphpage = new GraphPage(); // Re-initialize Page Object after page change
-	    graphpage.GraphRepresentationlink();
-	    graphpage.TryHereButton();
-	    graphpage.enterPythonCode(tryherecode); // Send code to editor
-	    graphpage.Run();
-	    Assert.assertEquals(driver.getTitle(), "Assessment");
-	}
-  }
+    @Test(priority = 5)
+    public void checkingGraphRepresentationLinkWithEmptyRun() {
+        graphPage.graphGetStarted();
+        graphPage.GraphRepresentationlink();
+        graphPage.TryHereButton();
+        graphPage.EmptytryInput();
+        graphPage.Run();
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+        LoggerReader.info("No error message is present on empty input Run");
+    }
 
+    @Test(priority = 6, dataProvider = "Invalidpythoncode", dataProviderClass = Dataprovider.class)
+    public void testInvalidPythonCode(String tryHereCode, String expectedAlertMessage) {
+        graphPage.graphGetStarted();
+        graphPage.GraphRepresentationlink();
+        graphPage.TryHereButton();
+        graphPage.enterPythonCode(tryHereCode);
+        graphPage.Run();
 
+        String actualAlertMessage = graphPage.getAlertTextAndAccept();
 
+        Assert.assertTrue(actualAlertMessage.contains(expectedAlertMessage),
+                "Expected alert message to contain: " + expectedAlertMessage + ", but got: " + actualAlertMessage);
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+    }
 
-   
-	
-
-	
-	
+    @Test(priority = 7, dataProvider = "Validpythoncode", dataProviderClass = Dataprovider.class)
+    public void testValidPythonCode(String tryHereCode, String expectedAlertMessage) {
+        graphPage.graphGetStarted();
+        graphPage.GraphRepresentationlink();
+        graphPage.TryHereButton();
+        graphPage.enterPythonCode(tryHereCode);
+        graphPage.Run();
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+    }
+}
