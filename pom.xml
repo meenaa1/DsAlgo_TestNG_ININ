@@ -8,13 +8,12 @@
 
 
 	<dependencies>
-
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>4.9.0</version> <!-- Use the latest stable version -->
-		</dependency>
-
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.31.0</version>
+</dependency>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -72,7 +71,7 @@
 			<version>2.0.17</version>
 		</dependency>
 
-		<dependency>
+	<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>5.1.2</version>
@@ -82,14 +81,17 @@
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>chaintest-testng</artifactId>
-			<version>1.0.12</version>
+			<version>1.0.11</version>
 		</dependency>
-
+		
+<!--
+		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager  -->
 		<dependency>
-			<groupId>DsAlgo_Cucumber</groupId>
-			<artifactId>DsAlgo_Cucumber</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.9.2</version>
 		</dependency>
+	
 	</dependencies>
 
 	<build>

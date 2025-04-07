@@ -13,6 +13,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import DriverFactory.driverFactory;
+
 public class DataStructurePage {
 
 	private WebDriver driver;
@@ -25,7 +27,7 @@ public class DataStructurePage {
 	@FindBy(xpath = "//a[@href='data-structures-introduction']")
 	WebElement GetstartedButton;
 	
-	@FindBy(className = "list-group-item")
+	@FindBy(xpath ="//a[@href='time-complexity']")
 	WebElement timeComplexity;
 
 	@FindBy(xpath = "//a[@href='/tryEditor']")
@@ -81,10 +83,11 @@ public class DataStructurePage {
 	@CacheLookup
 	WebElement SignOut;
 
-	public DataStructurePage(WebDriver driver) {
+	public DataStructurePage() {
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
-		this.driver = driver;
 	}
+
 
 	public void GetStarted() {
 		DSAlgoGetstart.click();
@@ -147,6 +150,9 @@ public class DataStructurePage {
 		return driver.switchTo().alert().getText();
 	}
 
+	public void getTitle() {
+		driver.getTitle();
+	}
 	public void Invalidinput() {
 
 		RunBtn.click();
