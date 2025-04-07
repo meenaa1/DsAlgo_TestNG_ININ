@@ -41,39 +41,48 @@ public class Dataprovider {
 		Excelreaderpython read = new Excelreaderpython();
 		ArrayList<String> practicequescode = read.getArraypracticeques(1);
 		String expectedoutput=read.getPQoutput(1);
+		
+		String codeBlock = String.join("\n", practicequescode); //     // Convert code lines to a single string
+		
 		return new Object[][]{
-			{practicequescode,expectedoutput}
+			{codeBlock,expectedoutput}
 			};
 	}
 	
 	@DataProvider(name = "PracticeQMaxConsones")
 	public Object[][] practiceqmaxconsones() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		ArrayList<String> practicequescode = read.getArraypracticeques(2);
-		String expectedoutput=read.getPQoutput(2);
+		ArrayList<String> practicequescode = read.getArraypracticeques(3);
+		String expectedoutput=read.getPQoutput(3);
+		String codeBlock = String.join("\n", practicequescode);
 		return new Object[][]{
-			{practicequescode,expectedoutput}
+			{codeBlock,expectedoutput}
 			};
 	}
 	
 	@DataProvider(name = "PracticeQEvennums")
 	public Object[][] practiceqevennums() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		ArrayList<String> practicequescode = read.getArraypracticeques(3);
-		String expectedoutput=read.getPQoutput(3);
+		ArrayList<String> practicequescode = read.getArraypracticeques(5);
+		String expectedoutput=read.getPQoutput(5);
+		String codeBlock = String.join("\n", practicequescode);
+		
 		return new Object[][]{
-			{practicequescode,expectedoutput}
+			{codeBlock,expectedoutput}
 			};
 	}
 
 	@DataProvider(name = "PracticeQSQofsortedarray")
 	public Object[][] practiceqsqofsortedarray() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		ArrayList<String> practicequescode = read.getArraypracticeques(4);
-		String expectedoutput=read.getPQoutput(4);
+		ArrayList<String> practicequescode = read.getArraypracticeques(7);
+		String expectedoutput=read.getPQoutput(7);
+        String codeBlock = String.join("\n", practicequescode); 
+		
 		return new Object[][]{
-			{practicequescode,expectedoutput}
+			{codeBlock,expectedoutput}
 			};
+		
 	}
 	
 	@DataProvider(name = "Registervalidcredentials")
@@ -131,4 +140,17 @@ public class Dataprovider {
 	        {"Practice Questions"}
 	    };
 	}
+	@DataProvider(name = "linkListDataProvider")
+	public Object[][] linkListDataProvider() {
+	   return new Object[][] {
+	       {"Indrodution"},
+	       {"Creating Linked List"},
+	       {"Types Of Linked List"},
+	       {"Implement Linked List in Python"},
+	       {"Traversal"},
+	       {"Insertion"},
+	       {"Deletion"},
+	     
+	   };
 }
+	}

@@ -3,21 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestClasses.GraphTest">
+      <class name="TestClasses.ArrayTest">
         <methods>
-          <include name="graphFromGetStarted"/>
-          <include name="testValidPythonCode" invocation-numbers="0"/>
           <include name="setupPages"/>
           <include name="setUp"/>
-          <include name="checkingGraphLink"/>
-          <include name="testInvalidPythonCode" invocation-numbers="0"/>
-          <include name="checkingPracticeQuestionsPage"/>
           <include name="tearDown"/>
           <include name="navigateToHomePage"/>
-          <include name="graphFromDropdown"/>
-          <include name="checkingGraphRepresentationLinkWithEmptyRun"/>
+          <include name="testvalidPythonCode_EvenNums"/>
         </methods>
-      </class> <!-- TestClasses.GraphTest -->
+      </class> <!-- TestClasses.ArrayTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
