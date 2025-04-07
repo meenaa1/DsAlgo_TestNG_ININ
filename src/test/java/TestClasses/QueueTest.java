@@ -38,7 +38,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=2)
 	public void checkImplementationofQueueinPython() throws InterruptedException {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationOfQueueInPython();
 		LoggerReader.info("User is in the Implementation Of Queue In Python Page");
@@ -51,7 +50,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=3, dataProvider="Invalidpythoncode", dataProviderClass= Dataprovider.class)
 	public void testInvalidPythonCode(String tryherecode, String expectedalertmessage) {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationOfQueueInPython();
 		LoggerReader.info("User is in the Implementation Of Queue In Python Page");
@@ -67,7 +65,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=4, dataProvider="Validpythoncode", dataProviderClass= Dataprovider.class)
 	public void testValidPythonCode(String tryherecode, String expectedalertmessage) {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationOfQueueInPython();
 		LoggerReader.info("User is in the Implementation Of Queue In Python Page");
@@ -79,7 +76,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=5)
 	public void checkPracticeQns() {
-		QueuePage queuepage = new QueuePage();
 		//driver.navigate().back();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationOfQueueInPython();
@@ -91,7 +87,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=6)
 	public void checkImplementationUsingCollectionsDequeue() {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationUsingCollectionsDequeue();
 		LoggerReader.info("User is in the Implementation using collections.deque Page");
@@ -104,7 +99,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=7, dataProvider="Invalidpythoncode", dataProviderClass= Dataprovider.class)
 	public void testImplementationUsingCollectionsDequeueInvalidPythonCode(String tryherecode, String expectedalertmessage) {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationUsingCollectionsDequeue();
 		LoggerReader.info("User is in the Implementation Using Collections Dequeue Page");
@@ -120,7 +114,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=8, dataProvider="Validpythoncode", dataProviderClass= Dataprovider.class)
 	public void testImplementationUsingCollectionsDequeueValidPythonCode(String tryherecode, String expectedalertmessage) {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationUsingCollectionsDequeue();
 		LoggerReader.info("User is in the Implementation Using Collections Dequeue Page");
@@ -132,7 +125,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=9)
 	public void checkImplementationusingarray() {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationUsingArray();
 		LoggerReader.info("User is in the Implementation using array Page");
@@ -145,7 +137,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=10, dataProvider="Invalidpythoncode", dataProviderClass= Dataprovider.class)
 	public void testImplementationusingarrayInvalidPythonCode(String tryherecode, String expectedalertmessage) {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationUsingArray();
 		LoggerReader.info("User is in the Implementation using array Page");
@@ -161,7 +152,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=11, dataProvider="Validpythoncode", dataProviderClass= Dataprovider.class)
 	public void testImplementationusingarrayValidPythonCode(String tryherecode, String expectedalertmessage) {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationUsingArray();
 		LoggerReader.info("User is in the Implementation using array Page");
@@ -173,7 +163,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=12)
 	public void checkQueueOperations() {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickQueueOperations();
 		LoggerReader.info("User is in the Queue Operations Page");
@@ -186,7 +175,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=13, dataProvider="Invalidpythoncode", dataProviderClass= Dataprovider.class)
 	public void testQueueOperationsInvalidPythonCode(String tryherecode, String expectedalertmessage) {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickQueueOperations();
 		LoggerReader.info("User is in the Queue Operations Page");
@@ -202,7 +190,6 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=14, dataProvider="Validpythoncode", dataProviderClass= Dataprovider.class)
 	public void testQueueOperationsValidPythonCode(String tryherecode, String expectedalertmessage) {
-		QueuePage queuepage = new QueuePage();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickQueueOperations();
 		LoggerReader.info("User is in the Queue Operations Page");

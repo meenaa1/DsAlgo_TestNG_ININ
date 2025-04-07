@@ -21,18 +21,18 @@ public class driverFactory {
         if (driver.get() == null) {
             String browserName = browser.get();
             if (browserName == null) {
-                browserName = "edge"; // Default to Chrome if not set
+                browserName = "chrome"; // Default to Chrome if not set
             }
             switch (browserName.toLowerCase()) {
                 case "firefox":
                     driver.set(new FirefoxDriver());
                     break;
-                case "chrome":
-                    driver.set(new ChromeDriver());
-                    break;
                 case "edge":
-                default:
                     driver.set(new EdgeDriver());
+                    break;
+                case "chrome":
+                default:
+                    driver.set(new ChromeDriver());
                     break;
             }
             driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
