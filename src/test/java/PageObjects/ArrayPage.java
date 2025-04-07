@@ -3,6 +3,7 @@ package PageObjects;
 import java.io.IOException;
 import java.time.Duration;
 import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
@@ -13,9 +14,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import DriverFactory.driverFactory;
 import Utilities.Excelreaderpython;
+import Utilities.LoggerReader;
 
 public class ArrayPage {
 
@@ -178,22 +179,32 @@ public class ArrayPage {
 		Run.click();
 	}
 
-	public void InvalidPythoncode(String sheetName, int rowNumber)
-			throws EncryptedDocumentException, IOException, InterruptedException {
-//		Path filePath = Paths.get(relativePath).toAbsolutePath();
-//		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-//		String pcode = testDataMap.get(rowNumber).get("pyCode");
-//		Actions actions = new Actions(driver);
-//		actions.moveToElement(TryEditor).sendKeys(pcode).build().perform();
-		Run.click();
-
+	public void enterPythonCode(String code) {
 		try {
-			// Wait for the alert to appear
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.visibilityOf(TryEditor));
+
+			Actions actions = new Actions(driver);
+			actions.moveToElement(TryEditor).click().perform();
+
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("document.querySelector('.CodeMirror').CodeMirror.setValue(arguments[0]);", code);
+
+			LoggerReader.info("Successfully entered code: " + code);
+		} catch (Exception e) {
+			LoggerReader.error("Failed to enter code: " + e.getMessage());
+		}
+	}
+
+	public String getAlertTextAndAccept() {
+		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-			wait.until(ExpectedConditions.alertIsPresent());
+			Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			String alertText = alert.getText();
+			alert.accept(); // close the alert
+			return alertText;
 		} catch (NoAlertPresentException e) {
-			// No alert was present, continue with the test
-			System.out.println("No alert present.");
+			return ""; // No alert appeared
 		}
 	}
 
@@ -201,13 +212,6 @@ public class ArrayPage {
 		return driver.switchTo().alert().getText();
 	}
 
-	public void ValidPythoncode(String sheetName, int rowNumber) throws EncryptedDocumentException, IOException {
-//		Path filePath = Paths.get(relativePath).toAbsolutePath();
-//		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-//		String pcode = testDataMap.get(rowNumber).get("pyCode");
-//		Actions actions = new Actions(driver);
-//		actions.moveToElement(TryEditor).sendKeys(pcode).build().perform();
-	}
 
 	public String GetConsoleOutput() {
 		return TryEditor_Console.getText();
@@ -227,31 +231,44 @@ public class ArrayPage {
 	}
 
 	public void ApplicationsArray() {
-		driver.navigate().back();
 		Applications_Of_Array.click();
 	}
 
 	public void Practicequestions() {
 		Practice_Questions.click();
 	}
+	public void Searchthearray() {
+		SearchThe_Array.click();
+		
+	}
+	
+	public void MaxConsecutiveOnes() {
+		MaxConsecutive_Ones.click();
+		
+	}
+	
+	public void FindEvenNumbers() {
+		Find_Numbers_Evennumber_Digits.click();
+	}
+	public void SquaresSortedArray() {
+		SquaresOf_SortedArray.click();
+	}
+	
 
 	public void PracticeTryEditor() {
 		codeMirrorDiv.click();
 	}
 
-	public void PracticeNoCodeinput() {
+	public void ClearTryEditor() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].CodeMirror.setValue('');", codeMirrorDiv);
 		System.out.println("Code input field cleared successfully");
-		Run.click();
+		
 	}
 
-	public void ValidInputPracticeQn(String sheetName, int rowNumber) throws EncryptedDocumentException, IOException {
-//		Path filePath = Paths.get(relativePath).toAbsolutePath();
-//		List<Map<String, String>> testDataMap = python.getData(filePath.toString(), sheetName);
-//		String pcode = testDataMap.get(rowNumber).get("pyCode");
-//		StringSelection stringSelection = new StringSelection(pcode);
-//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-
+	public void entercode(String code) {
+		Actions actions = new Actions(driver);
+		actions.sendKeys(code).perform();
 	}
+
 }

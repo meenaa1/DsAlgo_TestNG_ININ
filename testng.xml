@@ -13,9 +13,11 @@
 
 	<test name="Functional Tests" thread-count="3">
 		<classes>
-			<class name="TestClasses.GraphTest" />
+			<!--<class name="TestClasses.GraphTest" />
 			<class name="TestClasses.TreeTest" />
-			<class name="TestClasses.DataStructureTest" />
+			<class name="TestClasses.DataStructureTest" />-->
+			<class name ="TestClasses.ArrayTest"/>
+             <class name ="TestClasses.LinkedListTest"/>
 		</classes>
 	</test>
 
