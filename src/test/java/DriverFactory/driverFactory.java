@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class driverFactory { 
+public class driverFactory {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>(); // Each thread gets its own WebDriver
     private static ThreadLocal<String> browser = new ThreadLocal<>(); // Each thread gets its own browser setting
     public static final int TIMEOUT = 10;

@@ -100,4 +100,35 @@ public class Dataprovider {
 				{ username, password }
 		};
 	}
-}
+	
+	@DataProvider(name = "TreelinkDataProvider")
+	public Object[][] TreelinkDataProvider() {
+	   return new Object[][] {
+	       {"Tree Traversals"},
+	       {"Traversals-Illustration"},
+	       {"Binary Trees"},
+	       {"Types of Binary Trees"},
+	       {"Implementation of Python"},
+	       {"Binary Tree Traversals"},
+	       {"Implementation of Binary Trees"},
+	       {"Application of Binary trees"},
+	       {"Binary Search Trees"},
+	       {"Implementation Of BST"},
+	     
+	   };
+	}
+	@DataProvider(name = "linkListDataProvider")
+	public Object[][] linkListDataProvider() {
+	   return new Object[][] {
+	       {"Creating Linked List"},
+	       {"Types Of Linked List"},
+	       {"Implement Linked List in Python"},
+	       {"Traversal"},
+	       {"Insertion"},
+	       {"Deletion"},
+	     
+	   };
+	}
+	}
+
+
