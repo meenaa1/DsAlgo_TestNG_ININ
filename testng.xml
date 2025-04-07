@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+
+<suite name="DSAlgo Test Suite">
+
+
+	<listeners>
+
+		 <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener" /> 
+		<listener class-name="Utilities.RetryListener" />
+		<listener class-name="Utilities.Listener" />
+	</listeners>
+
+	<test name="Functional Tests" thread-count="3">
+		<classes>
+			<class name="TestClasses.GraphTest" />
+			<class name="TestClasses.TreeTest" />
+			<class name="TestClasses.DataStructureTest" />
+		</classes>
+	</test>
+
+</suite>
