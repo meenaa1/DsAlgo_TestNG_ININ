@@ -1,6 +1,8 @@
 package TestClasses;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -40,13 +42,13 @@ public class RegisterTest extends TestBase {
 		registerPage.clickRegister();
 		LoggerReader.info("New account !!");
 		Thread.sleep(1000);
-		assertEquals(driver.getTitle(), "NumpyNinja");
+		assertEquals(driver.getTitle(),"NumpyNinja");
 	}
 
 	@Test(priority = 3, dataProvider = "Registervalidcredentials", dataProviderClass = Dataprovider.class)
 	public void LoginAfterRegistration(String username, String password) {
 		login.signout();
-		login.signin();
+	    login.signin();
 		login.login(newusername, password);
 		String expectedmessage = "You are logged in";
 		String actualmessage = login.getErrorMessage();
@@ -101,7 +103,10 @@ public class RegisterTest extends TestBase {
 		registerPage.enterPassword(password);
 		registerPage.enterConfirmPassword(password);
 		registerPage.clickRegister();
-		Assert.assertTrue(registerPage.alert.isDisplayed());
+		String expectedmessage = "password_mismatch:The two password fields didn’t match.";
+		String actualmessage = registerPage.getErrorMessage();
+		LoggerReader.info(actualmessage);
+		assertEquals(actualmessage, expectedmessage, "Incorrect error message");
 	}
 
 	@Test(priority = 9, dataProvider = "Registerinvalidpassword", dataProviderClass = Dataprovider.class)
@@ -111,7 +116,11 @@ public class RegisterTest extends TestBase {
 		registerPage.enterPassword(password);
 		registerPage.enterConfirmPassword(password);
 		registerPage.clickRegister();
-		Assert.assertTrue(registerPage.alert.isDisplayed());
+		String expectedmessage = "password_mismatch:The two password fields didn’t match.";
+		String actualmessage = registerPage.getErrorMessage();
+		LoggerReader.info(actualmessage);
+		assertEquals(actualmessage, expectedmessage, "Incorrect error message");
 	}
+
 
 }

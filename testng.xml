@@ -5,7 +5,7 @@
 
 	<listeners>
 	<listener
-			class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
+			class-name="com.aventstack.chaintest.plugins.ChainTestListener" /> 
 		<listener class-name="Utilities.RetryListener" />
 		<listener class-name="Utilities.Listener" />
 	</listeners>

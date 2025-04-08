@@ -31,7 +31,6 @@ public class LoginTest extends TestBase {
 		login.enterUsername(username);
 		login.enterPassword(password);
 		login.clickLoginButton();
-		login.getErrorMessage();
 		LoggerReader.info("Login Successful.");
 		Assert.assertTrue(login.LoginStatus.isDisplayed());
 	}

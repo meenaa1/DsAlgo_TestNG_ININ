@@ -12,44 +12,43 @@
 	<test name="ChromeTest">
 		<parameter name="browser" value="chrome" />
 		<classes>
-
+			<class name="TestClasses.RegisterTest" />
+			<class name="TestClasses.LoginTest" />
 			<class name="TestClasses.DataStructureTest" />
+			<class name="TestClasses.ArrayTest" />
+			<class name="TestClasses.LinkedListTest" />
 			<class name="TestClasses.StackTest" />
 			<class name="TestClasses.QueueTest" />
 			<class name="TestClasses.TreeTest" />
 			<class name="TestClasses.GraphTest" />
-			<class name="TestClasses.ArrayTest" />
-			<class name="TestClasses.LinkedListTest" />
-
-
 		</classes>
 	</test>
 	<test name="FirefoxTest">
 		<parameter name="browser" value="firefox" />
 		<classes>
+			<class name="TestClasses.RegisterTest" />
+			<class name="TestClasses.LoginTest" />
 			<class name="TestClasses.DataStructureTest" />
+			<class name="TestClasses.ArrayTest" />
+			<class name="TestClasses.LinkedListTest" />
 			<class name="TestClasses.StackTest" />
 			<class name="TestClasses.QueueTest" />
 			<class name="TestClasses.TreeTest" />
 			<class name="TestClasses.GraphTest" />
-			<class name="TestClasses.ArrayTest" />
-			<class name="TestClasses.LinkedListTest" />
-
 		</classes>
 	</test>
 	<test name="EdgeTest">
 		<parameter name="browser" value="edge" />
 		<classes>
+			<class name="TestClasses.RegisterTest" />
+			<class name="TestClasses.LoginTest" />
 			<class name="TestClasses.DataStructureTest" />
+			<class name="TestClasses.ArrayTest" />
 			<class name="TestClasses.LinkedListTest" />
 			<class name="TestClasses.StackTest" />
 			<class name="TestClasses.QueueTest" />
 			<class name="TestClasses.TreeTest" />
 			<class name="TestClasses.GraphTest" />
-			<!--<class name="TestClasses.GraphTest"/>
-            <class name="TestClasses.TreeTest"/>
-            <class name="TestClasses.DataStructureTest"/>-->
-			<class name="TestClasses.ArrayTest" />
 		</classes>
 	</test>
 </suite>
