@@ -157,7 +157,7 @@ public class TreePage {
 		return OutPutmsg.getText();
 	}
 
-	public void Terminoligies() {
+	public void Terminologies() {
 		TerminologiesLink.click();
 	}
 

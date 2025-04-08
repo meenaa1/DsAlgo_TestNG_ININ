@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-
-<suite name="DSAlgo Test Suite">
+<suite name="DSAlgo Test Suite" parallel="false">
 
 
 	<listeners>
-
-		 <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener" /> 
+	<listener
+			class-name="com.aventstack.chaintest.plugins.ChainTestListener" /> 
 		<listener class-name="Utilities.RetryListener" />
 		<listener class-name="Utilities.Listener" />
 	</listeners>
-
-	<test name="Functional Tests" thread-count="3">
+	<test name="Functional Tests">
 		<classes>
-<<<<<<< HEAD
-		    <class name="TestClasses.LoginTest" />
-			<class name="TestClasses.GraphTest" />
-=======
-			<!--<class name="TestClasses.GraphTest" />
->>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
+			<class name="TestClasses.LoginTest" />
+			<class name="TestClasses.RegisterTest" />
+			<class name="TestClasses.DataStructureTest" />
+			<class name="TestClasses.ArrayTest" />
+			<class name="TestClasses.LinkedListTest" />
+			<class name="TestClasses.StackTest" />
+			<class name="TestClasses.QueueTest" />
 			<class name="TestClasses.TreeTest" />
-			<class name="TestClasses.DataStructureTest" />-->
-			<class name ="TestClasses.ArrayTest"/>
-             <class name ="TestClasses.LinkedListTest"/>
+			<class name="TestClasses.GraphTest" />
 		</classes>
 	</test>
-
 </suite>
+

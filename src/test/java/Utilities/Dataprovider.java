@@ -156,7 +156,7 @@ public class Dataprovider {
 		{username,password}
 		};
 	}
-	@DataProvider(name = "linkDataProvider")
+	@DataProvider(name = "TreelinkDataProvider")
 	public Object[][] linkDataProvider() {
 	    return new Object[][] {
 	        {"Tree Traversals"},
@@ -175,7 +175,7 @@ public class Dataprovider {
 	@DataProvider(name = "linkListDataProvider")
 	public Object[][] linkListDataProvider() {
 	   return new Object[][] {
-	       {"Indrodution"},
+	       {"Introduction"},
 	       {"Creating Linked List"},
 	       {"Types Of Linked List"},
 	       {"Implement Linked List in Python"},
