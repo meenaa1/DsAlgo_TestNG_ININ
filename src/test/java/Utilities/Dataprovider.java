@@ -2,7 +2,6 @@ package Utilities;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.testng.annotations.DataProvider;
 
 
@@ -41,46 +40,56 @@ public class Dataprovider {
 		Excelreaderpython read = new Excelreaderpython();
 		ArrayList<String> practicequescode = read.getArraypracticeques(1);
 		String expectedoutput=read.getPQoutput(1);
+		
+		String codeBlock = String.join("\n", practicequescode); //     // Convert code lines to a single string
+		
 		return new Object[][]{
-			{practicequescode,expectedoutput}
+			{codeBlock,expectedoutput}
 			};
 	}
 	
 	@DataProvider(name = "PracticeQMaxConsones")
 	public Object[][] practiceqmaxconsones() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		ArrayList<String> practicequescode = read.getArraypracticeques(2);
-		String expectedoutput=read.getPQoutput(2);
+		ArrayList<String> practicequescode = read.getArraypracticeques(3);
+		String expectedoutput=read.getPQoutput(3);
+		String codeBlock = String.join("\n", practicequescode);
 		return new Object[][]{
-			{practicequescode,expectedoutput}
+			{codeBlock,expectedoutput}
 			};
 	}
 	
 	@DataProvider(name = "PracticeQEvennums")
 	public Object[][] practiceqevennums() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		ArrayList<String> practicequescode = read.getArraypracticeques(3);
-		String expectedoutput=read.getPQoutput(3);
+		ArrayList<String> practicequescode = read.getArraypracticeques(5);
+		String expectedoutput=read.getPQoutput(5);
+		String codeBlock = String.join("\n", practicequescode);
+		
 		return new Object[][]{
-			{practicequescode,expectedoutput}
+			{codeBlock,expectedoutput}
 			};
 	}
 
 	@DataProvider(name = "PracticeQSQofsortedarray")
 	public Object[][] practiceqsqofsortedarray() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		ArrayList<String> practicequescode = read.getArraypracticeques(4);
-		String expectedoutput=read.getPQoutput(4);
+		ArrayList<String> practicequescode = read.getArraypracticeques(7);
+		String expectedoutput=read.getPQoutput(7);
+        String codeBlock = String.join("\n", practicequescode); 
+		
 		return new Object[][]{
-			{practicequescode,expectedoutput}
+			{codeBlock,expectedoutput}
 			};
+		
 	}
 	
 	@DataProvider(name = "Registervalidcredentials")
 	public Object[][] Registervalidcredentials() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		String username = read.getusername(4);
-		String password=read.getpassword(4);
+		String username = read.getusername(3);
+		String password=read.getpassword(3);
+		String confirmPassword=read.getconfirmpassword(3);
 		return new Object[][]{
 		{username,password}
 		};
@@ -106,11 +115,42 @@ public class Dataprovider {
 		};
 	}
 	
+	@DataProvider(name = "Registerconfirmpassword")
+	public Object[][] Registerconfirmpassword() throws IOException {
+		Excelreaderpython read = new Excelreaderpython();
+		String username = read.getusername(3);
+		String password=read.getpassword(3);
+		String Confirmpassword=read.getconfirmpassword(3);
+		return new Object[][]{
+		{username,password,Confirmpassword}
+		};
+	}
+	
 	@DataProvider(name = "LoginValidcredentials")
 	public Object[][] LoginValidcredentials() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		String username = read.getusername(8);
-		String password=read.getpassword(8);
+		String username = read.getusername(7);
+		String password=read.getpassword(7);
+		return new Object[][]{
+		{username,password}
+		};
+	}
+	
+	@DataProvider(name = "InvalidUsername")
+	public Object[][] InvalidUsername() throws IOException {
+		Excelreaderpython read = new Excelreaderpython();
+		String username = read.getusername(6);
+		String password=read.getpassword(6);
+		return new Object[][]{
+		{username,password}
+		};
+	}
+	
+	@DataProvider(name = "InvalidPassword")
+	public Object[][] InvalidPassword() throws IOException {
+		Excelreaderpython read = new Excelreaderpython();
+		String username = read.getusername(4);
+		String password=read.getpassword(4);
 		return new Object[][]{
 		{username,password}
 		};
@@ -143,4 +183,6 @@ public class Dataprovider {
 	       
 	    };
 	}
+	
 }
+	

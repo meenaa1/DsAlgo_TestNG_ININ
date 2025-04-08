@@ -22,6 +22,7 @@ public class GraphPage {
 	WebDriver driver;
 	WebDriverWait wait;
 	String relativePath = "src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
+	
 	public GraphPage() {
 		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
@@ -187,7 +188,8 @@ public class GraphPage {
 	public void PracticeQns() {
 		Practice_QuestionsLink.click();
 	}
-	    
+
+	
    	public void signOut() {
 		SignOut.click();
 	}

@@ -91,7 +91,7 @@ public String getPQoutput(int rownumber) throws IOException {
 }
 public ArrayList<String> readpracticeques(int rowvalue, int colvalue, String sheetname) throws IOException {
 	
-	String path = System.getProperty("user.dir")+"/src/test/resources/Testdata/Excel_Login_Pythoncode.xlsx";
+	String path = System.getProperty("user.dir")+"/src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 	File Excelfile = new File(path);
 	
 	FileInputStream Fis = new FileInputStream(Excelfile);
@@ -116,6 +116,15 @@ public ArrayList<String> readpracticeques(int rowvalue, int colvalue, String she
 	practice.add(credentials[rowvalue][colvalue]);
 	System.out.println(practice);
 	return practice;
+}
+
+
+public String getconfirmpassword(int rownumber) throws IOException {
+	String Confirmpassword = null;	
+	String sheetname = "Sheet1";
+	Confirmpassword = readExcelSheet(rownumber, 2, sheetname);
+	LoggerReader.info("Password is:"+Confirmpassword);
+	return Confirmpassword ;
 }
 
 

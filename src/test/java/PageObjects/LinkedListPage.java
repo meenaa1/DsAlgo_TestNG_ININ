@@ -6,16 +6,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import DriverFactory.driverFactory;
 
 public class LinkedListPage {
 	WebDriver driver;
-
-	public LinkedListPage() {
-		driver = driverFactory.getDriver();
-		PageFactory.initElements(driver, this);
-	}
 
 	@FindBy(xpath = "//a[@href='linked-list']")
 	@CacheLookup
@@ -60,7 +54,6 @@ public class LinkedListPage {
 	@FindBy(xpath = "//a[text()='Implement Linked List in Python']")
 	@CacheLookup
 	WebElement Implementing_LinkedList;
-
 	@FindBy(xpath = "//a[text()='Traversal']")
 	@CacheLookup
 	WebElement Traversal_link;
@@ -68,7 +61,6 @@ public class LinkedListPage {
 	@FindBy(linkText = "Insertion")
 	@CacheLookup
 	WebElement Insertion_link;
-
 	@FindBy(linkText = "Deletion")
 	@CacheLookup
 	WebElement Deletion_link;

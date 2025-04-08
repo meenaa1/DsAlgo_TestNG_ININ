@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="DSAlgo Test Suite" parallel="false">
+
+
 	<listeners>
 		<listener
 			class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
@@ -15,6 +17,10 @@
 			<class name="TestClasses.QueueTest" />
 			<class name="TestClasses.TreeTest" />
 			<class name="TestClasses.GraphTest" />
+			<class name="TestClasses.LoginTest" />
+			<class name="TestClasses.GraphTest" />
+
+			<class name="TestClasses.ArrayTest" />
 		</classes>
 	</test>
 </suite>
