@@ -6,128 +6,139 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import DriverFactory.driverFactory;
 
 public class LinkedListPage {
-	WebDriver driver;
+WebDriver driver;
 
-	public LinkedListPage() {
-		driver = driverFactory.getDriver();
-		PageFactory.initElements(driver, this);
-	}
-		
-	@FindBy(xpath = "//a[@href='linked-list']")
-	@CacheLookup
-	WebElement Linked_List;
+public LinkedListPage() {
+driver = driverFactory.getDriver();
+PageFactory.initElements(driver, this);
+}
 
-	@FindBy(linkText = "Introduction")
-	@CacheLookup
-	WebElement Introduction_page;
+@FindBy(xpath = "//a[@href='linked-list']")
+@CacheLookup
+WebElement Linked_List;
 
-	@FindBy(xpath = "//a[text()='Try here>>>']")
-	@CacheLookup
-	WebElement Tryherebtn;
+@FindBy(linkText = "Introduction")
+@CacheLookup
+WebElement Introduction_page;
 
-	@FindBy(xpath = "//*[@id=\"answer_form\"]/div/div/div[6]")
-	@CacheLookup
-	public WebElement Tryeditor;
+@FindBy(xpath = "//div[@class='nav-item dropdown']")
+@CacheLookup
+WebElement dropdownmenu;
 
-	@FindBy(xpath = "//button[text()='Run']")
-	@CacheLookup
-	public WebElement Runbtn;
+@FindBy(xpath = "//a[text()='Linked List']")
+@CacheLookup
+WebElement selectLinkedlist_DropdownMenu;
 
-	@FindBy(id = "output")
-	@CacheLookup
-	WebElement Console_Output;
+@FindBy(xpath = "//a[text()='Try here>>>']")
+@CacheLookup
+WebElement Tryherebtn;
 
-	@FindBy(linkText = "Creating Linked LIst")
-	@CacheLookup
-	WebElement Creating_LinkedList;
+@FindBy(xpath = "//*[@id=\"answer_form\"]/div/div/div[6]")
+@CacheLookup
+public WebElement Tryeditor;
 
-	@FindBy(xpath = "//a[text()='Types of Linked List']")
-	@CacheLookup
-	WebElement Types_LinkedList;
+@FindBy(xpath = "//button[text()='Run']")
+@CacheLookup
+public WebElement Runbtn;
 
-	@FindBy(xpath = "//a[text()='Implement Linked List in Python']")
-	@CacheLookup
-	WebElement Implementing_LinkedList;
+@FindBy(id = "output")
+@CacheLookup
+WebElement Console_Output;
 
-	@FindBy(xpath = "//a[text()='Traversal']")
-	@CacheLookup
-	WebElement Traversal_link;
+@FindBy(linkText = "Creating Linked LIst")
+@CacheLookup
+WebElement Creating_LinkedList;
 
-	@FindBy(linkText = "Insertion")
-	@CacheLookup
-	WebElement Insertion_link;
+@FindBy(xpath = "//a[text()='Types of Linked List']")
+@CacheLookup
+WebElement Types_LinkedList;
 
-	@FindBy(linkText = "Deletion")
-	@CacheLookup
-	WebElement Deletion_link;
+@FindBy(xpath = "//a[text()='Implement Linked List in Python']")
+@CacheLookup
+WebElement Implementing_LinkedList;
 
-	@FindBy(linkText = "Practice Questions")
-	@CacheLookup
-	WebElement Practice_Questions;
-	
-	public void Getstarted() {
-		Linked_List.click();
-	}
-	
-	public void Introductionpage() {
-		Introduction_page.click();
-	}
+@FindBy(xpath = "//a[text()='Traversal']")
+@CacheLookup
+WebElement Traversal_link;
 
-	public void Tryhere() {
-		Tryherebtn.click();
-	}
+@FindBy(linkText = "Insertion")
+@CacheLookup
+WebElement Insertion_link;
 
-	public void Run() {
-		Runbtn.click();
-	}
+@FindBy(linkText = "Deletion")
+@CacheLookup
+WebElement Deletion_link;
 
-	public void Nocode() {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(Tryeditor).click().sendKeys("").build().perform();
-	}
+@FindBy(linkText = "Practice Questions")
+@CacheLookup
+WebElement Practice_Questions;
 
-	public String alertMessage() {
-		return driver.switchTo().alert().getText();
-	}
+public void Getstarted() {
+Linked_List.click();
+}
 
-	public void EmptyTryEditorpage() {
-		Tryeditor.clear();
-	}
+public void Introductionpage() {
+Introduction_page.click();
+}
 
-	public String ValidOutput() {
-		return Console_Output.getText();
-	}
+public void Tryhere() {
+Tryherebtn.click();
+}
 
-	public void CreatingLinkedlist() {
-		Creating_LinkedList.click();
-	}
+public void dropdownmenuClick() {
+dropdownmenu.click();
+}
 
-	public void TypesLinkedlist() {
-		Types_LinkedList.click();
-	}
+public void clickLinkListFromDropdown() {
+selectLinkedlist_DropdownMenu.click();
+}
 
-	public void ImplementingList() {
-		Implementing_LinkedList.click();
-	}
+public void Run() {
+Runbtn.click();
+}
 
-	public void Traversal() {
-		Traversal_link.click();
-	}
+public void Nocode() {
+Actions actions = new Actions(driver);
+actions.moveToElement(Tryeditor).click().sendKeys("").build().perform();
+}
 
-	public void Insertion() {
-		Insertion_link.click();
-	}
+public String alertMessage() {
+return driver.switchTo().alert().getText();
+}
 
-	public void Deletion() {
-		Deletion_link.click();
+public String ValidOutput() {
+return Console_Output.getText();
+}
 
-	}
+public void CreatingLinkedlist() {
+Creating_LinkedList.click();
+}
 
-	public void PracticeQuestion() {
-		Practice_Questions.click();
-	}
+public void TypesLinkedlist() {
+Types_LinkedList.click();
+}
+
+public void ImplementingList() {
+Implementing_LinkedList.click();
+}
+
+public void Traversal() {
+Traversal_link.click();
+}
+
+public void Insertion() {
+Insertion_link.click();
+}
+
+public void Deletion() {
+Deletion_link.click();
+
+}
+
+public void PracticeQuestion() {
+Practice_Questions.click();
+}
 }

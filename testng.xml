@@ -13,10 +13,16 @@
 
 	<test name="Functional Tests" thread-count="3">
 		<classes>
+<<<<<<< HEAD
 		    <class name="TestClasses.LoginTest" />
 			<class name="TestClasses.GraphTest" />
+=======
+			<!--<class name="TestClasses.GraphTest" />
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
 			<class name="TestClasses.TreeTest" />
-			<class name="TestClasses.DataStructureTest" />
+			<class name="TestClasses.DataStructureTest" />-->
+			<class name ="TestClasses.ArrayTest"/>
+             <class name ="TestClasses.LinkedListTest"/>
 		</classes>
 	</test>
 
