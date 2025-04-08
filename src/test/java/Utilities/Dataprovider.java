@@ -2,6 +2,7 @@ package Utilities;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 import org.testng.annotations.DataProvider;
 
 
@@ -87,9 +88,8 @@ public class Dataprovider {
 	@DataProvider(name = "Registervalidcredentials")
 	public Object[][] Registervalidcredentials() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		String username = read.getusername(3);
-		String password=read.getpassword(3);
-		String confirmPassword=read.getconfirmpassword(3);
+		String username = read.getusername(4);
+		String password=read.getpassword(4);
 		return new Object[][]{
 		{username,password}
 		};
@@ -115,74 +115,42 @@ public class Dataprovider {
 		};
 	}
 	
-	@DataProvider(name = "Registerconfirmpassword")
-	public Object[][] Registerconfirmpassword() throws IOException {
-		Excelreaderpython read = new Excelreaderpython();
-		String username = read.getusername(3);
-		String password=read.getpassword(3);
-		String Confirmpassword=read.getconfirmpassword(3);
-		return new Object[][]{
-		{username,password,Confirmpassword}
-		};
-	}
-	
 	@DataProvider(name = "LoginValidcredentials")
 	public Object[][] LoginValidcredentials() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		String username = read.getusername(7);
-		String password=read.getpassword(7);
+		String username = read.getusername(8);
+		String password=read.getpassword(8);
 		return new Object[][]{
 		{username,password}
 		};
 	}
-	
-	@DataProvider(name = "InvalidUsername")
-	public Object[][] InvalidUsername() throws IOException {
-		Excelreaderpython read = new Excelreaderpython();
-		String username = read.getusername(6);
-		String password=read.getpassword(6);
-		return new Object[][]{
-		{username,password}
-		};
-	}
-	
-	@DataProvider(name = "InvalidPassword")
-	public Object[][] InvalidPassword() throws IOException {
-		Excelreaderpython read = new Excelreaderpython();
-		String username = read.getusername(4);
-		String password=read.getpassword(4);
-		return new Object[][]{
-		{username,password}
-		};
-	}
-	@DataProvider(name = "TreelinkDataProvider")
-	public Object[][] TreelinkDataProvider() {
+	@DataProvider(name = "linkDataProvider")
+	public Object[][] linkDataProvider() {
 	    return new Object[][] {
 	        {"Tree Traversals"},
 	        {"Traversals-Illustration"},
 	        {"Binary Trees"},
-	        {"Types of Binary Trees"},
+	        {"Types of Binary Trees()"},
 	        {"Implementation of Python"},
 	        {"Binary Tree Traversals"},
 	        {"Implementation of Binary Trees"},
 	        {"Application of Binary trees"},
 	        {"Binary Search Trees"},
 	        {"Implementation Of BST"},
-	      
+	        {"Practice Questions"}
 	    };
 	}
 	@DataProvider(name = "linkListDataProvider")
 	public Object[][] linkListDataProvider() {
-	    return new Object[][] {
-	        {"Creating Linked List"},
-	        {"Types Of Linked List"},
-	        {"Implement Linked List in Python"},
-	        {"Traversal"},
-	        {"Insertion"},
-	        {"Deletion"},
-	       
-	    };
-	}
-	
+	   return new Object[][] {
+	       {"Indrodution"},
+	       {"Creating Linked List"},
+	       {"Types Of Linked List"},
+	       {"Implement Linked List in Python"},
+	       {"Traversal"},
+	       {"Insertion"},
+	       {"Deletion"},
+	     
+	   };
 }
-	
+	}

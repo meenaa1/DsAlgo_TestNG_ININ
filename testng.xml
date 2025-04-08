@@ -4,23 +4,22 @@
 
 
 	<listeners>
-		<listener
+	<listener
 			class-name="com.aventstack.chaintest.plugins.ChainTestListener" />
 		<listener class-name="Utilities.RetryListener" />
 		<listener class-name="Utilities.Listener" />
 	</listeners>
 	<test name="Functional Tests">
 		<classes>
+			<class name="TestClasses.LoginTest" />
+			<class name="TestClasses.RegisterTest" />
 			<class name="TestClasses.DataStructureTest" />
+			<class name="TestClasses.ArrayTest" />
 			<class name="TestClasses.LinkedListTest" />
 			<class name="TestClasses.StackTest" />
 			<class name="TestClasses.QueueTest" />
 			<class name="TestClasses.TreeTest" />
 			<class name="TestClasses.GraphTest" />
-			<class name="TestClasses.LoginTest" />
-			<class name="TestClasses.GraphTest" />
-
-			<class name="TestClasses.ArrayTest" />
 		</classes>
 	</test>
 </suite>
