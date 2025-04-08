@@ -197,8 +197,9 @@ public class QueueTest extends TestBase {
 		queuepage.enterPythonCode(tryherecode);
 		queuepage.clickRunButton();
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-	}
+
 	
 	
 }
 
+}

@@ -91,14 +91,7 @@
 			<version>1.0.12</version>
 		</dependency>
 
-		
-
-	
-
-
-
-	</dependencies>
-
+</dependencies>
 
 	<build>
 		<plugins>

@@ -1,8 +1,6 @@
 package PageObjects;
 
-import java.io.IOException;
 import java.time.Duration;
-import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
