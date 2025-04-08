@@ -19,6 +19,12 @@ public class DataStructurePage {
 
 	private WebDriver driver;
 	WebDriverWait wait;
+	
+	public DataStructurePage() {
+		driver = driverFactory.getDriver();
+		PageFactory.initElements(driver, this);
+	}
+
 
 	@FindBy(xpath = "//button[text()='Get Started']")
 	WebElement DSAlgoGetstart;
@@ -83,11 +89,7 @@ public class DataStructurePage {
 	@CacheLookup
 	WebElement SignOut;
 
-	public DataStructurePage() {
-		driver = driverFactory.getDriver();
-		PageFactory.initElements(driver, this);
-	}
-
+	
 
 	public void GetStarted() {
 		DSAlgoGetstart.click();
