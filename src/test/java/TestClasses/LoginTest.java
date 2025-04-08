@@ -2,12 +2,14 @@ package TestClasses;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import BaseClass.TestBase;
 import PageObjects.LoginPage;
 import Utilities.Dataprovider;
 import Utilities.LoggerReader;
 
+@Listeners(Utilities.Listener.class)
 public class LoginTest extends TestBase {
 
 	public TestBase base = new TestBase();

@@ -9,13 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import DriverFactory.driverFactory;
 
 public class LoginPage {
-    WebDriver driver;
+	WebDriver driver;
 	WebDriverWait wait;
 
 	public LoginPage() {
-        driver = driverFactory.getDriver();
+		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
-		}
+	}
 
 	@FindBy(xpath = "//a[text()='Sign in']")
 	@CacheLookup
@@ -58,7 +58,6 @@ public class LoginPage {
 	}
 
 	public void clickGetStarted() {
-		
 		getStartedButton.click();
 	}
 
@@ -67,7 +66,6 @@ public class LoginPage {
 	}
 
 	public void enterPassword(String password) {
-		
 		passwordLoginpage.sendKeys(password);
 	}
 
@@ -82,7 +80,6 @@ public class LoginPage {
 	}
 
 	public void register() {
-		
 		registerlinkLoginPage.click();
 	}
 
@@ -114,7 +111,6 @@ public class LoginPage {
 
 	public void getCurrentUrl() {
 		driver.getCurrentUrl();
-
 	}
 
 	public void navigate() {

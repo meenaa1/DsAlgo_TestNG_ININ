@@ -14,8 +14,6 @@ import Utilities.LoggerReader;
 @Listeners(Utilities.Listener.class)
 public class QueueTest extends TestBase {
 
-	TestBase testBase =new TestBase();
-	ConfigReader config = new ConfigReader();
 	QueuePage queuepage = new QueuePage();
 	LoginPage login = new LoginPage();
 	String Username=ConfigReader.getProperty("username");
@@ -57,7 +55,7 @@ public class QueueTest extends TestBase {
 		queuepage.enterPythonCode(tryherecode);
 		queuepage.clickRunButton();
 		   // Handle the alert popup and get the message
-		String actualAlertMessage = queuepage.getAlertTextAndAccept(); // You'll define this in QueuePage
+		String actualAlertMessage = queuepage.getAlertTextAndAccept(); 
 		   // Assert the alert text
 		Assert.assertTrue(actualAlertMessage.contains(expectedalertmessage),
 		       "Expected alert message to contain: " + expectedalertmessage + ", but got: " + actualAlertMessage);
@@ -76,10 +74,8 @@ public class QueueTest extends TestBase {
 	
 	@Test(priority=5)
 	public void checkPracticeQns() {
-		//driver.navigate().back();
 		queuepage.clickQueueGetStartedBtn();
 		queuepage.clickImplementationOfQueueInPython();
-		//LoggerReader.info("User is in the Implementation Of Queue In Python Page");
 		queuepage.clickQueuePracticeQuestionsBtn();
 		Assert.assertEquals(driver.getTitle(), "Practice Questions");
 		LoggerReader.info("User is in Practice Questions Page");
@@ -105,9 +101,7 @@ public class QueueTest extends TestBase {
 		queuepage.clickTryHereBtn(); 
 		queuepage.enterPythonCode(tryherecode);
 		queuepage.clickRunButton();
-		   // Handle the alert popup and get the message
-		String actualAlertMessage = queuepage.getAlertTextAndAccept(); // You'll define this in QueuePage
-		   // Assert the alert text
+		String actualAlertMessage = queuepage.getAlertTextAndAccept(); 
 		Assert.assertTrue(actualAlertMessage.contains(expectedalertmessage),
 		       "Expected alert message to contain: " + expectedalertmessage + ", but got: " + actualAlertMessage);
 	}
@@ -143,9 +137,7 @@ public class QueueTest extends TestBase {
 		queuepage.clickTryHereBtn(); 
 		queuepage.enterPythonCode(tryherecode);
 		queuepage.clickRunButton();
-		   // Handle the alert popup and get the message
-		String actualAlertMessage = queuepage.getAlertTextAndAccept(); // You'll define this in QueuePage
-		   // Assert the alert text
+		String actualAlertMessage = queuepage.getAlertTextAndAccept(); 
 		Assert.assertTrue(actualAlertMessage.contains(expectedalertmessage),
 		       "Expected alert message to contain: " + expectedalertmessage + ", but got: " + actualAlertMessage);
 	}
@@ -181,9 +173,7 @@ public class QueueTest extends TestBase {
 		queuepage.clickTryHereBtn(); 
 		queuepage.enterPythonCode(tryherecode);
 		queuepage.clickRunButton();
-		   // Handle the alert popup and get the message
-		String actualAlertMessage = queuepage.getAlertTextAndAccept(); // You'll define this in QueuePage
-		   // Assert the alert text
+		String actualAlertMessage = queuepage.getAlertTextAndAccept(); 
 		Assert.assertTrue(actualAlertMessage.contains(expectedalertmessage),
 		       "Expected alert message to contain: " + expectedalertmessage + ", but got: " + actualAlertMessage);
 	}
@@ -197,9 +187,6 @@ public class QueueTest extends TestBase {
 		queuepage.enterPythonCode(tryherecode);
 		queuepage.clickRunButton();
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
-	
-	
-}
+	}
 
 }

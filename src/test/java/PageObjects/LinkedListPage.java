@@ -44,10 +44,6 @@ public class LinkedListPage {
 	@CacheLookup
 	public WebElement Runbtn;
 
-	@FindBy(id = "output")
-	@CacheLookup
-	WebElement Console_Output;
-
 	@FindBy(linkText = "Creating Linked LIst")
 	@CacheLookup
 	WebElement Creating_LinkedList;
@@ -109,10 +105,6 @@ public class LinkedListPage {
 		return driver.switchTo().alert().getText();
 	}
 
-	public String ValidOutput() {
-		return Console_Output.getText();
-	}
-
 	public void CreatingLinkedlist() {
 		Creating_LinkedList.click();
 	}
@@ -135,7 +127,6 @@ public class LinkedListPage {
 
 	public void Deletion() {
 		Deletion_link.click();
-
 	}
 
 	public void PracticeQuestion() {

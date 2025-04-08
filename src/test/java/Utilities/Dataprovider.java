@@ -2,9 +2,7 @@ package Utilities;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.testng.annotations.DataProvider;
-
 
 public class Dataprovider {
 	
@@ -31,10 +29,8 @@ public class Dataprovider {
 	    } catch (IndexOutOfBoundsException e) {
 	        throw new RuntimeException("Invalid index: Ensure row " + rowIndex + " exists in Excel sheet.", e);
 	    }
-
 	    return new Object[][]{{tryherecode, expectedalertmessage}};
 	}
-
 	
 	@DataProvider(name = "PracticeQSearchthearray")
 	public Object[][] practiceqsearchthearray() throws IOException {
@@ -156,6 +152,7 @@ public class Dataprovider {
 		{username,password}
 		};
 	}
+	
 	@DataProvider(name = "TreelinkDataProvider")
 	public Object[][] linkDataProvider() {
 	    return new Object[][] {
@@ -172,6 +169,7 @@ public class Dataprovider {
 	        {"Practice Questions"}
 	    };
 	}
+	
 	@DataProvider(name = "linkListDataProvider")
 	public Object[][] linkListDataProvider() {
 	   return new Object[][] {
@@ -182,7 +180,7 @@ public class Dataprovider {
 	       {"Traversal"},
 	       {"Insertion"},
 	       {"Deletion"},
-	     
 	   };
-}
 	}
+	
+}

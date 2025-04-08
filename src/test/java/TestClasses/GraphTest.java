@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import BaseClass.TestBase;
 import PageObjects.GraphPage;
 import PageObjects.LoginPage;
@@ -124,5 +123,4 @@ public class GraphTest extends TestBase {
         Assert.assertEquals(driver.getTitle(), "Assessment");
     }
     
-  
 }

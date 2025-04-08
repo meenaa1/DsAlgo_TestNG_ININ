@@ -41,7 +41,6 @@ public class Listener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         extentTest.get().log(Status.FAIL, result.getName() + " failed");
         System.out.println(result.getName() + " failed");
-
         WebDriver driver = driverFactory.getDriver(); 
         if (driver != null) {
             try {
@@ -56,7 +55,6 @@ public class Listener implements ITestListener {
                 }
                 String filePath = screenshotDir + result.getName() + ".png";
                 FileUtils.copyFile(screenshotFile, new File(filePath));
-
                 extentTest.get().addScreenCaptureFromPath(filePath);
                 System.out.println("Screenshot saved at: " + filePath);
                 attachScreenshotToAllure(driver);
