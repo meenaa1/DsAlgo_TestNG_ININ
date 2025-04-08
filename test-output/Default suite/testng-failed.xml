@@ -3,16 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestClasses.RegisterTest">
+      <class name="TestClasses.ArrayTest">
         <methods>
-          <include name="setUp"/>
-          <include name="Registrationusinginvalidusername" invocation-numbers="0"/>
-          <include name="tearDown"/>
           <include name="setupPages"/>
+          <include name="setUp"/>
+          <include name="testvalidPythonCode_SortedArray"/>
+          <include name="testvalidPythonCode_SearchtheArray"/>
+          <include name="tearDown"/>
           <include name="navigateToHomePage"/>
-          <include name="Registrationusinginvalidpassword" invocation-numbers="0"/>
+          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="testvalidPythonCode_EvenNums"/>
         </methods>
-      </class> <!-- TestClasses.RegisterTest -->
+      </class> <!-- TestClasses.ArrayTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
