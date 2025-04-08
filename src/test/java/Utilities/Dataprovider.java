@@ -88,8 +88,9 @@ public class Dataprovider {
 	@DataProvider(name = "Registervalidcredentials")
 	public Object[][] Registervalidcredentials() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		String username = read.getusername(4);
-		String password=read.getpassword(4);
+		String username = read.getusername(3);
+		String password=read.getpassword(3);
+		String confirmPassword=read.getconfirmpassword(3);
 		return new Object[][]{
 		{username,password}
 		};
@@ -115,11 +116,42 @@ public class Dataprovider {
 		};
 	}
 	
+	@DataProvider(name = "Registerconfirmpassword")
+	public Object[][] Registerconfirmpassword() throws IOException {
+		Excelreaderpython read = new Excelreaderpython();
+		String username = read.getusername(3);
+		String password=read.getpassword(3);
+		String Confirmpassword=read.getconfirmpassword(3);
+		return new Object[][]{
+		{username,password,Confirmpassword}
+		};
+	}
+	
 	@DataProvider(name = "LoginValidcredentials")
 	public Object[][] LoginValidcredentials() throws IOException {
 		Excelreaderpython read = new Excelreaderpython();
-		String username = read.getusername(8);
-		String password=read.getpassword(8);
+		String username = read.getusername(7);
+		String password=read.getpassword(7);
+		return new Object[][]{
+		{username,password}
+		};
+	}
+	
+	@DataProvider(name = "InvalidUsername")
+	public Object[][] InvalidUsername() throws IOException {
+		Excelreaderpython read = new Excelreaderpython();
+		String username = read.getusername(6);
+		String password=read.getpassword(6);
+		return new Object[][]{
+		{username,password}
+		};
+	}
+	
+	@DataProvider(name = "InvalidPassword")
+	public Object[][] InvalidPassword() throws IOException {
+		Excelreaderpython read = new Excelreaderpython();
+		String username = read.getusername(4);
+		String password=read.getpassword(4);
 		return new Object[][]{
 		{username,password}
 		};
