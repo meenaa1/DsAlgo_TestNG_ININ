@@ -25,48 +25,48 @@ public class RegisterTest extends TestBase {
 		registerPage = new RegisterPage();
 	}
 
-//	@Test(priority = 1)
-//	public void checkRegisterLink() {
-//		registerPage.register();
-//		LoggerReader.info("User is in the Register page");
-//		Assert.assertEquals(driver.getTitle(), "Registration");
-//	}
+	@Test(priority = 1)
+	public void checkRegisterLink() {
+		registerPage.register();
+		LoggerReader.info("User is in the Register page");
+		Assert.assertEquals(driver.getTitle(), "Registration");
+	}
 
-//	@Test(priority = 2, dataProvider = "Registervalidcredentials", dataProviderClass = Dataprovider.class)
-//	public void successfulRegistration(String username, String password) throws InterruptedException {
-//		registerPage.register();
-//		newusername = registerPage.generateuser(username);
-//		registerPage.enterUsername(newusername);
-//		registerPage.enterPassword(password);
-//		registerPage.enterConfirmPassword(password);
-//		registerPage.clickRegister();
-//		LoggerReader.info("New account !!");
-//		Thread.sleep(1000);
-//		assertEquals(driver.getTitle(),"NumpyNinja");
-//	}
-//
-//	@Test(priority = 3, dataProvider = "Registervalidcredentials", dataProviderClass = Dataprovider.class)
-//	public void LoginAfterRegistration(String username, String password) {
-//		login.signout();
-//	    login.signin();
-//		login.login(newusername, password);
-//		String expectedmessage = "You are logged in";
-//		String actualmessage = login.getErrorMessage();
-//		LoggerReader.info("Signin message: " + actualmessage);
-//		Assert.assertEquals(actualmessage, expectedmessage, "Incorrect Message");
-//	}
-//
-//	@Test(priority = 4, dataProvider = "Registervalidcredentials", dataProviderClass = Dataprovider.class)
-//	public void RegistrationWithSameRegdCredentials(String username, String password) {
-//		login.signout();
-//		registerPage.register();
-//		registerPage.enterUsername(newusername);
-//		registerPage.enterPassword(password);
-//		registerPage.enterConfirmPassword(password);
-//		registerPage.clickRegister();
-//		LoggerReader.info("Showing Password mismatch instead of User already exists.");
-//		Assert.assertTrue(login.LoginStatus.isDisplayed());
-//	}
+	@Test(priority = 2, dataProvider = "Registervalidcredentials", dataProviderClass = Dataprovider.class)
+	public void successfulRegistration(String username, String password) throws InterruptedException {
+		registerPage.register();
+		newusername = registerPage.generateuser(username);
+		registerPage.enterUsername(newusername);
+		registerPage.enterPassword(password);
+		registerPage.enterConfirmPassword(password);
+		registerPage.clickRegister();
+		LoggerReader.info("New account !!");
+		Thread.sleep(1000);
+		assertEquals(driver.getTitle(),"NumpyNinja");
+	}
+
+	@Test(priority = 3, dataProvider = "Registervalidcredentials", dataProviderClass = Dataprovider.class)
+	public void LoginAfterRegistration(String username, String password) {
+		login.signout();
+	    login.signin();
+		login.login(newusername, password);
+		String expectedmessage = "You are logged in";
+		String actualmessage = login.getErrorMessage();
+		LoggerReader.info("Signin message: " + actualmessage);
+		Assert.assertEquals(actualmessage, expectedmessage, "Incorrect Message");
+	}
+
+	@Test(priority = 4, dataProvider = "Registervalidcredentials", dataProviderClass = Dataprovider.class)
+	public void RegistrationWithSameRegdCredentials(String username, String password) {
+		login.signout();
+		registerPage.register();
+		registerPage.enterUsername(newusername);
+		registerPage.enterPassword(password);
+		registerPage.enterConfirmPassword(password);
+		registerPage.clickRegister();
+		LoggerReader.info("Showing Password mismatch instead of User already exists.");
+		Assert.assertTrue(login.LoginStatus.isDisplayed());
+	}
 
 	@Test(priority = 5, dataProvider = "Registervalidcredentials", dataProviderClass = Dataprovider.class)
 	public void RegisterWithEmptyUsername(String username, String password) {
