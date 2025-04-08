@@ -1,3 +1,129 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-04-08T16:28:14 EDT" name="Default suite" finished-at="2025-04-08T16:28:33 EDT" duration-ms="19156">
+    <groups>
+    </groups>
+    <test started-at="2025-04-08T16:28:14 EDT" name="Default test" finished-at="2025-04-08T16:28:33 EDT" duration-ms="19156">
+      <class name="TestClasses.HomeTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:14 EDT" name="setUp" finished-at="2025-04-08T16:28:19 EDT" duration-ms="5099" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:19 EDT" name="navigateToHomePage" finished-at="2025-04-08T16:28:20 EDT" duration-ms="987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:20 EDT" name="setupPages" finished-at="2025-04-08T16:28:20 EDT" duration-ms="115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkTreefromDropdownWithoutSignIn()[pri:1, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:20 EDT" name="checkTreefromDropdownWithoutSignIn" finished-at="2025-04-08T16:28:22 EDT" duration-ms="1326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkTreefromDropdownWithoutSignIn -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:22 EDT" name="navigateToHomePage" finished-at="2025-04-08T16:28:22 EDT" duration-ms="131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:22 EDT" name="setupPages" finished-at="2025-04-08T16:28:22 EDT" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkGetstartedWithoutSignin()[pri:2, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:22 EDT" name="checkGetstartedWithoutSignin" finished-at="2025-04-08T16:28:22 EDT" duration-ms="541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkGetstartedWithoutSignin -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:22 EDT" name="navigateToHomePage" finished-at="2025-04-08T16:28:23 EDT" duration-ms="131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:23 EDT" name="setupPages" finished-at="2025-04-08T16:28:23 EDT" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkGetStartedafterSignIn()[pri:3, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:23 EDT" name="checkGetStartedafterSignIn" finished-at="2025-04-08T16:28:24 EDT" duration-ms="1863" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkGetStartedafterSignIn -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:24 EDT" name="navigateToHomePage" finished-at="2025-04-08T16:28:25 EDT" duration-ms="209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:25 EDT" name="setupPages" finished-at="2025-04-08T16:28:25 EDT" duration-ms="17" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkTreeFromDropownAfterSignin()[pri:4, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:25 EDT" name="checkTreeFromDropownAfterSignin" finished-at="2025-04-08T16:28:25 EDT" duration-ms="579" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkTreeFromDropownAfterSignin -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:25 EDT" name="navigateToHomePage" finished-at="2025-04-08T16:28:25 EDT" duration-ms="151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:25 EDT" name="setupPages" finished-at="2025-04-08T16:28:25 EDT" duration-ms="14" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkStackGetStarted()[pri:5, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:25 EDT" name="checkStackGetStarted" finished-at="2025-04-08T16:28:26 EDT" duration-ms="630" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkStackGetStarted -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:26 EDT" name="navigateToHomePage" finished-at="2025-04-08T16:28:26 EDT" duration-ms="247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:26 EDT" name="setupPages" finished-at="2025-04-08T16:28:26 EDT" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkQueueGetStarted()[pri:6, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:26 EDT" name="checkQueueGetStarted" finished-at="2025-04-08T16:28:27 EDT" duration-ms="550" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkQueueGetStarted -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:27 EDT" name="navigateToHomePage" finished-at="2025-04-08T16:28:27 EDT" duration-ms="244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:27 EDT" name="setupPages" finished-at="2025-04-08T16:28:27 EDT" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="checkArrayGetStarted()[pri:7, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:27 EDT" name="checkArrayGetStarted" finished-at="2025-04-08T16:28:28 EDT" duration-ms="661" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkArrayGetStarted -->
+        <test-method is-config="true" signature="navigateToHomePage()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:28 EDT" name="navigateToHomePage" finished-at="2025-04-08T16:28:28 EDT" duration-ms="171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:28 EDT" name="setupPages" finished-at="2025-04-08T16:28:28 EDT" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="chechSignOut()[pri:10, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:28 EDT" name="chechSignOut" finished-at="2025-04-08T16:28:30 EDT" duration-ms="1681" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- chechSignOut -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestClasses.HomeTest@2fd953a6]" started-at="2025-04-08T16:28:30 EDT" name="tearDown" finished-at="2025-04-08T16:28:33 EDT" duration-ms="3059" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestClasses.HomeTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
 <testng-results ignored="0" total="369" passed="251" failed="0" skipped="118">
@@ -24549,3 +24675,4 @@ at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedExce
     </test> <!-- EdgeTest -->
   </suite> <!-- CrossBrowserSuite -->
 </testng-results>
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
