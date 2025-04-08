@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import BaseClass.TestBase;
 import PageObjects.ArrayPage;
 import PageObjects.LoginPage;
-import PageObjects.TreePage;
 import Utilities.ConfigReader;
 import Utilities.Dataprovider;
 import Utilities.LoggerReader;
@@ -15,7 +14,6 @@ import Utilities.LoggerReader;
 public class ArrayTest extends TestBase {
 	ArrayPage arrayPage;
 	LoginPage login;
-	TreePage tree;
 	String Username = ConfigReader.getProperty("username");
 	String Password = ConfigReader.getProperty("password");
 

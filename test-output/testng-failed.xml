@@ -19,15 +19,80 @@
 =======
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [CrossBrowserSuite]" guice-stage="DEVELOPMENT">
+<suite parallel="tests" name="Failed suite [CrossBrowserSuite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener"/>
     <listener class-name="Utilities.RetryListener"/>
     <listener class-name="Utilities.Listener"/>
   </listeners>
-  <test thread-count="5" name="ChromeTest(failed)">
+  <test thread-count="5" parallel="tests" name="ChromeTest(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
+<<<<<<< HEAD
+      <class name="TestClasses.QueueTest">
+        <methods>
+          <include name="testQueueOperationsValidPythonCode"/>
+          <include name="testQueueOperationsInvalidPythonCode"/>
+          <include name="testImplementationusingarrayInvalidPythonCode"/>
+          <include name="checkImplementationUsingCollectionsDequeue"/>
+          <include name="setUp"/>
+          <include name="checkPracticeQns"/>
+          <include name="setupPages"/>
+          <include name="testImplementationUsingCollectionsDequeueValidPythonCode"/>
+          <include name="testQueueGetStarted"/>
+          <include name="checkImplementationusingarray"/>
+          <include name="checkQueueOperations"/>
+          <include name="testImplementationUsingCollectionsDequeueInvalidPythonCode"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="testValidPythonCode" invocation-numbers="0"/>
+          <include name="navigateToHomePage"/>
+          <include name="testImplementationusingarrayValidPythonCode"/>
+        </methods>
+      </class> <!-- TestClasses.QueueTest -->
+      <class name="TestClasses.TreeTest">
+        <methods>
+          <include name="testValidPythonCode_ImpleOfBST"/>
+          <include name="emptyInputforBinaryTrees"/>
+          <include name="testInvalidPythonCode_overviewofTrees"/>
+          <include name="emptyInputforTraversals_Illust"/>
+          <include name="emptyInputforTreeTraversals"/>
+          <include name="emptyInputforImple_BinaryTrees"/>
+          <include name="checkingAllOtherLinks"/>
+          <include name="testInvalidPythonCode_BinaryTrees"/>
+          <include name="testValidPythonCode_ApplOfBinaryTrees"/>
+          <include name="testInvalidPythonCode_BinarySearchTrees"/>
+          <include name="emptyInputforTypesofTrees"/>
+          <include name="testInvalidPythonCode_BinaryTreeTraversal"/>
+          <include name="emptyInputforTerminologies"/>
+          <include name="testInvalidPythonCode_TreeTraversals"/>
+          <include name="testInvalidPythonCode_Terminologies"/>
+          <include name="testValidPythonCode_TypesofBinaryTrees"/>
+          <include name="tearDown"/>
+          <include name="testValidPythonCode_TypesofTrees"/>
+          <include name="navigateToHomePage"/>
+          <include name="setupPages"/>
+          <include name="testInvalidPythonCode_TypesofTrees"/>
+          <include name="emptyInputforImple_inpython"/>
+          <include name="testValidPythonCode_BinaryTreeTraversal"/>
+          <include name="testInvalidPythonCode_ApplOfBinaryTrees"/>
+          <include name="checkPracticeQuestions"/>
+          <include name="setUp"/>
+          <include name="checkingTerminologiesLink"/>
+          <include name="emptyInputforApplOfBinaryTrees"/>
+          <include name="testValidPythonCode_BinaryTrees"/>
+          <include name="testValidPythonCode"/>
+          <include name="checkingOverviewOfTrees"/>
+          <include name="testValidPythonCode_BinarySearchTrees"/>
+          <include name="testValidPythonCode_TreeTraversals"/>
+          <include name="testValidPythonCode_Terminologies"/>
+          <include name="treeFromGetStarted"/>
+          <include name="emptyInput"/>
+          <include name="emptyInputforBinarySearchTrees"/>
+          <include name="emptyInputforTypesofBinaryTrees"/>
+          <include name="testInvalidPythonCode_Imple_inpython"/>
+          <include name="checkingTypesOfTrees"/>
+=======
 <<<<<<< HEAD
       <class name="TestClasses.TreeTest">
         <methods>
@@ -75,10 +140,78 @@
           <include name="emptyInputforBinarySearchTrees"/>
           <include name="emptyInputforTypesofBinaryTrees"/>
           <include name="emptyInput"/>
+>>>>>>> e127c33bee2ed3e5fee47e3ba8813da803881f28
           <include name="testInvalidPythonCode_TypesofBinaryTrees"/>
           <include name="testValidPythonCode_Traversals_Illust"/>
           <include name="testInvalidPythonCode_Imple_BinaryTrees"/>
           <include name="emptyInputforBinaryTreeTraversal"/>
+<<<<<<< HEAD
+          <include name="testInvalidPythonCode_Traversals_Illust"/>
+          <include name="testValidPythonCode_Imple_BinaryTrees"/>
+          <include name="emptyInputforImpleOfBST"/>
+          <include name="testValidPythonCode_Imple_inpython"/>
+          <include name="testInvalidPythonCode_ImpleOfBST"/>
+        </methods>
+      </class> <!-- TestClasses.TreeTest -->
+      <class name="TestClasses.StackTest">
+        <methods>
+          <include name="testApplicationsInvalidPythonCode"/>
+          <include name="setUp"/>
+          <include name="testValidPythonCode" invocation-numbers="0"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
+          <include name="testImplementationInvalidPythonCode"/>
+          <include name="testLoginAndNavigateToStack"/>
+          <include name="setupPages"/>
+          <include name="tearDown"/>
+          <include name="testImplementationValidPythonCode"/>
+          <include name="checkPracticeQns"/>
+          <include name="navigateToHomePage"/>
+          <include name="testApplicationsValidPythonCode"/>
+          <include name="checkApplications"/>
+          <include name="checkImplementation"/>
+        </methods>
+      </class> <!-- TestClasses.StackTest -->
+      <class name="TestClasses.GraphTest">
+        <methods>
+          <include name="testValidPythonCodeforGraphLink"/>
+          <include name="graphFromGetStarted"/>
+          <include name="setUp"/>
+          <include name="setupPages"/>
+          <include name="checkingGraphLink"/>
+          <include name="checkingPracticeQuestionsPage"/>
+          <include name="tearDown"/>
+          <include name="checkingGraphLinkWithEmptyRun"/>
+          <include name="navigateToHomePage"/>
+          <include name="testInvalidPythonCodeforGraphlink"/>
+          <include name="checkingGraphRepresentationLinkWithEmptyRun"/>
+          <include name="testInvalidPythonCodeforGraphRepresentationLink"/>
+          <include name="testValidPythonCodeGraphRepresentationLink"/>
+        </methods>
+      </class> <!-- TestClasses.GraphTest -->
+      <class name="TestClasses.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="invalidPassword"/>
+          <include name="tearDown"/>
+          <include name="invalidUsername"/>
+          <include name="RegisterfromLogin"/>
+          <include name="navigateToHomePage"/>
+          <include name="setupPages"/>
+          <include name="signout"/>
+          <include name="emptypassword"/>
+          <include name="loginwithValidCredentials" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- TestClasses.LoginTest -->
+      <class name="TestClasses.LinkedListTest">
+        <methods>
+          <include name="LinkedListFromGetStarted"/>
+          <include name="emptyInput_Intro"/>
+          <include name="testValidPythonCode_ImplLinkedListInPython"/>
+          <include name="emptyInput_Deletion"/>
+          <include name="testValidPythonCode_Intro" invocation-numbers="0"/>
+          <include name="emptyInput_TypesofLinkedlist"/>
+          <include name="testInvalidPythonCode_ImplLinkedListInPython"/>
+=======
           <include name="emptyInputforImpleOfBST"/>
           <include name="testValidPythonCode_Imple_inpython"/>
         </methods>
@@ -107,11 +240,60 @@
 =======
           <include name="testvalidPythonCode_SortedArray"/>
           <include name="testvalidPythonCode_SearchtheArray"/>
+>>>>>>> e127c33bee2ed3e5fee47e3ba8813da803881f28
           <include name="tearDown"/>
           <include name="navigateToHomePage"/>
-          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="testValidPythonCode_Traversal"/>
+          <include name="testInvalidPythonCode_Traversal"/>
+          <include name="checkPracticeQuestions"/>
+          <include name="testInvalidPythonCode_Insertion"/>
+          <include name="setUp"/>
+          <include name="testValidPythonCode_Insertion"/>
+          <include name="setupPages"/>
+          <include name="testInvalidPythonCode_CreatingLinkedList"/>
+          <include name="emptyInput_ImplLinkedListInPython"/>
+          <include name="checkingAllOtherLinks" invocation-numbers="1 2 3 4 5 6"/>
+          <include name="testInvalidPythonCode_TypesofLinkedlist"/>
+          <include name="testValidPythonCode_CreatingLinkedList"/>
+          <include name="checkingIntro"/>
+          <include name="testValidPythonCode_Deletion"/>
+          <include name="emptyInput_Insertion"/>
+          <include name="testInvalidPythonCode_Intro"/>
+          <include name="testInvalidPythonCode_Deletion"/>
+          <include name="emptyInput_Traversal"/>
+          <include name="testValidPythonCode_TypesofLinkedlist"/>
+          <include name="emptyInput_CreatingLinkedList"/>
+        </methods>
+      </class> <!-- TestClasses.LinkedListTest -->
+      <class name="TestClasses.ArrayTest">
+        <methods>
+          <include name="testValidPythonCode"/>
+          <include name="CheckingBasicOpeartionswithEmptyRun"/>
+          <include name="setUp"/>
+          <include name="testInvalidPythonCodeArraysList"/>
+          <include name="ArrayStartingPage"/>
+          <include name="testValidPythonCodeApplicationsofArray"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
           <include name="testvalidPythonCode_EvenNums"/>
+<<<<<<< HEAD
+          <include name="ArraysPythonPage"/>
+          <include name="setupPages"/>
+          <include name="testvalidPythonCode_SortedArray"/>
+          <include name="testInvalidPythonCodeApplicationsofArray"/>
+          <include name="CheckingArraysListwithEmptyRun"/>
+          <include name="testvalidPythonCode_SearchtheArray"/>
+          <include name="CheckingApplicationsofArraywithEmptyRun"/>
+          <include name="tearDown"/>
+          <include name="testInvalidPythonCodeBasicOpeartions"/>
+          <include name="navigateToHomePage"/>
+          <include name="testValidPythonCodeArraysList"/>
+          <include name="CheckingArraysinPythonwithEmptyRun"/>
+          <include name="testValidPythonCodeBasicOpearations"/>
+          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="checkPracticeQns"/>
+=======
 >>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
+>>>>>>> e127c33bee2ed3e5fee47e3ba8813da803881f28
         </methods>
 <<<<<<< HEAD
       </class> <!-- TestClasses.GraphTest -->
@@ -192,43 +374,469 @@
       </class> <!-- TestClasses.QueueTest -->
 =======
       </class> <!-- TestClasses.ArrayTest -->
+<<<<<<< HEAD
+      <class name="TestClasses.DataStructureTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="testValidPythonCode" invocation-numbers="0"/>
+          <include name="setupPages"/>
+          <include name="tearDown"/>
+          <include name="navigateToHomePage"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
+          <include name="checkTimeComplexityLinkAndEmptyRun"/>
+        </methods>
+      </class> <!-- TestClasses.DataStructureTest -->
+      <class name="TestClasses.RegisterTest">
+        <methods>
+          <include name="successfulRegistration" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="Registrationusinginvalidusername"/>
+          <include name="RegisterWithEmptyPassowrd"/>
+          <include name="RegistrationWithSameRegdCredentials" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="LoginAfterRegistration" invocation-numbers="0"/>
+          <include name="setupPages"/>
+          <include name="navigateToHomePage"/>
+          <include name="RegisterWithEmptyConfirmPassowrd"/>
+          <include name="Registrationusinginvalidpassword"/>
+        </methods>
+      </class> <!-- TestClasses.RegisterTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+  <test thread-count="5" parallel="tests" name="FirefoxTest(failed)">
+=======
 >>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
     </classes>
   </test> <!-- ChromeTest(failed) -->
 <<<<<<< HEAD
 =======
   <test thread-count="5" name="FirefoxTest(failed)">
+>>>>>>> e127c33bee2ed3e5fee47e3ba8813da803881f28
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="TestClasses.ArrayTest">
+      <class name="TestClasses.QueueTest">
         <methods>
+          <include name="testQueueOperationsInvalidPythonCode"/>
+          <include name="testQueueOperationsValidPythonCode"/>
+          <include name="checkImplementationUsingCollectionsDequeue"/>
+          <include name="setUp"/>
+          <include name="testImplementationusingarrayInvalidPythonCode"/>
+          <include name="checkPracticeQns"/>
+          <include name="setupPages"/>
+          <include name="testImplementationUsingCollectionsDequeueValidPythonCode"/>
+          <include name="testQueueGetStarted"/>
+          <include name="checkImplementationusingarray"/>
+          <include name="checkQueueOperations"/>
+          <include name="testImplementationUsingCollectionsDequeueInvalidPythonCode"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="testValidPythonCode" invocation-numbers="0"/>
+          <include name="navigateToHomePage"/>
+          <include name="testImplementationusingarrayValidPythonCode"/>
+        </methods>
+      </class> <!-- TestClasses.QueueTest -->
+      <class name="TestClasses.TreeTest">
+        <methods>
+          <include name="testValidPythonCode_ImpleOfBST"/>
+          <include name="emptyInputforBinaryTrees"/>
+          <include name="testInvalidPythonCode_overviewofTrees"/>
+          <include name="emptyInputforTraversals_Illust"/>
+          <include name="checkingAllOtherLinks"/>
+          <include name="emptyInputforTreeTraversals"/>
+          <include name="emptyInputforImple_BinaryTrees"/>
+          <include name="testInvalidPythonCode_BinaryTrees"/>
+          <include name="testValidPythonCode_ApplOfBinaryTrees"/>
+          <include name="testInvalidPythonCode_BinarySearchTrees"/>
+          <include name="emptyInputforTypesofTrees"/>
+          <include name="testInvalidPythonCode_BinaryTreeTraversal"/>
+          <include name="testInvalidPythonCode_TreeTraversals"/>
+          <include name="emptyInputforTerminologies"/>
+          <include name="testInvalidPythonCode_Terminologies"/>
+          <include name="testValidPythonCode_TypesofBinaryTrees"/>
+          <include name="tearDown"/>
+          <include name="testValidPythonCode_TypesofTrees"/>
+          <include name="navigateToHomePage"/>
+          <include name="setupPages"/>
+          <include name="testInvalidPythonCode_TypesofTrees"/>
+          <include name="emptyInputforImple_inpython"/>
+          <include name="testValidPythonCode_BinaryTreeTraversal"/>
+          <include name="testInvalidPythonCode_ApplOfBinaryTrees"/>
+          <include name="checkPracticeQuestions"/>
+          <include name="setUp"/>
+          <include name="checkingTerminologiesLink"/>
+          <include name="emptyInputforApplOfBinaryTrees"/>
+          <include name="testValidPythonCode_BinaryTrees"/>
+          <include name="testValidPythonCode"/>
+          <include name="checkingOverviewOfTrees"/>
+          <include name="testValidPythonCode_BinarySearchTrees"/>
+          <include name="testValidPythonCode_TreeTraversals"/>
+          <include name="testValidPythonCode_Terminologies"/>
+          <include name="treeFromGetStarted"/>
+          <include name="emptyInputforTypesofBinaryTrees"/>
+          <include name="emptyInputforBinarySearchTrees"/>
+          <include name="emptyInput"/>
+          <include name="testInvalidPythonCode_Imple_inpython"/>
+          <include name="checkingTypesOfTrees"/>
+          <include name="testInvalidPythonCode_TypesofBinaryTrees"/>
+          <include name="testValidPythonCode_Traversals_Illust"/>
+          <include name="testInvalidPythonCode_Imple_BinaryTrees"/>
+          <include name="emptyInputforBinaryTreeTraversal"/>
+          <include name="testInvalidPythonCode_Traversals_Illust"/>
+          <include name="testValidPythonCode_Imple_BinaryTrees"/>
+          <include name="emptyInputforImpleOfBST"/>
+          <include name="testValidPythonCode_Imple_inpython"/>
+          <include name="testInvalidPythonCode_ImpleOfBST"/>
+        </methods>
+      </class> <!-- TestClasses.TreeTest -->
+      <class name="TestClasses.StackTest">
+        <methods>
+          <include name="testApplicationsInvalidPythonCode"/>
+          <include name="setUp"/>
+          <include name="testValidPythonCode" invocation-numbers="0"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
+          <include name="testImplementationInvalidPythonCode"/>
+          <include name="testLoginAndNavigateToStack"/>
+          <include name="setupPages"/>
+          <include name="tearDown"/>
+          <include name="testImplementationValidPythonCode"/>
+          <include name="checkPracticeQns"/>
+          <include name="navigateToHomePage"/>
+          <include name="testApplicationsValidPythonCode"/>
+          <include name="checkApplications"/>
+          <include name="checkImplementation"/>
+        </methods>
+      </class> <!-- TestClasses.StackTest -->
+      <class name="TestClasses.GraphTest">
+        <methods>
+          <include name="testValidPythonCodeforGraphLink"/>
+          <include name="graphFromGetStarted"/>
           <include name="setupPages"/>
           <include name="setUp"/>
-          <include name="testvalidPythonCode_SortedArray"/>
-          <include name="testvalidPythonCode_SearchtheArray"/>
+          <include name="checkingGraphLink"/>
+          <include name="checkingPracticeQuestionsPage"/>
+          <include name="tearDown"/>
+          <include name="checkingGraphLinkWithEmptyRun"/>
+          <include name="navigateToHomePage"/>
+          <include name="testInvalidPythonCodeforGraphlink"/>
+          <include name="testInvalidPythonCodeforGraphRepresentationLink"/>
+          <include name="checkingGraphRepresentationLinkWithEmptyRun"/>
+          <include name="testValidPythonCodeGraphRepresentationLink"/>
+        </methods>
+      </class> <!-- TestClasses.GraphTest -->
+      <class name="TestClasses.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="invalidPassword"/>
+          <include name="tearDown"/>
+          <include name="invalidUsername"/>
+          <include name="RegisterfromLogin"/>
+          <include name="navigateToHomePage"/>
+          <include name="setupPages"/>
+          <include name="signout"/>
+          <include name="emptypassword"/>
+          <include name="loginwithValidCredentials" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- TestClasses.LoginTest -->
+      <class name="TestClasses.LinkedListTest">
+        <methods>
+          <include name="LinkedListFromGetStarted"/>
+          <include name="emptyInput_Intro"/>
+          <include name="testValidPythonCode_ImplLinkedListInPython"/>
+          <include name="emptyInput_Deletion"/>
+          <include name="testValidPythonCode_Intro" invocation-numbers="0"/>
+          <include name="emptyInput_TypesofLinkedlist"/>
+          <include name="testInvalidPythonCode_ImplLinkedListInPython"/>
           <include name="tearDown"/>
           <include name="navigateToHomePage"/>
-          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="testValidPythonCode_Traversal"/>
+          <include name="checkPracticeQuestions"/>
+          <include name="testInvalidPythonCode_Traversal"/>
+          <include name="testInvalidPythonCode_Insertion"/>
+          <include name="setUp"/>
+          <include name="testValidPythonCode_Insertion"/>
+          <include name="setupPages"/>
+          <include name="testInvalidPythonCode_CreatingLinkedList"/>
+          <include name="emptyInput_ImplLinkedListInPython"/>
+          <include name="checkingAllOtherLinks" invocation-numbers="1 2 3 4 5 6"/>
+          <include name="testInvalidPythonCode_TypesofLinkedlist"/>
+          <include name="checkingIntro"/>
+          <include name="testValidPythonCode_CreatingLinkedList"/>
+          <include name="testValidPythonCode_Deletion"/>
+          <include name="emptyInput_Insertion"/>
+          <include name="testInvalidPythonCode_Deletion"/>
+          <include name="testInvalidPythonCode_Intro"/>
+          <include name="testValidPythonCode_TypesofLinkedlist"/>
+          <include name="emptyInput_Traversal"/>
+          <include name="emptyInput_CreatingLinkedList"/>
+        </methods>
+      </class> <!-- TestClasses.LinkedListTest -->
+      <class name="TestClasses.ArrayTest">
+        <methods>
+          <include name="testValidPythonCode"/>
+          <include name="CheckingBasicOpeartionswithEmptyRun"/>
+          <include name="setUp"/>
+          <include name="testInvalidPythonCodeArraysList"/>
+          <include name="ArrayStartingPage"/>
+          <include name="testValidPythonCodeApplicationsofArray"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
           <include name="testvalidPythonCode_EvenNums"/>
+          <include name="ArraysPythonPage"/>
+          <include name="setupPages"/>
+          <include name="testvalidPythonCode_SortedArray"/>
+          <include name="testInvalidPythonCodeApplicationsofArray"/>
+          <include name="CheckingArraysListwithEmptyRun"/>
+          <include name="testvalidPythonCode_SearchtheArray"/>
+          <include name="CheckingApplicationsofArraywithEmptyRun"/>
+          <include name="tearDown"/>
+          <include name="testInvalidPythonCodeBasicOpeartions"/>
+          <include name="navigateToHomePage"/>
+          <include name="testValidPythonCodeArraysList"/>
+          <include name="CheckingArraysinPythonwithEmptyRun"/>
+          <include name="testValidPythonCodeBasicOpearations"/>
+          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="checkPracticeQns"/>
         </methods>
       </class> <!-- TestClasses.ArrayTest -->
+      <class name="TestClasses.DataStructureTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="testValidPythonCode" invocation-numbers="0"/>
+          <include name="setupPages"/>
+          <include name="tearDown"/>
+          <include name="navigateToHomePage"/>
+          <include name="checkTimeComplexityLinkAndEmptyRun"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- TestClasses.DataStructureTest -->
+      <class name="TestClasses.RegisterTest">
+        <methods>
+          <include name="successfulRegistration" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="RegisterWithEmptyPassowrd"/>
+          <include name="Registrationusinginvalidusername"/>
+          <include name="RegistrationWithSameRegdCredentials" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="LoginAfterRegistration" invocation-numbers="0"/>
+          <include name="setupPages"/>
+          <include name="RegisterWithEmptyConfirmPassowrd"/>
+          <include name="navigateToHomePage"/>
+          <include name="Registrationusinginvalidpassword"/>
+        </methods>
+      </class> <!-- TestClasses.RegisterTest -->
     </classes>
   </test> <!-- FirefoxTest(failed) -->
-  <test thread-count="5" name="EdgeTest(failed)">
+  <test thread-count="5" parallel="tests" name="EdgeTest(failed)">
     <parameter name="browser" value="edge"/>
     <classes>
-      <class name="TestClasses.ArrayTest">
+      <class name="TestClasses.QueueTest">
         <methods>
+          <include name="testQueueOperationsValidPythonCode"/>
+          <include name="testQueueOperationsInvalidPythonCode"/>
+          <include name="checkImplementationUsingCollectionsDequeue"/>
+          <include name="testImplementationusingarrayInvalidPythonCode"/>
+          <include name="setUp"/>
+          <include name="checkPracticeQns"/>
+          <include name="setupPages"/>
+          <include name="testImplementationUsingCollectionsDequeueValidPythonCode"/>
+          <include name="testQueueGetStarted"/>
+          <include name="checkImplementationusingarray"/>
+          <include name="checkQueueOperations"/>
+          <include name="testImplementationUsingCollectionsDequeueInvalidPythonCode"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="testValidPythonCode" invocation-numbers="0"/>
+          <include name="navigateToHomePage"/>
+          <include name="testImplementationusingarrayValidPythonCode"/>
+        </methods>
+      </class> <!-- TestClasses.QueueTest -->
+      <class name="TestClasses.TreeTest">
+        <methods>
+          <include name="testValidPythonCode_ImpleOfBST"/>
+          <include name="emptyInputforBinaryTrees"/>
+          <include name="testInvalidPythonCode_overviewofTrees"/>
+          <include name="emptyInputforTraversals_Illust"/>
+          <include name="emptyInputforImple_BinaryTrees"/>
+          <include name="emptyInputforTreeTraversals"/>
+          <include name="checkingAllOtherLinks"/>
+          <include name="testInvalidPythonCode_BinaryTrees"/>
+          <include name="testValidPythonCode_ApplOfBinaryTrees"/>
+          <include name="testInvalidPythonCode_BinarySearchTrees"/>
+          <include name="emptyInputforTypesofTrees"/>
+          <include name="testInvalidPythonCode_BinaryTreeTraversal"/>
+          <include name="emptyInputforTerminologies"/>
+          <include name="testInvalidPythonCode_TreeTraversals"/>
+          <include name="testValidPythonCode_TypesofBinaryTrees"/>
+          <include name="testInvalidPythonCode_Terminologies"/>
+          <include name="tearDown"/>
+          <include name="testValidPythonCode_TypesofTrees"/>
+          <include name="navigateToHomePage"/>
+          <include name="setupPages"/>
+          <include name="emptyInputforImple_inpython"/>
+          <include name="testInvalidPythonCode_TypesofTrees"/>
+          <include name="testValidPythonCode_BinaryTreeTraversal"/>
+          <include name="checkPracticeQuestions"/>
+          <include name="testInvalidPythonCode_ApplOfBinaryTrees"/>
+          <include name="setUp"/>
+          <include name="checkingTerminologiesLink"/>
+          <include name="emptyInputforApplOfBinaryTrees"/>
+          <include name="testValidPythonCode_BinaryTrees"/>
+          <include name="testValidPythonCode"/>
+          <include name="checkingOverviewOfTrees"/>
+          <include name="testValidPythonCode_BinarySearchTrees"/>
+          <include name="testValidPythonCode_TreeTraversals"/>
+          <include name="testValidPythonCode_Terminologies"/>
+          <include name="treeFromGetStarted"/>
+          <include name="emptyInputforTypesofBinaryTrees"/>
+          <include name="emptyInputforBinarySearchTrees"/>
+          <include name="emptyInput"/>
+          <include name="testInvalidPythonCode_Imple_inpython"/>
+          <include name="testInvalidPythonCode_TypesofBinaryTrees"/>
+          <include name="checkingTypesOfTrees"/>
+          <include name="testValidPythonCode_Traversals_Illust"/>
+          <include name="testInvalidPythonCode_Imple_BinaryTrees"/>
+          <include name="emptyInputforBinaryTreeTraversal"/>
+          <include name="testInvalidPythonCode_Traversals_Illust"/>
+          <include name="testValidPythonCode_Imple_BinaryTrees"/>
+          <include name="emptyInputforImpleOfBST"/>
+          <include name="testValidPythonCode_Imple_inpython"/>
+          <include name="testInvalidPythonCode_ImpleOfBST"/>
+        </methods>
+      </class> <!-- TestClasses.TreeTest -->
+      <class name="TestClasses.StackTest">
+        <methods>
+          <include name="testApplicationsInvalidPythonCode"/>
+          <include name="setUp"/>
+          <include name="testValidPythonCode" invocation-numbers="0"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
+          <include name="testImplementationInvalidPythonCode"/>
+          <include name="testLoginAndNavigateToStack"/>
+          <include name="setupPages"/>
+          <include name="tearDown"/>
+          <include name="testImplementationValidPythonCode"/>
+          <include name="checkPracticeQns"/>
+          <include name="navigateToHomePage"/>
+          <include name="testApplicationsValidPythonCode"/>
+          <include name="checkApplications"/>
+          <include name="checkImplementation"/>
+        </methods>
+      </class> <!-- TestClasses.StackTest -->
+      <class name="TestClasses.GraphTest">
+        <methods>
+          <include name="graphFromGetStarted"/>
+          <include name="testValidPythonCodeforGraphLink"/>
           <include name="setupPages"/>
           <include name="setUp"/>
-          <include name="testvalidPythonCode_SortedArray"/>
-          <include name="testvalidPythonCode_SearchtheArray"/>
+          <include name="checkingGraphLink"/>
+          <include name="checkingPracticeQuestionsPage"/>
+          <include name="tearDown"/>
+          <include name="checkingGraphLinkWithEmptyRun"/>
+          <include name="navigateToHomePage"/>
+          <include name="testInvalidPythonCodeforGraphlink"/>
+          <include name="testValidPythonCodeGraphRepresentationLink"/>
+          <include name="checkingGraphRepresentationLinkWithEmptyRun"/>
+          <include name="testInvalidPythonCodeforGraphRepresentationLink"/>
+        </methods>
+      </class> <!-- TestClasses.GraphTest -->
+      <class name="TestClasses.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="invalidPassword"/>
+          <include name="tearDown"/>
+          <include name="invalidUsername"/>
+          <include name="RegisterfromLogin"/>
+          <include name="navigateToHomePage"/>
+          <include name="setupPages"/>
+          <include name="signout"/>
+          <include name="emptypassword"/>
+          <include name="loginwithValidCredentials" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- TestClasses.LoginTest -->
+      <class name="TestClasses.LinkedListTest">
+        <methods>
+          <include name="LinkedListFromGetStarted"/>
+          <include name="emptyInput_Intro"/>
+          <include name="testValidPythonCode_ImplLinkedListInPython"/>
+          <include name="emptyInput_Deletion"/>
+          <include name="emptyInput_TypesofLinkedlist"/>
+          <include name="testValidPythonCode_Intro" invocation-numbers="0"/>
+          <include name="testInvalidPythonCode_ImplLinkedListInPython"/>
           <include name="tearDown"/>
           <include name="navigateToHomePage"/>
-          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="testValidPythonCode_Traversal"/>
+          <include name="testInvalidPythonCode_Traversal"/>
+          <include name="checkPracticeQuestions"/>
+          <include name="testInvalidPythonCode_Insertion"/>
+          <include name="setUp"/>
+          <include name="testValidPythonCode_Insertion"/>
+          <include name="setupPages"/>
+          <include name="testInvalidPythonCode_CreatingLinkedList"/>
+          <include name="emptyInput_ImplLinkedListInPython"/>
+          <include name="testInvalidPythonCode_TypesofLinkedlist"/>
+          <include name="checkingAllOtherLinks" invocation-numbers="1 2 3 4 5 6"/>
+          <include name="checkingIntro"/>
+          <include name="testValidPythonCode_CreatingLinkedList"/>
+          <include name="testValidPythonCode_Deletion"/>
+          <include name="emptyInput_Insertion"/>
+          <include name="testInvalidPythonCode_Intro"/>
+          <include name="testInvalidPythonCode_Deletion"/>
+          <include name="emptyInput_Traversal"/>
+          <include name="testValidPythonCode_TypesofLinkedlist"/>
+          <include name="emptyInput_CreatingLinkedList"/>
+        </methods>
+      </class> <!-- TestClasses.LinkedListTest -->
+      <class name="TestClasses.ArrayTest">
+        <methods>
+          <include name="testValidPythonCode"/>
+          <include name="CheckingBasicOpeartionswithEmptyRun"/>
+          <include name="setUp"/>
+          <include name="testInvalidPythonCodeArraysList"/>
+          <include name="ArrayStartingPage"/>
+          <include name="testValidPythonCodeApplicationsofArray"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
           <include name="testvalidPythonCode_EvenNums"/>
+          <include name="ArraysPythonPage"/>
+          <include name="setupPages"/>
+          <include name="testvalidPythonCode_SortedArray"/>
+          <include name="testInvalidPythonCodeApplicationsofArray"/>
+          <include name="CheckingArraysListwithEmptyRun"/>
+          <include name="testvalidPythonCode_SearchtheArray"/>
+          <include name="CheckingApplicationsofArraywithEmptyRun"/>
+          <include name="tearDown"/>
+          <include name="testInvalidPythonCodeBasicOpeartions"/>
+          <include name="navigateToHomePage"/>
+          <include name="testValidPythonCodeArraysList"/>
+          <include name="CheckingArraysinPythonwithEmptyRun"/>
+          <include name="testValidPythonCodeBasicOpearations"/>
+          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="checkPracticeQns"/>
         </methods>
       </class> <!-- TestClasses.ArrayTest -->
+      <class name="TestClasses.DataStructureTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="testValidPythonCode" invocation-numbers="0"/>
+          <include name="setupPages"/>
+          <include name="tearDown"/>
+          <include name="navigateToHomePage"/>
+          <include name="testInvalidPythonCode" invocation-numbers="0"/>
+          <include name="checkTimeComplexityLinkAndEmptyRun"/>
+        </methods>
+      </class> <!-- TestClasses.DataStructureTest -->
+      <class name="TestClasses.RegisterTest">
+        <methods>
+          <include name="successfulRegistration" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="Registrationusinginvalidusername"/>
+          <include name="RegistrationWithSameRegdCredentials" invocation-numbers="0"/>
+          <include name="RegisterWithEmptyPassowrd"/>
+          <include name="tearDown"/>
+          <include name="LoginAfterRegistration" invocation-numbers="0"/>
+          <include name="setupPages"/>
+          <include name="navigateToHomePage"/>
+          <include name="RegisterWithEmptyConfirmPassowrd"/>
+          <include name="Registrationusinginvalidpassword"/>
+        </methods>
+      </class> <!-- TestClasses.RegisterTest -->
     </classes>
   </test> <!-- EdgeTest(failed) -->
 >>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git

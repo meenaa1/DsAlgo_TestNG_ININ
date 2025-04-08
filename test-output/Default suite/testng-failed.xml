@@ -4,6 +4,10 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
+      <class name="TestClasses.ArrayTest">
+        <methods>
+=======
       <class name="TestClasses.HomeTest">
         <methods>
           <include name="setupPages"/>
@@ -37,8 +41,19 @@
 =======
           <include name="Registrationusinginvalidusername" invocation-numbers="0"/>
           <include name="tearDown"/>
+>>>>>>> e127c33bee2ed3e5fee47e3ba8813da803881f28
           <include name="setupPages"/>
+          <include name="setUp"/>
+          <include name="testvalidPythonCode_SortedArray"/>
+          <include name="testvalidPythonCode_SearchtheArray"/>
+          <include name="tearDown"/>
           <include name="navigateToHomePage"/>
+<<<<<<< HEAD
+          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="testvalidPythonCode_EvenNums"/>
+        </methods>
+      </class> <!-- TestClasses.ArrayTest -->
+=======
           <include name="Registrationusinginvalidpassword" invocation-numbers="0"/>
 >>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
         </methods>
@@ -47,6 +62,7 @@
 =======
       </class> <!-- TestClasses.RegisterTest -->
 >>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
+>>>>>>> e127c33bee2ed3e5fee47e3ba8813da803881f28
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
