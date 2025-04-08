@@ -138,46 +138,36 @@ public class ArrayPage {
 	public void DsAlgoStarting() {
 		DSAlgoGetStart.click();
 	}
-
-	public void Usersignin() {
+    public void Usersignin() {
 		Signin.click();
 	}
-
-	public void Entercredentials(String username, String password) {
+    public void Entercredentials(String username, String password) {
 		Username.sendKeys(username);
 		Password.sendKeys(password);
 	}
-
-	public void Userlogin() {
+    public void Userlogin() {
 		Login.click();
 	}
-
-	public String LoginMessage() {
+    public String LoginMessage() {
 		return Login_Success.getText();
 	}
-
-	public void ArrayGetStarted() {
+    public void ArrayGetStarted() {
 		ArrayGetStart.click();
 	}
-
-	public void ArraysPython() {
+    public void ArraysPython() {
 		Arrays_Python.click();
 	}
-
-	public void Tryherebtn() {
+    public void Tryherebtn() {
 		TryHere.click();
 	}
-
-	public void TryEditorNocode() {
+    public void TryEditorNocode() {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(TryEditor).click().sendKeys("").build().perform();
 	}
-
-	public void RunBtn() {
+    public void RunBtn() {
 		Run.click();
 	}
-
-	public void enterPythonCode(String code) {
+    public void enterPythonCode(String code) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.visibilityOf(TryEditor));
@@ -193,8 +183,7 @@ public class ArrayPage {
 			LoggerReader.error("Failed to enter code: " + e.getMessage());
 		}
 	}
-
-	public String getAlertTextAndAccept() {
+   public String getAlertTextAndAccept() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 			Alert alert = wait.until(ExpectedConditions.alertIsPresent());
@@ -205,66 +194,52 @@ public class ArrayPage {
 			return ""; // No alert appeared
 		}
 	}
-
-	public String alertMessage() {
+   public String alertMessage() {
 		return driver.switchTo().alert().getText();
 	}
-
-
-	public String GetConsoleOutput() {
+   public String GetConsoleOutput() {
 		return TryEditor_Console.getText();
 	}
-
-	public void ArraysList() {
+   public void ArraysList() {
 		Arrays_Using_List.click();
 	}
-
-	public void Basicoperation() {
+   public void Basicoperation() {
 		Basic_Operation.click();
 	}
-
-	public void BasicOperationText() {
+   public void BasicOperationText() {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(TryEditor).click().build().perform();
 	}
-
-	public void ApplicationsArray() {
+   public void ApplicationsArray() {
 		Applications_Of_Array.click();
 	}
-
-	public void Practicequestions() {
+   public void Practicequestions() {
 		Practice_Questions.click();
 	}
-	public void Searchthearray() {
+   public void Searchthearray() {
 		SearchThe_Array.click();
-		
+
 	}
-	
-	public void MaxConsecutiveOnes() {
+   public void MaxConsecutiveOnes() {
 		MaxConsecutive_Ones.click();
-		
+
 	}
-	
-	public void FindEvenNumbers() {
+   public void FindEvenNumbers() {
 		Find_Numbers_Evennumber_Digits.click();
 	}
-	public void SquaresSortedArray() {
+   public void SquaresSortedArray() {
 		SquaresOf_SortedArray.click();
 	}
-	
-
-	public void PracticeTryEditor() {
+   public void PracticeTryEditor() {
 		codeMirrorDiv.click();
 	}
-
-	public void ClearTryEditor() {
+   public void ClearTryEditor() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].CodeMirror.setValue('');", codeMirrorDiv);
 		System.out.println("Code input field cleared successfully");
-		
-	}
 
-	public void entercode(String code) {
+	}
+   public void entercode(String code) {
 		Actions actions = new Actions(driver);
 		actions.sendKeys(code).perform();
 	}
