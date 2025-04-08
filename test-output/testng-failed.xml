@@ -1,79 +1,17 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestClasses.DataStructureTest">
+      <class name="TestClasses.RegisterTest">
         <methods>
           <include name="setUp"/>
-          <include name="testvalidPythonCode"/>
-          <include name="afterClass"/>
+          <include name="tearDown"/>
+          <include name="setupPages"/>
+          <include name="RegisterWithEmptyConfirmPassowrd" invocation-numbers="0"/>
           <include name="navigateToHomePage"/>
-          <include name="testInvalidPythonCode"/>
         </methods>
-      </class> <!-- TestClasses.DataStructureTest -->
+      </class> <!-- TestClasses.RegisterTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [DSAlgo Test Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener"/>
-    <listener class-name="Utilities.RetryListener"/>
-    <listener class-name="Utilities.Listener"/>
-  </listeners>
-  <test thread-count="5" name="Functional Tests(failed)">
-    <classes>
-      <class name="TestClasses.DataStructureTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="testValidPythonCode" invocation-numbers="0 0 0"/>
-          <include name="setupPages"/>
-          <include name="tearDown"/>
-          <include name="dataStructureIntroduction"/>
-          <include name="navigateToHomePage"/>
-          <include name="checkTimeComplexityLinkAndEmptyRun"/>
-          <include name="testInvalidPythonCode" invocation-numbers="0 0 0"/>
-          <include name="checkPracticeQuestionsPage"/>
-        </methods>
-      </class> <!-- TestClasses.DataStructureTest -->
-      <class name="TestClasses.GraphTest">
-        <methods>
-          <include name="graphFromGetStarted"/>
-          <include name="testValidPythonCode"/>
-          <include name="setupPages"/>
-          <include name="setUp"/>
-          <include name="checkingGraphLink"/>
-          <include name="testInvalidPythonCode"/>
-          <include name="checkingPracticeQuestionsPage"/>
-          <include name="tearDown"/>
-          <include name="navigateToHomePage"/>
-          <include name="graphFromDropdown"/>
-          <include name="checkingGraphRepresentationLinkWithEmptyRun"/>
-        </methods>
-      </class> <!-- TestClasses.GraphTest -->
-      <class name="TestClasses.TreeTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="checkingTerminologiesLink"/>
-          <include name="testInvalidPythonCode" invocation-numbers="0 0 0"/>
-          <include name="checkingAllOtherLinks" invocation-numbers="0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 10 10 10"/>
-          <include name="checkingOverviewOfTrees"/>
-          <include name="testValidPythonCode" invocation-numbers="0 0 0"/>
-          <include name="treeFromDropdown"/>
-          <include name="treeFromGetStarted"/>
-          <include name="emptyInput"/>
-          <include name="checkingTypesOfTrees"/>
-          <include name="tearDown"/>
-          <include name="navigateToHomePage"/>
-          <include name="setupPages"/>
-          <include name="checkPracticeQuestions"/>
-        </methods>
-      </class> <!-- TestClasses.TreeTest -->
-    </classes>
-  </test> <!-- Functional Tests(failed) -->
-</suite> <!-- Failed suite [DSAlgo Test Suite] -->
->>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git

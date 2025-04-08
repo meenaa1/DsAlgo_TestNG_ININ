@@ -1,8 +1,7 @@
 package TestClasses;
 
-import static org.testng.Assert.assertEquals;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import BaseClass.TestBase;
 import PageObjects.LoginPage;
@@ -10,80 +9,92 @@ import Utilities.Dataprovider;
 import Utilities.LoggerReader;
 
 public class LoginTest extends TestBase {
+
 	public TestBase base = new TestBase();
-	LoginPage lpf;
-	String pagetitle;
-	WebDriver driver;
+	LoginPage login;
+
+	@BeforeMethod
+	public void setupPages() {
+		login = new LoginPage();
+	}
 
 	@Test(priority = 1)
-	public void toLoginpage() {
-		lpf = new LoginPage();
-		lpf.signin();
-		// pagetitle = lpf.checkpageTitle();
-		LoggerReader.info("Current page: " + pagetitle);
-		Assert.assertEquals(pagetitle, "Login", "Incorrect Page");
+	public void checkingLoginLink() {
+		login.signin();
+		LoggerReader.info("we are in login page");
+		Assert.assertEquals(driver.getTitle(), "Login");
 	}
 
 	@Test(priority = 2, dataProvider = "LoginValidcredentials", dataProviderClass = Dataprovider.class)
-	public void successfulLogin(String username, String password) {
-		lpf.enterUsername(username);
-		lpf.enterPassword(password);
-		lpf.clickLoginButton();
-		String successmessage = "You are logged in";
-		String actualmessage = lpf.getErrorMessage();
-		LoggerReader.info(actualmessage);
-		assertEquals(actualmessage, successmessage, "Login not successful");
+	public void loginwithValidCredentials(String username, String password) {
+		login.signin();
+		login.enterUsername(username);
+		login.enterPassword(password);
+		login.clickLoginButton();
+		login.getErrorMessage();
+		LoggerReader.info("Login Successful.");
+		Assert.assertTrue(login.LoginStatus.isDisplayed());
 	}
 
 	@Test(priority = 3)
 	public void signout() {
-		lpf.signout();
-		String successmessage = "Logged out successfully";
-		String actualmessage = lpf.getErrorMessage();
-		LoggerReader.info(actualmessage);
-		assertEquals(actualmessage, successmessage, "Logged out successfully");
+		login.signout();
+		login.getErrorMessage();
+		LoggerReader.info("Logout successful");
+		Assert.assertTrue(login.LoginStatus.isDisplayed());
 	}
 
 	@Test(priority = 4, dataProvider = "LoginValidcredentials", dataProviderClass = Dataprovider.class)
-	public void Loginwithnonexistingcredentials(String username, String password) {
-		lpf.signin();
-		username = username + "abc";
-		lpf.enterUsername(username);
-		lpf.enterPassword(password);
-		lpf.clickLoginButton();
-		String successmessage = "Invalid Username and Password";
-		String actualmessage = lpf.getErrorMessage();
-		LoggerReader.info(actualmessage);
-		assertEquals(actualmessage, successmessage, "Incorrectmessage");
+	public void emptyUsernameandPassword(String username, String password) {
+		login.signin();
+		login.clickLoginButton();
+		LoggerReader.info("Empty username and password.");
+		Assert.assertTrue(login.alert.isDisplayed());
 	}
 
 	@Test(priority = 5, dataProvider = "LoginValidcredentials", dataProviderClass = Dataprovider.class)
-	public void Loginwithnousername(String username, String password) {
-		lpf.enterPassword(password);
-		lpf.clickLoginButton();
-		// String actualvalidationmessage = lpf.emptyusernamevalidation();
-		String expectedvalidationmessage = "Please fill out this field.";
-		// Assert.assertEquals(actualvalidationmessage, expectedvalidationmessage,
-		// "Incorrect validation");
+	public void emptyusername(String username, String password) {
+		login.signin();
+		login.enterPassword(password);
+		login.clickLoginButton();
+		LoggerReader.info("Username is empty.");
+		Assert.assertTrue(login.alert.isDisplayed());
 	}
 
 	@Test(priority = 6, dataProvider = "LoginValidcredentials", dataProviderClass = Dataprovider.class)
-	public void Loginwithnopassword(String username, String password) {
-		// lpf.clearfields();
-		lpf.enterUsername(username);
-		lpf.clickLoginButton();
-		// String actualvalidationmessage = lpf.emptypasswordvalidation();
-		String expectedvalidationmessage = "Please fill out this field.";
-		// Assert.assertEquals(actualvalidationmessage, expectedvalidationmessage,
-		// "Incorrect validation");
+	public void emptypassword(String username, String password) {
+		login.signin();
+		login.enterUsername(username);
+		login.clickLoginButton();
+		LoggerReader.info("Empty Password.");
+		Assert.assertTrue(login.alert.isDisplayed());
 	}
 
 	@Test(priority = 7)
 	public void RegisterfromLogin() {
-		lpf.register();
-		// pagetitle = lpf.checkpageTitle();
-		LoggerReader.info("Current page: " + pagetitle);
-		Assert.assertEquals(pagetitle, "Registration", "Incorrect Page");
+		login.signin();
+		login.register();
+		LoggerReader.info("inside login page");
+		Assert.assertEquals(driver.getTitle(), "Registration");
 	}
 
+	@Test(priority = 8, dataProvider = "InvalidUsername", dataProviderClass = Dataprovider.class)
+	public void invalidUsername(String username, String password) {
+		login.signin();
+		login.enterUsername(username);
+		login.enterPassword(password);
+		login.clickLoginButton();
+		LoggerReader.info("Invalid username.");
+		Assert.assertTrue(login.LoginStatus.isDisplayed());
+	}
+	
+	@Test(priority = 8, dataProvider = "InvalidPassword", dataProviderClass = Dataprovider.class)
+	public void invalidPassword(String username, String password) {
+		login.signin();
+		login.enterUsername(username);
+		login.enterPassword(password);
+		login.clickLoginButton();
+		LoggerReader.info("Invalid password.");
+		Assert.assertTrue(login.LoginStatus.isDisplayed());
+	}
 }
