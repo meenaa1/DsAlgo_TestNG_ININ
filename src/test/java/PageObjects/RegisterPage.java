@@ -1,5 +1,7 @@
 package PageObjects;
 
+import java.util.Random;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -39,7 +41,7 @@ public class RegisterPage {
 	@CacheLookup
 	WebElement GetStarted;
 	
-	@FindBy(xpath = "//div[@id='navbarCollapse']/div[2]/ul/a[2]")
+	@FindBy(xpath = "//a[@href='/register']")
 	@CacheLookup
 	WebElement registerlink;
     
@@ -96,6 +98,19 @@ public class RegisterPage {
 	
 	public String alertmsg() {
 		return alert.getText();
+	}
+
+	public String generateuser(String username) {
+		Random rand = new Random();
+		int randnum = rand.nextInt(1000);
+		String newuname=username+randnum;
+		return newuname;
+	}
+
+	public void clearfields() {
+		usernameField.clear();
+		passwordField.clear();
+		confirmPasswordField.clear();
 	}
 		
 }

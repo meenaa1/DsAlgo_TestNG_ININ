@@ -3,15 +3,31 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="TestClasses.StackTest">
+=======
+      <class name="TestClasses.RegisterTest">
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
         <methods>
           <include name="setUp"/>
+<<<<<<< HEAD
           <include name="afterClass"/>
           <include name="checkPracticeQns"/>
           <include name="navigateToHomePage"/>
           <include name="tearDown"/>
+=======
+          <include name="Registrationusinginvalidusername" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setupPages"/>
+          <include name="navigateToHomePage"/>
+          <include name="Registrationusinginvalidpassword" invocation-numbers="0"/>
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
         </methods>
+<<<<<<< HEAD
       </class> <!-- TestClasses.StackTest -->
+=======
+      </class> <!-- TestClasses.RegisterTest -->
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

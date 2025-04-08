@@ -13,8 +13,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
 import DriverFactory.driverFactory;
 import Utilities.LoggerReader;
 
@@ -167,12 +165,9 @@ public QueuePage() {
 				actions.sendKeys(code).perform();
 		   }
 		 
-		//public void get(String tryherecode) {
-			//return;
-		//}
-
 		
 		
 	}
+
 
 

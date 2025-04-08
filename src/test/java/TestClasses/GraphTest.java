@@ -15,85 +15,114 @@ import Utilities.LoggerReader;
 @Listeners(Utilities.Listener.class)
 public class GraphTest extends TestBase {
 
-TestBase testBase =new TestBase();
-ConfigReader config = new ConfigReader();
-GraphPage graphpage = new GraphPage();
-LoginPage login = new LoginPage();
-String Username=ConfigReader.getProperty("username");
-String Password=ConfigReader.getProperty("password");
+    LoginPage login;
+    GraphPage graphPage;
+    String Username = ConfigReader.getProperty("username");
+    String Password = ConfigReader.getProperty("password");
 
-@BeforeMethod
-public void setupPages() {
-    login = new LoginPage();
-    graphpage = new GraphPage();
-}
+    @BeforeMethod
+    public void setupPages() {
+        login = new LoginPage();
+        graphPage = new GraphPage();
+    }
 
-@Test(priority=1)
-public void GraphFromGetStarted() {
-login.signin();
-login.login(Username, Password);
-graphpage.GraphGetStarted();
-Assert.assertEquals(driver.getTitle(), "Graph");
-LoggerReader.info("User is in the Graph Page");
-}
-@Test(priority=2)
-public void GraphfromDropdown() {
-graphpage.dropdownMenuClick();
-graphpage.ClickGraphFromDropdown();
-Assert.assertEquals(driver.getTitle(), "Graph");
-}
-@Test(priority=3)
-public void checkingGraphLink() {
-graphpage.Graphlink();
-Assert.assertEquals(driver.getTitle(), "Graph");
-}
-@Test(priority=4)
-public void checkingPracticeQnPage() {
-graphpage.navigateback();
-graphpage.GraphRepresentationlink();
-graphpage.PracticeQns();
-Assert.assertEquals(driver.getTitle(), "Practice Questions");
-}
+    @Test(priority = 1)
+    public void graphFromGetStarted() {
+        login.signin();
+        login.login(Username, Password);
+        graphPage.GraphGetStarted();
+        Assert.assertEquals(driver.getTitle(), "Graph");
+        LoggerReader.info("User is in the Graph Page");
+    }
 
-@Test(priority=5)
-public void checkingGraphRepresentationLink() {
-graphpage.graphGetStarted();
-graphpage = new GraphPage(); // Re-initialize Page Object after page change
-graphpage.GraphRepresentationlink();
-//Assert.assertEquals(driver.getTitle(), "Graph Representations");
-graphpage.TryHereButton();
-graphpage.EmptytryInput();
-graphpage.Run();
-Assert.assertEquals(driver.getTitle(), "Assessment");
-System.out.println("No Error Message is present");
+    @Test(priority = 2)
+    public void graphFromDropdown() {
+        graphPage.dropdownMenuClick();
+        graphPage.ClickGraphFromDropdown();
+        Assert.assertEquals(driver.getTitle(), "Graph");
+    }
+
+    @Test(priority = 3)
+    public void checkingGraphLink() {
+        graphPage.Graphlink();
+        Assert.assertEquals(driver.getTitle(), "Graph");
+    }
+
+    @Test(priority = 4)
+    public void checkingPracticeQuestionsPage() {
+        graphPage.navigateback();
+        graphPage.GraphRepresentationlink();
+        graphPage.PracticeQns();
+        Assert.assertEquals(driver.getTitle(), "Practice Questions");
+    }
+
+    @Test(priority = 5)
+    public void checkingGraphLinkWithEmptyRun() {
+        graphPage.graphGetStarted();
+        graphPage.Graphlink();
+        graphPage.TryHereButton();
+        graphPage.EmptytryInput();
+        graphPage.Run();
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+        LoggerReader.info("No error message is present on empty input Run");
+    }
+    
+    @Test(priority = 6, dataProvider = "Invalidpythoncode", dataProviderClass = Dataprovider.class)
+    public void testInvalidPythonCodeforGraphlink(String tryHereCode, String expectedAlertMessage) {
+        graphPage.graphGetStarted();
+        graphPage.Graphlink();
+        graphPage.TryHereButton();
+        graphPage.enterPythonCode(tryHereCode);
+        graphPage.Run();
+        String actualAlertMessage = graphPage.getAlertTextAndAccept();
+        Assert.assertTrue(actualAlertMessage.contains(expectedAlertMessage),
+                "Expected alert message to contain: " + expectedAlertMessage + ", but got: " + actualAlertMessage);
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+    }
+    
+    @Test(priority = 7, dataProvider = "Validpythoncode", dataProviderClass = Dataprovider.class)
+    public void testValidPythonCodeforGraphLink(String tryHereCode, String expectedAlertMessage) {
+        graphPage.graphGetStarted();
+        graphPage.Graphlink();
+        graphPage.TryHereButton();
+        graphPage.enterPythonCode(tryHereCode);
+        graphPage.Run();
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+    }
+    
+    @Test(priority = 8)
+    public void checkingGraphRepresentationLinkWithEmptyRun() {
+        graphPage.graphGetStarted();
+        graphPage.GraphRepresentationlink();
+        graphPage.TryHereButton();
+        graphPage.EmptytryInput();
+        graphPage.Run();
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+        LoggerReader.info("No error message is present on empty input Run");
+    }
+    
+    @Test(priority = 9, dataProvider = "Invalidpythoncode", dataProviderClass = Dataprovider.class)
+    public void testInvalidPythonCodeforGraphRepresentationLink(String tryHereCode, String expectedAlertMessage) {
+        graphPage.graphGetStarted();
+        graphPage.GraphRepresentationlink();
+        graphPage.TryHereButton();
+        graphPage.enterPythonCode(tryHereCode);
+        graphPage.Run();
+        String actualAlertMessage = graphPage.getAlertTextAndAccept();
+        Assert.assertTrue(actualAlertMessage.contains(expectedAlertMessage),
+                "Expected alert message to contain: " + expectedAlertMessage + ", but got: " + actualAlertMessage);
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+    }
+
+    @Test(priority = 10, dataProvider = "Validpythoncode", dataProviderClass = Dataprovider.class)
+    public void testValidPythonCodeGraphRepresentationLink(String tryHereCode, String expectedAlertMessage) {
+        graphPage.graphGetStarted();
+        graphPage.GraphRepresentationlink();
+        graphPage.TryHereButton();
+        graphPage.enterPythonCode(tryHereCode);
+        graphPage.Run();
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+    }
+    
+  
 }
-
-@Test(priority = 6, dataProvider = "Invalidpythoncode", dataProviderClass = Dataprovider.class)
-public void testInvalidPythonCode(String tryherecode, String expectedalertmessage) throws InterruptedException {
-   graphpage.graphGetStarted();
-   graphpage = new GraphPage();
-   graphpage.GraphRepresentationlink();
-   graphpage.TryHereButton();
-   graphpage.enterPythonCode(tryherecode);
-   graphpage.Run();
-
-   // Handle the alert popup and get the message
-   String actualAlertMessage = graphpage.getAlertTextAndAccept(); // You'll define this in GraphPage
-
-   // Assert the alert text
-   Assert.assertTrue(actualAlertMessage.contains(expectedalertmessage),
-       "Expected alert message to contain: " + expectedalertmessage + ", but got: " + actualAlertMessage);
-}
-
-
-@Test(priority=7, dataProvider="Validpythoncode", dataProviderClass= Dataprovider.class)
-public void testvalidPythonCode(String tryherecode, String expectedalertmessage) throws InterruptedException {
-graphpage.graphGetStarted();
-graphpage = new GraphPage(); // Re-initialize Page Object after page change
-   graphpage.GraphRepresentationlink();
-   graphpage.TryHereButton();
-   graphpage.enterPythonCode(tryherecode); // Send code to editor
-   graphpage.Run();
-   Assert.assertEquals(driver.getTitle(), "Assessment");
-}
-  }

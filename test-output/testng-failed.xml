@@ -9,6 +9,7 @@
   <test thread-count="5" name="ChromeTest(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
+<<<<<<< HEAD
       <class name="TestClasses.TreeTest">
         <methods>
           <include name="testValidPythonCode_ImpleOfBST"/>
@@ -64,8 +65,16 @@
         </methods>
       </class> <!-- TestClasses.TreeTest -->
       <class name="TestClasses.GraphTest">
+=======
+      <class name="TestClasses.ArrayTest">
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
         <methods>
+<<<<<<< HEAD
+=======
+          <include name="setupPages"/>
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
           <include name="setUp"/>
+<<<<<<< HEAD
           <include name="setupPages"/>
           <include name="checkingGraphLink"/>
           <include name="testInvalidPythonCode"/>
@@ -76,7 +85,16 @@
           <include name="navigateToHomePage"/>
           <include name="checkingPracticeQnPage"/>
           <include name="GraphFromGetStarted"/>
+=======
+          <include name="testvalidPythonCode_SortedArray"/>
+          <include name="testvalidPythonCode_SearchtheArray"/>
+          <include name="tearDown"/>
+          <include name="navigateToHomePage"/>
+          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="testvalidPythonCode_EvenNums"/>
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
         </methods>
+<<<<<<< HEAD
       </class> <!-- TestClasses.GraphTest -->
       <class name="TestClasses.StackTest">
         <methods>
@@ -153,6 +171,46 @@
           <include name="testImplementationusingarrayValidPythonCode"/>
         </methods>
       </class> <!-- TestClasses.QueueTest -->
+=======
+      </class> <!-- TestClasses.ArrayTest -->
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
     </classes>
   </test> <!-- ChromeTest(failed) -->
+<<<<<<< HEAD
+=======
+  <test thread-count="5" name="FirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="TestClasses.ArrayTest">
+        <methods>
+          <include name="setupPages"/>
+          <include name="setUp"/>
+          <include name="testvalidPythonCode_SortedArray"/>
+          <include name="testvalidPythonCode_SearchtheArray"/>
+          <include name="tearDown"/>
+          <include name="navigateToHomePage"/>
+          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="testvalidPythonCode_EvenNums"/>
+        </methods>
+      </class> <!-- TestClasses.ArrayTest -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+  <test thread-count="5" name="EdgeTest(failed)">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="TestClasses.ArrayTest">
+        <methods>
+          <include name="setupPages"/>
+          <include name="setUp"/>
+          <include name="testvalidPythonCode_SortedArray"/>
+          <include name="testvalidPythonCode_SearchtheArray"/>
+          <include name="tearDown"/>
+          <include name="navigateToHomePage"/>
+          <include name="testvalidPythonCode_MaxConones"/>
+          <include name="testvalidPythonCode_EvenNums"/>
+        </methods>
+      </class> <!-- TestClasses.ArrayTest -->
+    </classes>
+  </test> <!-- EdgeTest(failed) -->
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git
 </suite> <!-- Failed suite [CrossBrowserSuite] -->
