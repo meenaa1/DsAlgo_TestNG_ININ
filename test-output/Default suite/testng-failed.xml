@@ -5,17 +5,14 @@
     <classes>
       <class name="TestClasses.GraphTest">
         <methods>
-          <include name="graphFromGetStarted"/>
-          <include name="testValidPythonCode" invocation-numbers="0"/>
+          <include name="testValidPythonCodeforGraphLink"/>
           <include name="setupPages"/>
           <include name="setUp"/>
-          <include name="checkingGraphLink"/>
-          <include name="testInvalidPythonCode" invocation-numbers="0"/>
-          <include name="checkingPracticeQuestionsPage"/>
           <include name="tearDown"/>
           <include name="navigateToHomePage"/>
-          <include name="graphFromDropdown"/>
-          <include name="checkingGraphRepresentationLinkWithEmptyRun"/>
+          <include name="testInvalidPythonCodeforGraphlink"/>
+          <include name="testInvalidPythonCodeforGraphRepresentationLink"/>
+          <include name="testValidPythonCodeGraphRepresentationLink"/>
         </methods>
       </class> <!-- TestClasses.GraphTest -->
     </classes>

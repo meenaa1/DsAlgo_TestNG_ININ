@@ -16,7 +16,7 @@ public class LinkedListPage {
 		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
 	}
-		
+
 	@FindBy(xpath = "//a[@href='linked-list']")
 	@CacheLookup
 	WebElement Linked_List;
@@ -24,6 +24,14 @@ public class LinkedListPage {
 	@FindBy(linkText = "Introduction")
 	@CacheLookup
 	WebElement Introduction_page;
+
+	@FindBy(xpath = "//div[@class='nav-item dropdown']")
+	@CacheLookup
+	WebElement dropdownmenu;
+
+	@FindBy(xpath = "//a[text()='Linked List']")
+	@CacheLookup
+	WebElement selectLinkedlist_DropdownMenu;
 
 	@FindBy(xpath = "//a[text()='Try here>>>']")
 	@CacheLookup
@@ -68,17 +76,25 @@ public class LinkedListPage {
 	@FindBy(linkText = "Practice Questions")
 	@CacheLookup
 	WebElement Practice_Questions;
-	
+
 	public void Getstarted() {
 		Linked_List.click();
 	}
-	
+
 	public void Introductionpage() {
 		Introduction_page.click();
 	}
 
 	public void Tryhere() {
 		Tryherebtn.click();
+	}
+
+	public void dropdownmenuClick() {
+		dropdownmenu.click();
+	}
+
+	public void clickLinkListFromDropdown() {
+		selectLinkedlist_DropdownMenu.click();
 	}
 
 	public void Run() {
@@ -92,10 +108,6 @@ public class LinkedListPage {
 
 	public String alertMessage() {
 		return driver.switchTo().alert().getText();
-	}
-
-	public void EmptyTryEditorpage() {
-		Tryeditor.clear();
 	}
 
 	public String ValidOutput() {

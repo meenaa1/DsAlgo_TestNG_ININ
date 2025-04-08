@@ -11,7 +11,7 @@ import Utilities.ConfigReader;
 import Utilities.Dataprovider;
 import Utilities.LoggerReader;
 
-//@Listeners(Utilities.Listener.class)
+@Listeners(Utilities.Listener.class)
 public class DataStructureTest extends TestBase {
 
     LoginPage login;
