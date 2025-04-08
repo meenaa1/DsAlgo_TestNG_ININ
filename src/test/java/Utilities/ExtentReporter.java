@@ -15,7 +15,6 @@ public class ExtentReporter {
                     ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
                     reporter.config().setReportName("Test Execution Report");
                     reporter.config().setDocumentTitle("Test Results");
-
                     extent = new ExtentReports();
                     extent.attachReporter(reporter);
                     extent.setSystemInfo("Innovation_Inspectors", "QA Team");

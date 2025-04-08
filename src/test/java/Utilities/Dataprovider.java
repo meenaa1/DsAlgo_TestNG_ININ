@@ -66,6 +66,7 @@ public class Dataprovider {
 		ArrayList<String> practicequescode = read.getArraypracticeques(5);
 		String expectedoutput=read.getPQoutput(5);
 		String codeBlock = String.join("\n", practicequescode);
+		
 		return new Object[][]{
 			{codeBlock,expectedoutput}
 			};
@@ -77,6 +78,7 @@ public class Dataprovider {
 		ArrayList<String> practicequescode = read.getArraypracticeques(7);
 		String expectedoutput=read.getPQoutput(7);
         String codeBlock = String.join("\n", practicequescode); 
+		
 		return new Object[][]{
 			{codeBlock,expectedoutput}
 			};

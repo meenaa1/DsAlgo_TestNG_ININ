@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+/target/
+=======
 .settings
 .project
 .classpath
@@ -6,3 +9,4 @@ target/
 test-output/
 logs/
 allure-results/
+>>>>>>> branch 'master' of https://github.com/meenaa1/DsAlgo_TestNG_ININ.git

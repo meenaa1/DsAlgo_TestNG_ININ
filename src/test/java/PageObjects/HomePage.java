@@ -23,7 +23,31 @@ public class HomePage {
 	@FindBy(xpath = "//div[@class='nav-item dropdown show']")
 	@CacheLookup
 	public WebElement dataStructuresDropdown;
+	
+	@FindBy(xpath = "//a[text()='Linked List']")
+	@CacheLookup
+	WebElement selectLinkedlist_DropdownMenu;
 
+	@FindBy(xpath = "//h5[text()='Stack']/../a")
+	@CacheLookup
+	WebElement StackGetStarted;
+	
+	@FindBy(xpath = "//h5[text()='Queue']/../a")
+	@CacheLookup
+	WebElement queueGetStartedBtn;
+	
+	@FindBy(xpath = "//a[@href='array']")
+	@CacheLookup
+	WebElement ArrayGetStart;
+	
+	@FindBy(xpath = "//a[@href='linkedlist']")
+	@CacheLookup
+	WebElement linkedListGetStart;
+	
+	@FindBy(xpath = "//a[@href='tree']")
+	@CacheLookup
+	WebElement treeGetStart;
+	
 	@FindBy(xpath = "//a[text()='Tree']")
 	@CacheLookup
 	public WebElement treeOption;
@@ -67,7 +91,28 @@ public class HomePage {
 	public void dropdownMenuClick() {
 		dropdownMenu.click();
 	}
+	
+	public void clickGraphGetstarted()
+	{
+		graphGetStarted.click();
+	}
+	
+	public void clickStackGetstarted()
+	{
+		StackGetStarted.click();
+	}
+	
+	public void clickQueueGetstarted()
+	{
+		queueGetStartedBtn.click();
+	}
 
+	public void clickArrayGetstarted()
+	{
+		ArrayGetStart.click();
+	}
+
+	
 	public void clickTreeFromDropdown() {
 		selectTree_DropdownMenu.click();
 	}

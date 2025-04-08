@@ -55,34 +55,28 @@ public class ArrayTest extends TestBase {
 	@Test(priority = 4, dataProvider = "Invalidpythoncode", dataProviderClass = Dataprovider.class)
 
 	public void testInvalidPythonCode(String tryHereCode, String expectedAlertMessage) {
-
 		arrayPage.ArrayGetStarted();
 		arrayPage.ArraysPython();
 		arrayPage.Tryherebtn();
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		String actualAlertMessage = arrayPage.getAlertTextAndAccept();
 
 		Assert.assertTrue(actualAlertMessage.contains(expectedAlertMessage),
 				"Expected alert message to contain: " + expectedAlertMessage + ", but got: " + actualAlertMessage);
 
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 5, dataProvider = "Validpythoncode", dataProviderClass = Dataprovider.class)
 
 	public void testValidPythonCode(String tryHereCode, String expectedAlertMessage) {
-
 		arrayPage.ArrayGetStarted();
 		arrayPage.ArraysPython();
 		arrayPage.Tryherebtn();
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 6)
@@ -107,9 +101,7 @@ public class ArrayTest extends TestBase {
 		String actualAlertMessage = arrayPage.getAlertTextAndAccept();
 		Assert.assertTrue(actualAlertMessage.contains(expectedAlertMessage),
 				"Expected alert message to contain: " + expectedAlertMessage + ", but got: " + actualAlertMessage);
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 8, dataProvider = "Validpythoncode", dataProviderClass = Dataprovider.class)
@@ -118,12 +110,9 @@ public class ArrayTest extends TestBase {
 		arrayPage.ArrayGetStarted();
 		arrayPage.ArraysList();
 		arrayPage.Tryherebtn();
-
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 9)
@@ -143,31 +132,23 @@ public class ArrayTest extends TestBase {
 		arrayPage.ArrayGetStarted();
 		arrayPage.Basicoperation();
 		arrayPage.Tryherebtn();
-
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		String actualAlertMessage = arrayPage.getAlertTextAndAccept();
-
 		Assert.assertTrue(actualAlertMessage.contains(expectedAlertMessage),
 				"Expected alert message to contain: " + expectedAlertMessage + ", but got: " + actualAlertMessage);
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 11, dataProvider = "Validpythoncode", dataProviderClass = Dataprovider.class)
 
 	public void testValidPythonCodeBasicOpearations(String tryHereCode, String expectedAlertMessage) {
-
 		arrayPage.ArrayGetStarted();
 		arrayPage.Basicoperation();
 		arrayPage.Tryherebtn();
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 12)
@@ -175,7 +156,6 @@ public class ArrayTest extends TestBase {
 		arrayPage.ArrayGetStarted();
 		arrayPage.ApplicationsArray();
 		LoggerReader.info("User is in the Applications of Array page");
-
 		arrayPage.Tryherebtn();
 		arrayPage.TryEditorNocode();
 		arrayPage.RunBtn();
@@ -188,32 +168,23 @@ public class ArrayTest extends TestBase {
 		arrayPage.ArrayGetStarted();
 		arrayPage.ApplicationsArray();
 		arrayPage.Tryherebtn();
-
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		String actualAlertMessage = arrayPage.getAlertTextAndAccept();
-
 		Assert.assertTrue(actualAlertMessage.contains(expectedAlertMessage),
 				"Expected alert message to contain: " + expectedAlertMessage + ", but got: " + actualAlertMessage);
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 14, dataProvider = "Validpythoncode", dataProviderClass = Dataprovider.class)
 
 	public void testValidPythonCodeApplicationsofArray(String tryHereCode, String expectedAlertMessage) {
-
 		arrayPage.ArrayGetStarted();
 		arrayPage.ApplicationsArray();
 		arrayPage.Tryherebtn();
-
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 15)
@@ -229,69 +200,53 @@ public class ArrayTest extends TestBase {
 	@Test(priority = 16, dataProvider = "PracticeQSearchthearray", dataProviderClass = Dataprovider.class)
 
 	public void testvalidPythonCode_SearchtheArray(String tryHereCode, String expectedAlertMessage) {
-
 		arrayPage.ArrayGetStarted();
 		arrayPage.ApplicationsArray();
 		arrayPage.Practicequestions();
 		arrayPage.Searchthearray();
 		arrayPage.ClearTryEditor();
-
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 17, dataProvider = "PracticeQMaxConsones", dataProviderClass = Dataprovider.class)
 
 	public void testvalidPythonCode_MaxConones(String tryHereCode, String expectedAlertMessage) {
-
 		arrayPage.ArrayGetStarted();
 		arrayPage.ApplicationsArray();
 		arrayPage.Practicequestions();
 		arrayPage.MaxConsecutiveOnes();
 		arrayPage.ClearTryEditor();
-
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 18, dataProvider = "PracticeQEvennums", dataProviderClass = Dataprovider.class)
 
 	public void testvalidPythonCode_EvenNums(String tryHereCode, String expectedAlertMessage) {
-
 		arrayPage.ArrayGetStarted();
 		arrayPage.ApplicationsArray();
 		arrayPage.Practicequestions();
 		arrayPage.FindEvenNumbers();
 		arrayPage.ClearTryEditor();
-
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 	@Test(priority = 19, dataProvider = "PracticeQSQofsortedarray", dataProviderClass = Dataprovider.class)
 
 	public void testvalidPythonCode_SortedArray(String tryHereCode, String expectedAlertMessage) {
-
 		arrayPage.ArrayGetStarted();
 		arrayPage.ApplicationsArray();
 		arrayPage.Practicequestions();
 		arrayPage.FindEvenNumbers();
 		arrayPage.ClearTryEditor();
-
 		arrayPage.enterPythonCode(tryHereCode);
 		arrayPage.RunBtn();
-
 		Assert.assertEquals(driver.getTitle(), "Assessment");
-
 	}
 
 }
