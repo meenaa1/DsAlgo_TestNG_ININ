@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CrossBrowserSuite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener"/>
+    <listener class-name="Utilities.RetryListener"/>
+    <listener class-name="Utilities.Listener"/>
+  </listeners>
+  <test thread-count="5" name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="TestClasses.TreeTest">
+        <methods>
+          <include name="testValidPythonCode_ImpleOfBST"/>
+          <include name="emptyInputforBinaryTrees"/>
+          <include name="emptyInputforTraversals_Illust"/>
+          <include name="emptyInputforTreeTraversals"/>
+          <include name="testInvalidPythonCode_BinaryTrees"/>
+          <include name="treeFromDropdown"/>
+          <include name="testValidPythonCode_ApplOfBinaryTrees"/>
+          <include name="testInvalidPythonCode_BinarySearchTrees"/>
+          <include name="emptyInputforTypesofTrees"/>
+          <include name="testValidPythonCode_TypesofBinaryTrees"/>
+          <include name="testInvalidPythonCode_TypesofTrees"/>
+          <include name="checkPracticeQuestions"/>
+          <include name="checkingTerminologiesLink"/>
+          <include name="testValidPythonCode"/>
+          <include name="testValidPythonCode_Terminologies"/>
+          <include name="testInvalidPythonCode_Imple_inpython"/>
+          <include name="checkingTypesOfTrees"/>
+          <include name="testInvalidPythonCode_Traversals_Illust"/>
+          <include name="testValidPythonCode_Imple_BinaryTrees"/>
+          <include name="testInvalidPythonCode_ImpleOfBST"/>
+          <include name="testInvalidPythonCode_overviewofTrees"/>
+          <include name="checkingAllOtherLinks"/>
+          <include name="emptyInputforImple_BinaryTrees"/>
+          <include name="testInvalidPythonCode_BinaryTreeTraversal"/>
+          <include name="emptyInputforTerminologies"/>
+          <include name="testInvalidPythonCode_TreeTraversals"/>
+          <include name="testInvalidPythonCode_Terminologies"/>
+          <include name="tearDown"/>
+          <include name="testValidPythonCode_TypesofTrees"/>
+          <include name="navigateToHomePage"/>
+          <include name="setupPages"/>
+          <include name="emptyInputforImple_inpython"/>
+          <include name="testValidPythonCode_BinaryTreeTraversal"/>
+          <include name="testInvalidPythonCode_ApplOfBinaryTrees"/>
+          <include name="setUp"/>
+          <include name="emptyInputforApplOfBinaryTrees"/>
+          <include name="testValidPythonCode_BinaryTrees"/>
+          <include name="checkingOverviewOfTrees"/>
+          <include name="testValidPythonCode_BinarySearchTrees"/>
+          <include name="testValidPythonCode_TreeTraversals"/>
+          <include name="treeFromGetStarted"/>
+          <include name="emptyInputforBinarySearchTrees"/>
+          <include name="emptyInputforTypesofBinaryTrees"/>
+          <include name="emptyInput"/>
+          <include name="testInvalidPythonCode_TypesofBinaryTrees"/>
+          <include name="testValidPythonCode_Traversals_Illust"/>
+          <include name="testInvalidPythonCode_Imple_BinaryTrees"/>
+          <include name="emptyInputforBinaryTreeTraversal"/>
+          <include name="emptyInputforImpleOfBST"/>
+          <include name="testValidPythonCode_Imple_inpython"/>
+        </methods>
+      </class> <!-- TestClasses.TreeTest -->
+      <class name="TestClasses.GraphTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="setupPages"/>
+          <include name="checkingGraphLink"/>
+          <include name="testInvalidPythonCode"/>
+          <include name="GraphfromDropdown"/>
+          <include name="testvalidPythonCode"/>
+          <include name="tearDown"/>
+          <include name="checkingGraphRepresentationLink"/>
+          <include name="navigateToHomePage"/>
+          <include name="checkingPracticeQnPage"/>
+          <include name="GraphFromGetStarted"/>
+        </methods>
+      </class> <!-- TestClasses.GraphTest -->
+      <class name="TestClasses.StackTest">
+        <methods>
+          <include name="testApplicationsInvalidPythonCode"/>
+          <include name="setUp"/>
+          <include name="checkOperationInStack"/>
+          <include name="testValidPythonCode"/>
+          <include name="testInvalidPythonCode"/>
+          <include name="testImplementationInvalidPythonCode"/>
+          <include name="testLoginAndNavigateToStack"/>
+          <include name="setupPages"/>
+          <include name="tearDown"/>
+          <include name="testImplementationValidPythonCode"/>
+          <include name="checkPracticeQns"/>
+          <include name="navigateToHomePage"/>
+          <include name="testApplicationsValidPythonCode"/>
+          <include name="checkApplications"/>
+          <include name="checkImplementation"/>
+        </methods>
+      </class> <!-- TestClasses.StackTest -->
+      <class name="TestClasses.LinkedListTest">
+        <methods>
+          <include name="LinkedListFromGetStarted"/>
+          <include name="emptyInput_Intro"/>
+          <include name="LinkedListFromDropdown"/>
+          <include name="testValidPythonCode_ImplLinkedListInPython"/>
+          <include name="emptyInput_Deletion"/>
+          <include name="testValidPythonCode_Intro"/>
+          <include name="emptyInput_TypesofLinkedlist"/>
+          <include name="testInvalidPythonCode_ImplLinkedListInPython"/>
+          <include name="tearDown"/>
+          <include name="navigateToHomePage"/>
+          <include name="testValidPythonCode_Traversal"/>
+          <include name="checkPracticeQuestions"/>
+          <include name="testInvalidPythonCode_Traversal"/>
+          <include name="testInvalidPythonCode_Insertion"/>
+          <include name="setUp"/>
+          <include name="testValidPythonCode_Insertion"/>
+          <include name="setupPages"/>
+          <include name="testInvalidPythonCode_CreatingLinkedList"/>
+          <include name="emptyInput_ImplLinkedListInPython"/>
+          <include name="testInvalidPythonCode_TypesofLinkedlist"/>
+          <include name="checkingAllOtherLinks"/>
+          <include name="testValidPythonCode_CreatingLinkedList"/>
+          <include name="checkingIntro"/>
+          <include name="testValidPythonCode_Deletion"/>
+          <include name="emptyInput_Insertion"/>
+          <include name="testInvalidPythonCode_Deletion"/>
+          <include name="testInvalidPythonCode_Intro"/>
+          <include name="testValidPythonCode_TypesofLinkedlist"/>
+          <include name="emptyInput_Traversal"/>
+          <include name="emptyInput_CreatingLinkedList"/>
+        </methods>
+      </class> <!-- TestClasses.LinkedListTest -->
+      <class name="TestClasses.QueueTest">
+        <methods>
+          <include name="testQueueOperationsValidPythonCode"/>
+          <include name="testQueueOperationsInvalidPythonCode"/>
+          <include name="setUp"/>
+          <include name="testImplementationusingarrayInvalidPythonCode"/>
+          <include name="checkImplementationUsingCollectionsDequeue"/>
+          <include name="checkImplementationofQueueinPython"/>
+          <include name="checkPracticeQns"/>
+          <include name="setupPages"/>
+          <include name="testImplementationUsingCollectionsDequeueValidPythonCode"/>
+          <include name="testQueueGetStarted"/>
+          <include name="checkImplementationusingarray"/>
+          <include name="checkQueueOperations"/>
+          <include name="testImplementationUsingCollectionsDequeueInvalidPythonCode"/>
+          <include name="testInvalidPythonCode"/>
+          <include name="tearDown"/>
+          <include name="testValidPythonCode"/>
+          <include name="navigateToHomePage"/>
+          <include name="testImplementationusingarrayValidPythonCode"/>
+        </methods>
+      </class> <!-- TestClasses.QueueTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [CrossBrowserSuite] -->

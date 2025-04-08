@@ -103,7 +103,7 @@ public class RegisterTest extends TestBase {
 		registerPage.enterPassword(password);
 		registerPage.enterConfirmPassword(password);
 		registerPage.clickRegister();
-		String expectedmessage = "Invalid username";
+		String expectedmessage = "password_mismatch:The two password fields didn’t match.";
 		String actualmessage = registerPage.getErrorMessage();
 		LoggerReader.info(actualmessage);
 		assertEquals(actualmessage, expectedmessage, "Incorrect error message");
@@ -116,7 +116,7 @@ public class RegisterTest extends TestBase {
 		registerPage.enterPassword(password);
 		registerPage.enterConfirmPassword(password);
 		registerPage.clickRegister();
-		String expectedmessage = "Invalid Password";
+		String expectedmessage = "password_mismatch:The two password fields didn’t match.";
 		String actualmessage = registerPage.getErrorMessage();
 		LoggerReader.info(actualmessage);
 		assertEquals(actualmessage, expectedmessage, "Incorrect error message");

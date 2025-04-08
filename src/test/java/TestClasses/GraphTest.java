@@ -2,6 +2,7 @@ package TestClasses;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import BaseClass.TestBase;
@@ -11,8 +12,7 @@ import Utilities.ConfigReader;
 import Utilities.Dataprovider;
 import Utilities.LoggerReader;
 
-//@Listeners(ChainTestListener.class)
-//@Listeners(Utilities.Listener.class)
+@Listeners(Utilities.Listener.class)
 public class GraphTest extends TestBase {
 
     LoginPage login;
@@ -57,6 +57,40 @@ public class GraphTest extends TestBase {
     }
 
     @Test(priority = 5)
+    public void checkingGraphLinkWithEmptyRun() {
+        graphPage.graphGetStarted();
+        graphPage.Graphlink();
+        graphPage.TryHereButton();
+        graphPage.EmptytryInput();
+        graphPage.Run();
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+        LoggerReader.info("No error message is present on empty input Run");
+    }
+    
+    @Test(priority = 6, dataProvider = "Invalidpythoncode", dataProviderClass = Dataprovider.class)
+    public void testInvalidPythonCodeforGraphlink(String tryHereCode, String expectedAlertMessage) {
+        graphPage.graphGetStarted();
+        graphPage.Graphlink();
+        graphPage.TryHereButton();
+        graphPage.enterPythonCode(tryHereCode);
+        graphPage.Run();
+        String actualAlertMessage = graphPage.getAlertTextAndAccept();
+        Assert.assertTrue(actualAlertMessage.contains(expectedAlertMessage),
+                "Expected alert message to contain: " + expectedAlertMessage + ", but got: " + actualAlertMessage);
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+    }
+    
+    @Test(priority = 7, dataProvider = "Validpythoncode", dataProviderClass = Dataprovider.class)
+    public void testValidPythonCodeforGraphLink(String tryHereCode, String expectedAlertMessage) {
+        graphPage.graphGetStarted();
+        graphPage.Graphlink();
+        graphPage.TryHereButton();
+        graphPage.enterPythonCode(tryHereCode);
+        graphPage.Run();
+        Assert.assertEquals(driver.getTitle(), "Assessment");
+    }
+    
+    @Test(priority = 8)
     public void checkingGraphRepresentationLinkWithEmptyRun() {
         graphPage.graphGetStarted();
         graphPage.GraphRepresentationlink();
@@ -66,24 +100,22 @@ public class GraphTest extends TestBase {
         Assert.assertEquals(driver.getTitle(), "Assessment");
         LoggerReader.info("No error message is present on empty input Run");
     }
-
-    @Test(priority = 6, dataProvider = "Invalidpythoncode", dataProviderClass = Dataprovider.class)
-    public void testInvalidPythonCode(String tryHereCode, String expectedAlertMessage) {
+    
+    @Test(priority = 9, dataProvider = "Invalidpythoncode", dataProviderClass = Dataprovider.class)
+    public void testInvalidPythonCodeforGraphRepresentationLink(String tryHereCode, String expectedAlertMessage) {
         graphPage.graphGetStarted();
         graphPage.GraphRepresentationlink();
         graphPage.TryHereButton();
         graphPage.enterPythonCode(tryHereCode);
         graphPage.Run();
-
         String actualAlertMessage = graphPage.getAlertTextAndAccept();
-
         Assert.assertTrue(actualAlertMessage.contains(expectedAlertMessage),
                 "Expected alert message to contain: " + expectedAlertMessage + ", but got: " + actualAlertMessage);
         Assert.assertEquals(driver.getTitle(), "Assessment");
     }
 
-    @Test(priority = 7, dataProvider = "Validpythoncode", dataProviderClass = Dataprovider.class)
-    public void testValidPythonCode(String tryHereCode, String expectedAlertMessage) {
+    @Test(priority = 10, dataProvider = "Validpythoncode", dataProviderClass = Dataprovider.class)
+    public void testValidPythonCodeGraphRepresentationLink(String tryHereCode, String expectedAlertMessage) {
         graphPage.graphGetStarted();
         graphPage.GraphRepresentationlink();
         graphPage.TryHereButton();
@@ -91,4 +123,6 @@ public class GraphTest extends TestBase {
         graphPage.Run();
         Assert.assertEquals(driver.getTitle(), "Assessment");
     }
+    
+  
 }
