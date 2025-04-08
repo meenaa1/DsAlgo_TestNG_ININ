@@ -3,6 +3,7 @@ package TestClasses;
 import static org.testng.Assert.assertEquals;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import BaseClass.TestBase;
 import PageObjects.LoginPage;
@@ -10,10 +11,10 @@ import PageObjects.RegisterPage;
 import Utilities.Dataprovider;
 import Utilities.LoggerReader;
 
+@Listeners(Utilities.Listener.class)
 public class RegisterTest extends TestBase {
-	public TestBase base = new TestBase();
+	
 	RegisterPage registerPage;
-	String pagetitle;
 	String newusername;
 	LoginPage login;
 
@@ -119,6 +120,5 @@ public class RegisterTest extends TestBase {
 		LoggerReader.info(actualmessage);
 		assertEquals(actualmessage, expectedmessage, "Incorrect error message");
 	}
-
 
 }

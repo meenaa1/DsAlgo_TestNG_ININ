@@ -64,10 +64,6 @@ public class TreePage {
 	@CacheLookup
 	public WebElement RunBtn;
 
-	@FindBy(xpath = "//pre[@id='output']")
-	@CacheLookup
-	WebElement OutPutmsg;
-
 	@FindBy(linkText = "Terminologies")
 	@CacheLookup
 	WebElement TerminologiesLink;
@@ -153,10 +149,6 @@ public class TreePage {
 		actions.moveToElement(tryEditorInp).click().sendKeys("").build().perform();
 	}
 	
-	public String Outputmsg() {
-		return OutPutmsg.getText();
-	}
-
 	public void Terminologies() {
 		TerminologiesLink.click();
 	}

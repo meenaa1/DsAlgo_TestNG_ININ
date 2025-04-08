@@ -67,7 +67,6 @@ public class TreeTest extends TestBase {
 	@Test(priority = 6, dataProvider = "TreelinkDataProvider", dataProviderClass = Dataprovider.class)
 	public void checkingAllOtherLinks(String string) {
 		driver.navigate().back();
-
 		switch (string) {
 		case "Tree Traversals":
 			tree.TreeTraversals();
@@ -551,4 +550,5 @@ public class TreeTest extends TestBase {
 		Assert.assertEquals(driver.getTitle(), "Practice Questions");
 		LoggerReader.info("User is in Practice Questions Page");
 	}
+	
 }

@@ -6,7 +6,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import BaseClass.TestBase;
 import PageObjects.LoginPage;
-import PageObjects.QueuePage;
 import PageObjects.StackPage;
 import Utilities.ConfigReader;
 import Utilities.Dataprovider;
@@ -15,10 +14,7 @@ import Utilities.LoggerReader;
 @Listeners(Utilities.Listener.class)
 public class StackTest extends TestBase{
 	
-	TestBase testBase =new TestBase();
-	ConfigReader config = new ConfigReader();
 	StackPage stackpage = new StackPage();
-	QueuePage queuepage = new QueuePage();
 	LoginPage login = new LoginPage();
 	String Username=ConfigReader.getProperty("username");
 	String Password=ConfigReader.getProperty("password");
@@ -58,7 +54,7 @@ public class StackTest extends TestBase{
 			stackpage.Tryhere();
 			stackpage.enterPythonCode(tryherecode);
 			stackpage.RunBtn();
-			String actualAlertMessage = stackpage.getAlertTextAndAccept(); // You'll define this in StackPage
+			String actualAlertMessage = stackpage.getAlertTextAndAccept(); 
 			   // Assert the alert text
 			Assert.assertTrue(actualAlertMessage.contains(expectedalertmessage),
 			       "Expected alert message to contain: " + expectedalertmessage + ", but got: " + actualAlertMessage);
@@ -105,8 +101,7 @@ public class StackTest extends TestBase{
 		stackpage.Tryhere();
 		stackpage.enterPythonCode(tryherecode);
 		stackpage.RunBtn();
-		String actualAlertMessage = stackpage.getAlertTextAndAccept(); // You'll define this in StackPage
-		   // Assert the alert text
+		String actualAlertMessage = stackpage.getAlertTextAndAccept(); 
 		Assert.assertTrue(actualAlertMessage.contains(expectedalertmessage),
 		       "Expected alert message to contain: " + expectedalertmessage + ", but got: " + actualAlertMessage);
 }
@@ -141,8 +136,7 @@ public class StackTest extends TestBase{
 		stackpage.Tryhere();
 		stackpage.enterPythonCode(tryherecode);
 		stackpage.RunBtn();
-		 String actualAlertMessage = stackpage.getAlertTextAndAccept(); // You'll define this in StackPage
-		   // Assert the alert text
+		 String actualAlertMessage = stackpage.getAlertTextAndAccept(); 
 		   Assert.assertTrue(actualAlertMessage.contains(expectedalertmessage),
 		       "Expected alert message to contain: " + expectedalertmessage + ", but got: " + actualAlertMessage);
     }
@@ -157,9 +151,5 @@ public class StackTest extends TestBase{
 		stackpage.RunBtn();
 	    Assert.assertEquals(driver.getTitle(), "Assessment");
 	}
-	
-
-	
-	
-
+		
 }

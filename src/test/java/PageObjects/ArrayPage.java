@@ -26,31 +26,7 @@ public class ArrayPage {
 		driver = driverFactory.getDriver();
 		PageFactory.initElements(driver, this);
 	}
-
-	@FindBy(xpath = "//button[text()='Get Started']")
-	@CacheLookup
-	WebElement DSAlgoGetStart;
-
-	@FindBy(xpath = "//a[text()='Sign in']")
-	@CacheLookup
-	WebElement Signin;
-
-	@FindBy(xpath = "//input[@name='username']")
-	@CacheLookup
-	WebElement Username;
-
-	@FindBy(xpath = "//input[@name='password']")
-	@CacheLookup
-	WebElement Password;
-
-	@FindBy(xpath = "//input[@type='submit']")
-	@CacheLookup
-	WebElement Login;
-
-	@FindBy(xpath = "//*[@class ='alert alert-primary']")
-	@CacheLookup
-	WebElement Login_Success;
-
+	
 	@FindBy(xpath = "//a[@href='array']")
 	@CacheLookup
 	WebElement ArrayGetStart;
@@ -70,10 +46,6 @@ public class ArrayPage {
 	@FindBy(xpath = "//button[@type='button']")
 	@CacheLookup
 	public WebElement Run;
-
-	@FindBy(id = "output")
-	@CacheLookup
-	WebElement TryEditor_Console;
 
 	@FindBy(xpath = "//a[text()='Arrays Using List']")
 	@CacheLookup
@@ -99,10 +71,6 @@ public class ArrayPage {
 	@CacheLookup
 	public WebElement Submit;
 
-	@FindBy(xpath = "//pre[text()='Error occurred during submission']")
-	@CacheLookup
-	WebElement Errormessage;
-
 	@FindBy(xpath = "//a[text()='Max Consecutive Ones']")
 	@CacheLookup
 	WebElement MaxConsecutive_Ones;
@@ -123,51 +91,32 @@ public class ArrayPage {
 	@CacheLookup
 	WebElement SquaresOfSortedArray_Question;
 
-	@FindBy(xpath = "//div[@class='alert alert-primary']")
-	@CacheLookup
-	WebElement logoutMsg;
-
 	@FindBy(className = ("CodeMirror"))
 	@CacheLookup
 	public WebElement codeMirrorDiv;
 
-	@FindBy(xpath = "//a[text()='Sign out']")
-	@CacheLookup
-	WebElement Signout;
-
-	public void DsAlgoStarting() {
-		DSAlgoGetStart.click();
-	}
-    public void Usersignin() {
-		Signin.click();
-	}
-    public void Entercredentials(String username, String password) {
-		Username.sendKeys(username);
-		Password.sendKeys(password);
-	}
-    public void Userlogin() {
-		Login.click();
-	}
-    public String LoginMessage() {
-		return Login_Success.getText();
-	}
-    public void ArrayGetStarted() {
+	public void ArrayGetStarted() {
 		ArrayGetStart.click();
 	}
-    public void ArraysPython() {
+
+	public void ArraysPython() {
 		Arrays_Python.click();
 	}
-    public void Tryherebtn() {
+
+	public void Tryherebtn() {
 		TryHere.click();
 	}
-    public void TryEditorNocode() {
+
+	public void TryEditorNocode() {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(TryEditor).click().sendKeys("").build().perform();
 	}
-    public void RunBtn() {
+
+	public void RunBtn() {
 		Run.click();
 	}
-    public void enterPythonCode(String code) {
+
+	public void enterPythonCode(String code) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.visibilityOf(TryEditor));
@@ -183,7 +132,8 @@ public class ArrayPage {
 			LoggerReader.error("Failed to enter code: " + e.getMessage());
 		}
 	}
-   public String getAlertTextAndAccept() {
+
+	public String getAlertTextAndAccept() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 			Alert alert = wait.until(ExpectedConditions.alertIsPresent());
@@ -194,52 +144,55 @@ public class ArrayPage {
 			return ""; // No alert appeared
 		}
 	}
-   public String alertMessage() {
-		return driver.switchTo().alert().getText();
-	}
-   public String GetConsoleOutput() {
-		return TryEditor_Console.getText();
-	}
-   public void ArraysList() {
+
+	public void ArraysList() {
 		Arrays_Using_List.click();
 	}
-   public void Basicoperation() {
+
+	public void Basicoperation() {
 		Basic_Operation.click();
 	}
-   public void BasicOperationText() {
+
+	public void BasicOperationText() {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(TryEditor).click().build().perform();
 	}
-   public void ApplicationsArray() {
+
+	public void ApplicationsArray() {
 		Applications_Of_Array.click();
 	}
-   public void Practicequestions() {
+
+	public void Practicequestions() {
 		Practice_Questions.click();
 	}
-   public void Searchthearray() {
+
+	public void Searchthearray() {
 		SearchThe_Array.click();
-
 	}
-   public void MaxConsecutiveOnes() {
+
+	public void MaxConsecutiveOnes() {
 		MaxConsecutive_Ones.click();
-
 	}
-   public void FindEvenNumbers() {
+
+	public void FindEvenNumbers() {
 		Find_Numbers_Evennumber_Digits.click();
 	}
-   public void SquaresSortedArray() {
+
+	public void SquaresSortedArray() {
 		SquaresOf_SortedArray.click();
 	}
-   public void PracticeTryEditor() {
+
+	public void PracticeTryEditor() {
 		codeMirrorDiv.click();
 	}
-   public void ClearTryEditor() {
+
+	public void ClearTryEditor() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].CodeMirror.setValue('');", codeMirrorDiv);
 		System.out.println("Code input field cleared successfully");
-
 	}
-   public void entercode(String code) {
+
+	public void entercode(String code) {
 		Actions actions = new Actions(driver);
 		actions.sendKeys(code).perform();
 	}

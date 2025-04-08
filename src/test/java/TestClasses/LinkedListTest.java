@@ -53,7 +53,6 @@ public class LinkedListTest extends TestBase {
 	@Test(priority = 4, dataProvider = "linkListDataProvider", dataProviderClass = Dataprovider.class)
 	public void checkingAllOtherLinks(String string) {
 		driver.navigate().back();
-
 		switch (string) {
 		case "Creating Linked List":
 			Link.CreatingLinkedlist();
@@ -73,7 +72,6 @@ public class LinkedListTest extends TestBase {
 		case "Deletion":
 			Link.Deletion();
 			break;
-
 		}
 	}
 
