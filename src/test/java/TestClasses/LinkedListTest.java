@@ -317,6 +317,7 @@ public class LinkedListTest extends TestBase {
 		Link.Getstarted();
 		Link.Insertion();
 		Link.PracticeQuestion();
+		Assert.assertFalse(graphpage.content().trim().isEmpty(), "Page is blank! Body does not contain text.");
 		Assert.assertEquals(driver.getTitle(), "Practice Questions");
 		LoggerReader.info("User is in Practice Questions Page");
 	}

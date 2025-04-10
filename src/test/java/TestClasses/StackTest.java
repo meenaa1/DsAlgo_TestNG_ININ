@@ -5,17 +5,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import BaseClass.TestBase;
-import PageObjects.LoginPage;
-import PageObjects.StackPage;
-import Utilities.ConfigReader;
-import Utilities.Dataprovider;
-import Utilities.LoggerReader;
+import PageObjects.*;
+import Utilities.*;
 
 @Listeners(Utilities.Listener.class)
 public class StackTest extends TestBase{
 	
-	StackPage stackpage = new StackPage();
-	LoginPage login = new LoginPage();
+	StackPage stackpage;
+	LoginPage login;
+	GraphPage graphPage;
 	String Username=ConfigReader.getProperty("username");
 	String Password=ConfigReader.getProperty("password");
 	
@@ -23,6 +21,7 @@ public class StackTest extends TestBase{
 	    public void setupPages() {
 	        login = new LoginPage();
 	        stackpage = new StackPage();
+	        graphPage = new GraphPage();
 	    }
 	
 	@Test(priority=1)
@@ -77,6 +76,7 @@ public class StackTest extends TestBase{
 		stackpage.OperationInStack();
 		LoggerReader.info("User is in the Implementation Of Queue In Python Page");
 		stackpage.StackPracticeQuestions();
+		Assert.assertFalse(graphPage.content().trim().isEmpty(), "Page is blank! Body does not contain text.");
 		Assert.assertEquals(driver.getTitle(), "Practice Questions");
 		LoggerReader.info("User is in Practice Questions Page");
 	}

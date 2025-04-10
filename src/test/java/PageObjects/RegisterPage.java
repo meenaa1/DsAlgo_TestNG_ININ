@@ -52,7 +52,7 @@ public class RegisterPage {
 	@FindBy(xpath = "//input[@value='Register']")
 	@CacheLookup
 	private WebElement registerButton;
-
+	
 	@FindBy(xpath = "//div[@role='alert']")
 	@CacheLookup
 	public WebElement success;
@@ -95,6 +95,8 @@ public class RegisterPage {
 	public String successMessage() {
 		return success.getText();
 	}
+	
+	
 
 	public String alertmsg() {
 		return alert.getText();

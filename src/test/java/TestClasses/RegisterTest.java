@@ -63,8 +63,10 @@ public class RegisterTest extends TestBase {
 		registerPage.enterPassword(password);
 		registerPage.enterConfirmPassword(password);
 		registerPage.clickRegister();
-		LoggerReader.info("Showing Password mismatch instead of User already exists.");
-		Assert.assertTrue(login.LoginStatus.isDisplayed());
+		String expectedmessage = "Username already exists";
+		String actualmessage = registerPage.getErrorMessage();
+		LoggerReader.info(actualmessage);
+		assertEquals(actualmessage, expectedmessage, "Incorrect error message");
 	}
 
 	@Test(priority = 5, dataProvider = "Registervalidcredentials", dataProviderClass = Dataprovider.class)

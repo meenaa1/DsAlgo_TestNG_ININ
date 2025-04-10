@@ -5,11 +5,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import BaseClass.TestBase;
-import PageObjects.GraphPage;
-import PageObjects.LoginPage;
-import Utilities.ConfigReader;
-import Utilities.Dataprovider;
-import Utilities.LoggerReader;
+import PageObjects.*;
+import Utilities.*;
 
 @Listeners(Utilities.Listener.class)
 public class GraphTest extends TestBase {
@@ -52,6 +49,7 @@ public class GraphTest extends TestBase {
         graphPage.navigateback();
         graphPage.GraphRepresentationlink();
         graphPage.PracticeQns();
+        Assert.assertFalse(graphPage.content().trim().isEmpty(), "Page is blank! Body does not contain text.");
         Assert.assertEquals(driver.getTitle(), "Practice Questions");
     }
 
