@@ -13,7 +13,6 @@ import Utilities.ConfigReader;
 @Listeners(Utilities.Listener.class)
 public class HomeTest extends TestBase {
 
-	public TestBase base = new TestBase();
 	HomePage home;
 	LoginPage login;
 	String Username = ConfigReader.getProperty("username");

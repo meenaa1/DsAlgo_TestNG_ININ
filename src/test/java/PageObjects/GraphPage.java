@@ -79,6 +79,9 @@ public class GraphPage {
 	@FindBy(xpath = ".//textarea")
 	@CacheLookup
 	WebElement textArea;
+	
+	@FindBy(tagName = "body")
+	WebElement content;
 
 	public void GraphGetStarted() {
 		GraphGetStarted.click();
@@ -162,6 +165,11 @@ public class GraphPage {
 	public void entercode(String code) {
 		Actions actions = new Actions(driver);
 		actions.sendKeys(code).perform();
+	}
+	
+	public String content() {
+		String bodyText = content.getText();
+		return bodyText;
 	}
 
 }
