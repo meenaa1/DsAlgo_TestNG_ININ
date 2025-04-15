@@ -4,40 +4,35 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Excelreaderpython {
-	String[][] credentials = new String[100][100];
-	ArrayList<String> practice = new ArrayList<String>();
-	int i = 0, j = 0;
-
+	
 	public String readExcelSheet(int rowvalue, int colvalue, String sheetname) throws IOException {
 		String path = System.getProperty("user.dir") + "/src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 		File Excelfile = new File(path);
-		FileInputStream Fis = new FileInputStream(Excelfile);
-		XSSFWorkbook workbook = new XSSFWorkbook(Fis);
-		XSSFSheet sheet = workbook.getSheet(sheetname);
-		List<List<String>> credentials = new ArrayList<>();
-		for (Row currRow : sheet) {
-			List<String> rowValues = new ArrayList<>();
-			for (Cell currCell : currRow) {
-				rowValues.add(currCell.toString()); // Convert cell to string safely
+
+		try (FileInputStream fis = new FileInputStream(Excelfile); XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
+
+			XSSFSheet sheet = workbook.getSheet(sheetname);
+			List<List<String>> credentials = new ArrayList<>();
+			for (Row currRow : sheet) {
+				List<String> rowValues = new ArrayList<>();
+				for (Cell currCell : currRow) {
+					rowValues.add(currCell.toString());
+				}
+				credentials.add(rowValues);
 			}
-			credentials.add(rowValues);
+			if (rowvalue >= credentials.size() || colvalue >= credentials.get(rowvalue).size()) {
+				throw new IndexOutOfBoundsException(
+						"Requested row " + rowvalue + ", column " + colvalue + " is out of bounds.");
+			}
+			return credentials.get(rowvalue).get(colvalue);
 		}
-		workbook.close();
-		// Validate index before accessing
-		if (rowvalue >= credentials.size() || colvalue >= credentials.get(rowvalue).size()) {
-			throw new IndexOutOfBoundsException(
-					"Requested row " + rowvalue + ", column " + colvalue + " is out of bounds.");
-		}
-		return credentials.get(rowvalue).get(colvalue);
 	}
 
 	public String getusername(int rownumber) throws IOException {
@@ -90,27 +85,22 @@ public class Excelreaderpython {
 	}
 
 	public ArrayList<String> readpracticeques(int rowvalue, int colvalue, String sheetname) throws IOException {
-
+		ArrayList<String> practiceList = new ArrayList<>();
 		String path = System.getProperty("user.dir") + "/src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
-		File Excelfile = new File(path);
-		FileInputStream Fis = new FileInputStream(Excelfile);
-		XSSFWorkbook workbook = new XSSFWorkbook(Fis);
-		XSSFSheet sheet = workbook.getSheet(sheetname);
-		Iterator<Row> row = sheet.rowIterator();
-		while (row.hasNext()) {
-			Row currRow = row.next();
-			Iterator<Cell> cell = currRow.cellIterator();
-			while (cell.hasNext()) {
-				Cell currCell = cell.next();
-				i = currCell.getRowIndex();
-				j = currCell.getColumnIndex();
-				credentials[i][j] = currCell.getStringCellValue();
+
+		try (FileInputStream fis = new FileInputStream(new File(path)); XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
+
+			XSSFSheet sheet = workbook.getSheet(sheetname);
+			Row row = sheet.getRow(rowvalue);
+			if (row != null) {
+				Cell cell = row.getCell(colvalue);
+				if (cell != null) {
+					practiceList.add(cell.toString());
+				}
 			}
 		}
-		workbook.close();
-		practice.add(credentials[rowvalue][colvalue]);
-		System.out.println(practice);
-		return practice;
+		System.out.println(practiceList);
+		return practiceList;
 	}
 
 	public String getconfirmpassword(int rownumber) throws IOException {
