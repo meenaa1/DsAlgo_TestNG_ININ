@@ -11,10 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Excelreaderpython {
-	String[][] credentials = new String[100][100];
-	ArrayList<String> practice = new ArrayList<String>();
-	int i = 0, j = 0;
-
+	
 	public String readExcelSheet(int rowvalue, int colvalue, String sheetname) throws IOException {
 		String path = System.getProperty("user.dir") + "/src/test/resources/TestData/Excel_Login_Pythoncode.xlsx";
 		File Excelfile = new File(path);
